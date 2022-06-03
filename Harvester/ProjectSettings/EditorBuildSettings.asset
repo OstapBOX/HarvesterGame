@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 1cbb49503bffc0041912d62c8f4adb31
+  - enabled: 1
+    path: Assets/Scenes/Harvester.unity
+    guid: 3efedc42538f67c4ca9ee016296dce28
+  - enabled: 1
+    path: Assets/Scenes/Hangar.unity
+    guid: 4aa1b8fe422cf87449f59462443c3303
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 13eddd8123c478147ab730908a60a88e
+  - enabled: 1
+    path: Assets/Scenes/Storage.unity
+    guid: 4ae54cde8cc68154fb0a2a6dce671e87
+  - enabled: 1
+    path: Assets/Scenes/MyFarm.unity
+    guid: 74c945ad6e82e9c4b92c123033321078
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: b18414425da52b44bafac066641ca368,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fbcbfd411805c8d43b2bf75747f8c8b1,
+      type: 2}
