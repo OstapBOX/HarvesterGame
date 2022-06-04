@@ -10,6 +10,7 @@ public class Wheat : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         gameManager.UpdateScore(1);
+        gameManager.TapPopVibrate();
         PlayerData.instance.ChangeWheatAmount(1);
         Destroy(gameObject);
     }    

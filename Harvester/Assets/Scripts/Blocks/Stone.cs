@@ -28,6 +28,7 @@ public class Stone : MonoBehaviour {
         }
         PlayerData.instance.UpdateStatisticStoneCollected();
         SoundManager.instance.PlaySound(collideSound);
+        gameManager.TapPeekVibrate();
         Destroy(this.gameObject);
     }
 }

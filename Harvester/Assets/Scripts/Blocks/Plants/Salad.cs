@@ -12,6 +12,7 @@ public class Salad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         gameManager.UpdateScore(1);
+        gameManager.TapPopVibrate();
         PlayerData.instance.ChangeSaladAmount(1);
         Destroy(gameObject);
     }

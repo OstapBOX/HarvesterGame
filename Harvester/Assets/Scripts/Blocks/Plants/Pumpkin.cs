@@ -12,6 +12,7 @@ public class Pumpkin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         gameManager.UpdateScore(1);
+        gameManager.TapPopVibrate();
         PlayerData.instance.ChangePumpkinAmount(1);
         Destroy(gameObject);
     }

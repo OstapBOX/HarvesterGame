@@ -17,7 +17,8 @@ public class PlayerData : MonoBehaviour
         else if(instance != null && instance != this) {
             Destroy(this.gameObject);
         }
-  
+
+        Vibration.Init();
     }
     
     public void UpdateStatisticGamesPlayed() {

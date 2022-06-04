@@ -20,7 +20,7 @@ public class СharacteristicsBar : MonoBehaviour
     }
 
     public void UpdateCharacteristics() {
-        for(int i = 0; i < harvesterSelection.transform.GetChildCount(); i++) {
+        for(int i = 0; i < harvesterSelection.transform.childCount; i++) {
             if(harvesterSelection.transform.GetChild(i).gameObject.activeSelf == true) {
                 Harvester currentHarvester = harvesterSelection.transform.GetChild(i).GetComponent<Harvester>();
                 strenth.text = currentHarvester.strength.ToString();

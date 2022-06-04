@@ -187,6 +187,8 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Respawn");
     }
 
+  
+
     public void UpdateStatistic() {
         PlayerData.instance.UpdateStatisticHighestScore(score);
         PlayerData.instance.UpdateStatisticWheatCollected(score);
@@ -218,6 +220,19 @@ public class GameManager : MonoBehaviour {
         UpdateStatistic();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Shop");
+    }
+
+    //Vibrations
+    public void TapPopVibrate() {
+        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
+            Vibration.VibratePop();
+        }
+    }
+
+    public void TapPeekVibrate() {
+        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
+            Vibration.VibratePeek();
+        }
     }
 
     private IEnumerator Invulnerability() {
