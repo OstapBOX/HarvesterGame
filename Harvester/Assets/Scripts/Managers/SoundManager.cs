@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
-{
+public class SoundManager : MonoBehaviour {
     public static SoundManager instance { get; private set; }
-    private AudioSource source;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource effectsSource;
 
     private void Awake() {
         if (instance == null) {
@@ -15,12 +15,28 @@ public class SoundManager : MonoBehaviour
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);
         }
-
-        source = GetComponent<AudioSource>();    
+        ChangeMasterVolume(PlayerPrefs.GetFloat("musicVolume", 1));
+        ApplyEffectsStatus();
+        ApplyMusicStatus();
     }
 
     public void PlaySound(AudioClip _sound) {
-        source.PlayOneShot(_sound);
+        effectsSource.PlayOneShot(_sound);
     }
 
+    public void ChangeMasterVolume(float value) {
+        AudioListener.volume = value;
+        PlayerPrefs.SetFloat("musicVolume", value);
+    }
+
+    public void ApplyEffectsStatus() {
+        effectsSource.mute = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ?  false : true;
+
+    }
+    public void ApplyMusicStatus() {
+        musicSource.mute = PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? false : true;
+    }
 }
+
+
+

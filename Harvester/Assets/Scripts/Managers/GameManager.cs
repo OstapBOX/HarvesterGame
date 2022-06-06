@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject notEnoughFuel;
 
     [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private AudioClip engineStarts;
     [SerializeField] private ParticleSystem gameOverExplosion;
     [SerializeField] private GameObject plantsParticle;
     [SerializeField] private GameObject dirtParticle;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour {
         collectorAnimator = collector.GetComponent<Animator>();
         recordText.text = reachRecord.ToString();
         startTime = Time.time;
+        SoundManager.instance.PlaySound(engineStarts);
         score = 0;
         fuel = 100;
         strength = harvester.strength;
@@ -224,15 +226,19 @@ public class GameManager : MonoBehaviour {
 
     //Vibrations
     public void TapPopVibrate() {
+#if !UNITY_EDITOR
         if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
             Vibration.VibratePop();
         }
+#endif
     }
 
     public void TapPeekVibrate() {
+#if !UNITY_EDITOR
         if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
             Vibration.VibratePeek();
         }
+#endif
     }
 
     private IEnumerator Invulnerability() {

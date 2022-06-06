@@ -8,7 +8,6 @@ public class HarvesterModel : MonoBehaviour
     }
 
     private void ChooseHarvesterModel(int _index) {
-        Debug.Log(_index);
         Instantiate(harvesterModels[_index], transform.position, transform.rotation, transform);
     }
 }
