@@ -73,12 +73,14 @@ public static class Vibration
     ///</summary>
     public static void VibratePop ()
     {
-        if ( Application.isMobilePlatform ) {
+        if (PlayerPrefs.GetInt("VibrationsMuted", 0) == 0) {
+            if (Application.isMobilePlatform) {
 #if UNITY_IOS
         _VibratePop ();
 #elif UNITY_ANDROID
-            Vibrate ( 20 );
+                Vibrate(20);
 #endif
+            }
         }
     }
     ///<summary>
@@ -86,12 +88,14 @@ public static class Vibration
     ///</summary>
     public static void VibratePeek ()
     {
-        if ( Application.isMobilePlatform ) {
+        if (PlayerPrefs.GetInt("VibrationsMuted", 0) == 0) {
+            if (Application.isMobilePlatform) {
 #if UNITY_IOS
         _VibratePeek ();
 #elif UNITY_ANDROID
-            Vibrate ( 150 );
+                Vibrate(150);
 #endif
+            }
         }
     }
     ///<summary>

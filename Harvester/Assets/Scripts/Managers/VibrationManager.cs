@@ -32,13 +32,13 @@ public class VibrationManager : MonoBehaviour {
     }
 
     public void TapPopVibrate() {
-        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
+        if (PlayerPrefs.GetInt("VibrationsMuted", 0) == 0) {
             Vibration.VibratePop();
         }
     }
 
     public void TapPeekVibrate() {
-        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
+        if (PlayerPrefs.GetInt("VibrationsMuted", 0) == 0) {
             Vibration.VibratePeek();
         }
     }

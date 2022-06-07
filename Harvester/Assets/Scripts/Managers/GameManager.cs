@@ -227,17 +227,13 @@ public class GameManager : MonoBehaviour {
     //Vibrations
     public void TapPopVibrate() {
 #if !UNITY_EDITOR
-        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
-            Vibration.VibratePop();
-        }
+            Vibration.VibratePop();    
 #endif
     }
 
     public void TapPeekVibrate() {
 #if !UNITY_EDITOR
-        if (PlayerPrefs.GetInt("Vibrations", 0) == 0) {
             Vibration.VibratePeek();
-        }
 #endif
     }
 
