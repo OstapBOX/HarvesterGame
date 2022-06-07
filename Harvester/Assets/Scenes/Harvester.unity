@@ -598,7 +598,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.000061, z: 8.9e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1742,6 +1742,7 @@ GameObject:
   - component: {fileID: 276033202}
   - component: {fileID: 276033204}
   - component: {fileID: 276033203}
+  - component: {fileID: 276033205}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Untagged
@@ -1758,7 +1759,7 @@ RectTransform:
   m_GameObject: {fileID: 276033201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children:
   - {fileID: 267389779}
   - {fileID: 1294238024}
@@ -1808,6 +1809,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276033201}
   m_CullTransparentMesh: 1
+--- !u!114 &276033205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276033201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 276033203}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7859599872553287098}
+        m_TargetAssemblyTypeName: HarvesterControll, Assembly-CSharp
+        m_MethodName: CastShield
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &290229508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3190,7 +3247,7 @@ PrefabInstance:
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
@@ -3225,17 +3282,17 @@ PrefabInstance:
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15165274
+      value: 0.2987213
       objectReference: {fileID: 0}
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15165274
+      value: 0.2987213
       objectReference: {fileID: 0}
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15165274
+      value: 0.2987213
       objectReference: {fileID: 0}
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
@@ -3280,7 +3337,7 @@ PrefabInstance:
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -11.1
       objectReference: {fileID: 0}
     - target: {fileID: 6685866366582676831, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
@@ -3300,7 +3357,7 @@ PrefabInstance:
     - target: {fileID: 6685866367150220351, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6685866367363750330, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
@@ -3315,7 +3372,7 @@ PrefabInstance:
     - target: {fileID: 6685866367529087104, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6685866367583329786, guid: 11d7c67697aa0d744b567ff5dddff8f4,
         type: 3}
@@ -6247,6 +6304,7 @@ GameObject:
   - component: {fileID: 1528063064}
   - component: {fileID: 1528063066}
   - component: {fileID: 1528063065}
+  - component: {fileID: 1528063067}
   m_Layer: 5
   m_Name: Cultivator
   m_TagString: Untagged
@@ -6263,7 +6321,7 @@ RectTransform:
   m_GameObject: {fileID: 1528063063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children:
   - {fileID: 104623317}
   - {fileID: 1669899336}
@@ -6313,6 +6371,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528063063}
   m_CullTransparentMesh: 1
+--- !u!114 &1528063067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528063063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1528063065}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7859599872553287098}
+        m_TargetAssemblyTypeName: HarvesterControll, Assembly-CSharp
+        m_MethodName: CastCultivator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1566980828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6491,7 +6605,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.305e-42, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -6616,8 +6730,6 @@ MonoBehaviour:
   isInvulnerable: 0
   gameSpeed: 20
   maxGameSpeed: 70
-  harvesterRotationSpeed: 20
-  harvesterRotationForce: 2000
   cultivatorCollider: {fileID: 919132149112306266}
   rotatorCollider: {fileID: 5049306774089825765}
   notEnoughFuel: {fileID: 684335296}
@@ -6797,7 +6909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.733}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -86, y: -150}
+  m_AnchoredPosition: {x: 84.8, y: -111.8}
   m_SizeDelta: {x: 138.9, y: 460.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655601820
@@ -6818,7 +6930,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 2.5
+  m_Spacing: 36.55
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -8559,6 +8671,7 @@ GameObject:
   - component: {fileID: 2079419965}
   - component: {fileID: 2079419967}
   - component: {fileID: 2079419966}
+  - component: {fileID: 2079419968}
   m_Layer: 5
   m_Name: SpeedUp
   m_TagString: Untagged
@@ -8575,7 +8688,7 @@ RectTransform:
   m_GameObject: {fileID: 2079419964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children:
   - {fileID: 532732375}
   - {fileID: 602016103}
@@ -8625,6 +8738,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079419964}
   m_CullTransparentMesh: 1
+--- !u!114 &2079419968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079419964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2079419966}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7859599872553287098}
+        m_TargetAssemblyTypeName: HarvesterControll, Assembly-CSharp
+        m_MethodName: CastDash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2087344319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10703,7 +10872,7 @@ RectTransform:
   - {fileID: 522972866896269122}
   - {fileID: 522972867333079227}
   m_Father: {fileID: 522972866957874769}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10892,8 +11061,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.040443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 683425429}
   - {fileID: 522972866910061462}
+  - {fileID: 683425429}
   m_Father: {fileID: 522972868027775672}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

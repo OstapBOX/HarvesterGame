@@ -16,9 +16,7 @@ public class GameManager : MonoBehaviour {
     private int minutes, seconds;
     public bool isGameActive, isInvulnerable;
     private bool firstDeath = true;
-    public float gameSpeed = 20.0f, maxGameSpeed = 100,
-                 harvesterRotationSpeed = 20.0f,
-                 harvesterRotationForce;
+    public float gameSpeed = 25.0f, maxGameSpeed = 150;
 
     
     private GameObject harvesterModels;
@@ -64,8 +62,7 @@ public class GameManager : MonoBehaviour {
         fuel = 100;
         strength = harvester.strength;
         maxHeals = harvester.strength;
-        gameSpeed = 20.0f;
-        harvesterRotationSpeed = 20.0f;
+        gameSpeed = 25.0f;
         StartCoroutine(FuelIndicator());
         StartCoroutine(PlantsParticle());
         strengthText.text = strength.ToString();
@@ -75,7 +72,7 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (isGameActive) {
             if (gameSpeed < maxGameSpeed) {
-                gameSpeed += 0.5f * Time.deltaTime;
+                gameSpeed += 0.25f * Time.deltaTime;
             }
             UpdateTime();
             PlayerData.instance.UpdateStatisticTime(minutes, seconds);
@@ -289,7 +286,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator PlantsParticle() {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(3.8f);
         plantsParticle.SetActive(true);
     }
 }

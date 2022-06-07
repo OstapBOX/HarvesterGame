@@ -30,6 +30,7 @@ public class HarvesterSelection : MonoBehaviour
 
     private void Start() {
         currentHarvester = SaveManager.instance.currentHarvester;
+        CheckArrowsStatus();
         SelectHarvester(currentHarvester);
         сharacteristicsBar.UpdateCharacteristics();
     }
@@ -71,11 +72,16 @@ public class HarvesterSelection : MonoBehaviour
     public void ChangeHarvester(int _change) {
         SoundManager.instance.PlaySound(swipe);
         currentHarvester += _change;
-        previousButton.interactable = (currentHarvester != 0);
+        previousButton.interactable = (currentHarvester != 0 );
         nextButton.interactable = (currentHarvester != transform.childCount - 1);
         SaveManager.instance.currentHarvester = currentHarvester;
         SaveManager.instance.Save();
         SelectHarvester(currentHarvester);
+    }
+
+    private void CheckArrowsStatus() {
+        previousButton.interactable = (currentHarvester != 0);
+        nextButton.interactable = (currentHarvester != transform.childCount - 1);
     }
 
     public void BuyHarvester() {

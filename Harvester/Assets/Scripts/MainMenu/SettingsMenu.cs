@@ -24,24 +24,24 @@ public class SettingsMenu : MonoBehaviour {
 
     public void SwitchMusic() {
         PlayerPrefs.SetInt("MusicMuted", PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? 1 : 0);
-        music.image.sprite = PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? musicOn : musicOff;
+        music.image.sprite = PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? musicOff : musicOn;
         SoundManager.instance.ApplyMusicStatus();
     }
 
     public void SwitchEffects() {
         PlayerPrefs.SetInt("EffectsMuted", PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? 1 : 0);
-        effects.image.sprite = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? effectsOn : effectsOff;
+        effects.image.sprite = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? effectsOff : effectsOn;
         SoundManager.instance.ApplyEffectsStatus();
     }
 
     public void SwitchVibrations() {
         PlayerPrefs.SetInt("VibrationsMuted", PlayerPrefs.GetInt("VibrationsMuted", 0) == 0 ? 1 : 0);
-        vibrations.image.sprite = PlayerPrefs.GetInt("VibrationsMuted", 0) == 0 ? vibrationsOn : vibrationsOff;
+        vibrations.image.sprite = PlayerPrefs.GetInt("VibrationsMuted", 0) == 0 ? vibrationsOff : vibrationsOn;
     }    
 
     private void SetSettingsIcons() {
-        music.image.sprite = PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? musicOn : musicOff;
-        effects.image.sprite = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? effectsOn : effectsOff;
-        vibrations.image.sprite = PlayerPrefs.GetInt("VibrationsMuted", 0) == 0 ? vibrationsOn : vibrationsOff;
+        music.image.sprite = PlayerPrefs.GetInt("MusicMuted", 0) == 0 ? musicOff : musicOn;
+        effects.image.sprite = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? effectsOff : effectsOn;
+        vibrations.image.sprite = PlayerPrefs.GetInt("VibrationsMuted", 0) == 0 ? vibrationsOff : vibrationsOn;
     }
 }

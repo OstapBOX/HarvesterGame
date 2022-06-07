@@ -73,63 +73,18 @@ public class HarvesterControll : MonoBehaviour {
 
             if (swipeManager.swipeUp) {
                 swipeManager.swipeUp = false;
-
-                if (abilitiesCooldown[0] == false) {
-                    if(PlayerData.instance.GetSpeedUpAmount() > 0) {
-                        SoundManager.instance.PlaySound(dashActivation);
-                        PlayerData.instance.ChangeSpeedUpAmount(-1);
-                        powerUpsAmount.UpdatePowerUpsAmount();
-                        abilitiesCooldown[0] = true;
-                        abilitiesMasks[0].fillAmount = 1;
-                        MoveForward();
-                    }
-                    else {
-                        SoundManager.instance.PlaySound(reject);
-                    }
-                }
-                else {
-                    SoundManager.instance.PlaySound(reject);
-                }
+                CastDash();                
             }
 
             if (swipeManager.tap) {
                 swipeManager.tap = false;
-                if (abilitiesCooldown[1] == false) {
-                    if (PlayerData.instance.GetShieldAmount() > 0) {
-                        SoundManager.instance.PlaySound(shieldActivation);
-                        PlayerData.instance.ChangeShieldAmount(-1);
-                        powerUpsAmount.UpdatePowerUpsAmount();
-                        abilitiesCooldown[1] = true;
-                        abilitiesMasks[1].fillAmount = 1;
-                        gameManager.UseShield();
-                    }
-                    else {
-                        SoundManager.instance.PlaySound(reject);
-                    }
-                }
-                else {
-                    SoundManager.instance.PlaySound(reject);
-                }
+                CastShield();
             }
 
             if (swipeManager.doubleTap) {
                 swipeManager.doubleTap = false;
-                if (abilitiesCooldown[2] == false) {
-                    if (PlayerData.instance.GetCultivatorAmount() > 0) {
-                        SoundManager.instance.PlaySound(cultivatorActivation);
-                        PlayerData.instance.ChangeCultivatorAmount(-1);
-                        powerUpsAmount.UpdatePowerUpsAmount();
-                        abilitiesCooldown[2] = true;
-                        abilitiesMasks[2].fillAmount = 1;
-                        gameManager.UseCollector();
-                    }
-                    else {
-                        SoundManager.instance.PlaySound(reject);
-                    }
-                }
-                else {
-                    SoundManager.instance.PlaySound(reject);
-                }
+                CastCultivator();
+               
             }
 
             AbilityInterface(0);
@@ -158,6 +113,60 @@ public class HarvesterControll : MonoBehaviour {
         Sequence.Join(transform.DORotate(Vector3.zero, 0.5f));
     }
 
+    public void CastDash() {
+        if (abilitiesCooldown[0] == false) {
+            if (PlayerData.instance.GetSpeedUpAmount() > 0) {
+                SoundManager.instance.PlaySound(dashActivation);
+                PlayerData.instance.ChangeSpeedUpAmount(-1);
+                powerUpsAmount.UpdatePowerUpsAmount();
+                abilitiesCooldown[0] = true;
+                abilitiesMasks[0].fillAmount = 1;
+                MoveForward();
+            }
+            else {
+                SoundManager.instance.PlaySound(reject);
+            }
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+        }
+    }
+    public void CastShield() {
+        if (abilitiesCooldown[1] == false) {
+            if (PlayerData.instance.GetShieldAmount() > 0) {
+                SoundManager.instance.PlaySound(shieldActivation);
+                PlayerData.instance.ChangeShieldAmount(-1);
+                powerUpsAmount.UpdatePowerUpsAmount();
+                abilitiesCooldown[1] = true;
+                abilitiesMasks[1].fillAmount = 1;
+                gameManager.UseShield();
+            }
+            else {
+                SoundManager.instance.PlaySound(reject);
+            }
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+        }
+    }
+    public void CastCultivator() {
+        if (abilitiesCooldown[2] == false) {
+            if (PlayerData.instance.GetCultivatorAmount() > 0) {
+                SoundManager.instance.PlaySound(cultivatorActivation);
+                PlayerData.instance.ChangeCultivatorAmount(-1);
+                powerUpsAmount.UpdatePowerUpsAmount();
+                abilitiesCooldown[2] = true;
+                abilitiesMasks[2].fillAmount = 1;
+                gameManager.UseCollector();
+            }
+            else {
+                SoundManager.instance.PlaySound(reject);
+            }
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+        }
+    }
 
     private void AbilityInterface(int _abilityIndex) {
         if (abilitiesCooldown[_abilityIndex]) {
