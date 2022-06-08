@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator FuelIndicator() {
         while (fuel > 0) {
-            yield return new WaitForSeconds(harvester.consumption);
+            yield return new WaitForSeconds(1 - harvester.consumption);
             if (isGameActive) {
                 UpdateFuel(-1);
             }

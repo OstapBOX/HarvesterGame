@@ -29,7 +29,7 @@ public class HarvesterSelection : MonoBehaviour
     [SerializeField] private AudioClip pick;
 
     private void Start() {
-        currentHarvester = SaveManager.instance.currentHarvester;
+        currentHarvester = CurrentHarvester();
         CheckArrowsStatus();
         SelectHarvester(currentHarvester);
         сharacteristicsBar.UpdateCharacteristics();
@@ -91,6 +91,16 @@ public class HarvesterSelection : MonoBehaviour
         SaveManager.instance.Save();
         UpdateUI();
     }
+
+    private int CurrentHarvester() {
+        if (!SaveManager.instance.harvestersUnlocked[currentHarvester]) {
+            return 0;
+        }
+        else {
+            return SaveManager.instance.currentHarvester;
+        }
+    }
+        
 
     public void LoadMenu() {
         SoundManager.instance.PlaySound(pick);

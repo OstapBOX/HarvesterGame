@@ -60,6 +60,7 @@ MonoBehaviour:
   effectsOff: {fileID: 21300000, guid: d45d147ead4b71b43b15ca4e5822a420, type: 3}
   vibrationsOn: {fileID: 21300000, guid: 9083bbbdb6273de4388684c34b7a3450, type: 3}
   vibrationsOff: {fileID: 21300000, guid: 49554deaa7eaa3943bd1f7c54dace554, type: 3}
+  tap: {fileID: 8300000, guid: c3cee050ccb6fa5449e535be28696802, type: 3}
 --- !u!1 &6685866366719820862
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +398,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6685866366582676830}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: PlayTap
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
