@@ -62,7 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Hippie
+  price: 120
   strength: 3
+  farmLevel: 4
   consumption: 0.3
   abilitiesDuration:
   - 35

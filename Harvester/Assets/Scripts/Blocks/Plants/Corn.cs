@@ -13,7 +13,8 @@ public class Corn : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         gameManager.UpdateScore(1);
         gameManager.TapPopVibrate();
-        PlayerData.instance.ChangeCornAmount(1);
+        //PlayerData.instance.ChangeCornAmount(1);
+        gameManager.cornCollected += 1;
         Destroy(gameObject);
     }
 }

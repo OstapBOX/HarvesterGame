@@ -309,7 +309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Formula
+  price: 500
   strength: 3
+  farmLevel: 20
   consumption: 0.95
   abilitiesDuration:
   - 10

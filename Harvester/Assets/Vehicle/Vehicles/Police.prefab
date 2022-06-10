@@ -314,7 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Police
+  price: 100
   strength: 7
+  farmLevel: 2
   consumption: 0.8
   abilitiesDuration:
   - 20

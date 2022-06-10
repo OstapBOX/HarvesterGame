@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
     private Animator shieldAnimator;
     private Animator collectorAnimator;
 
+    public int wheatCollected = 0, cornCollected = 0, saladCollected = 0, carrotCollected = 0, sunflowerCollected = 0, cottonCollected = 0, pumpkinCollected = 0;
+
     // Start is called before the first frame update
     void Start() {
         Time.timeScale = 1f;
@@ -138,7 +140,6 @@ public class GameManager : MonoBehaviour {
         if (firstDeath) {
             isGameActive = false;
             Time.timeScale = 0f;
-            Debug.Log("firstDeath");
             continueScreen.SetActive(true);
         }
         else {
@@ -176,29 +177,36 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Respawn() {
-
         Time.timeScale = 1f;
-        Debug.Log("Inv");
+        fuel = 100;
         StartCoroutine(Invulnerability());
+        StartCoroutine(FuelIndicator());
         isGameActive = true;
         UpdateStrenght(maxHeals/2);
-        fuel = 100;
-        Debug.Log("Respawn");
     }
 
-  
+    private void UpdateCollected() {
+        PlayerData.instance.ChangeWheatAmount(wheatCollected);
+        PlayerData.instance.ChangeCornAmount(cornCollected);
+        PlayerData.instance.ChangeSaladAmount(saladCollected);
+        PlayerData.instance.ChangeCarrotAmount(carrotCollected);
+        PlayerData.instance.ChangeSunflowerAmount(sunflowerCollected);
+        PlayerData.instance.ChangeCottonAmount(cornCollected);
+        PlayerData.instance.ChangePumpkinAmount(pumpkinCollected);
+    }
 
-    public void UpdateStatistic() {
+   private void UpdateStatistic() {
         PlayerData.instance.UpdateStatisticHighestScore(score);
         PlayerData.instance.UpdateStatisticWheatCollected(score);
         PlayerData.instance.UpdateStatisticGamesPlayed();
         PlayerData.instance.UpdateStatisticTime(minutes, seconds);
-    }
+   }
 
     public void RestartGame() {
         if (PlayerPrefs.GetInt("totalEnergy") > 0) {
             Time.timeScale = 1f;
             UpdateStatistic();
+            UpdateCollected();
             PlayerPrefs.SetInt("totalEnergy", PlayerPrefs.GetInt("totalEnergy") - 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -210,6 +218,7 @@ public class GameManager : MonoBehaviour {
     public void BackToMenu() {
         SoundManager.instance.PlaySound(tap);
         UpdateStatistic();
+        UpdateCollected();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
@@ -217,8 +226,14 @@ public class GameManager : MonoBehaviour {
     public void LoadShop() {
         SoundManager.instance.PlaySound(tap);
         UpdateStatistic();
+        UpdateCollected();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Shop");
+    }
+
+    public void DoubleReward() {
+        UpdateCollected();
+
     }
 
     //Vibrations
@@ -289,4 +304,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(3.8f);
         plantsParticle.SetActive(true);
     }
+
+
+
 }

@@ -476,7 +476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Bulldozer
+  price: 450
   strength: 10
+  farmLevel: 19
   consumption: 0.85
   abilitiesDuration:
   - 40

@@ -6193,13 +6193,14 @@ MonoBehaviour:
   - {fileID: 658739100}
   - {fileID: 1811084674}
   - {fileID: 532370729}
-  levelsPrices: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000007800000064000000640000006400000064000000640000006400000064000000640000006400000064000000
+  levelsPrices: 00000000230000004b0000007d00000096000000af000000c8000000fa0000002c01000090010000580200005203000084030000b60300004c040000b00400004605000078050000aa050000dc050000dc050000
   priceText: {fileID: 275575678}
   levelText: {fileID: 1892347168}
   notEnoughCoins: {fileID: 791331343}
   statisticBar: {fileID: 6802718010964777876}
   upgrade: {fileID: 8300000, guid: 5b9ed4aef9cb56c4b9eee4e970250b94, type: 3}
   reject: {fileID: 8300000, guid: 68aaf93e39ab45042924ec6c44301ce5, type: 3}
+  upgradeButton: {fileID: 1669572796}
 --- !u!1001 &389502845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8205,7 +8206,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1578053349010547767, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 2883247865835871902, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 9207742491188521419, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
 --- !u!4 &523452998 stripped
 Transform:
@@ -12738,7 +12742,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1578053349010547767, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 2883247865835871902, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 9207742491188521419, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
 --- !u!4 &775778090 stripped
 Transform:
@@ -17214,7 +17221,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1578053349010547767, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 2883247865835871902, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 9207742491188521419, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
 --- !u!4 &1027409082 stripped
 Transform:
@@ -31535,7 +31545,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1578053349010547767, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 2883247865835871902, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
+    - {fileID: 9207742491188521419, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfe51ffd767fb3e4d91bd89422455e80, type: 3}
 --- !u!4 &2032694560 stripped
 Transform:

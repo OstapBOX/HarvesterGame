@@ -14,12 +14,12 @@ public class HarvesterSelection : MonoBehaviour
     [SerializeField] private Button buy;
     [SerializeField] private TextMeshProUGUI priceText;
     [SerializeField] private TextMeshProUGUI nameText;
- 
+
 
     [Header("Car Attributes")]
-    [SerializeField] private int[] harvesterPrices;
-    [SerializeField] private string[] harvesterName;
+    [SerializeField] private Harvester[] harvesters;
     [SerializeField] private GameObject carLockedScreen;
+    [SerializeField] private GameObject farmLevelRequired;
     private int currentHarvester;
 
     [Header("UI")]
@@ -33,6 +33,7 @@ public class HarvesterSelection : MonoBehaviour
         CheckArrowsStatus();
         SelectHarvester(currentHarvester);
         сharacteristicsBar.UpdateCharacteristics();
+        UpdateUI();//Added
     }
 
     private void SelectHarvester(int _index) {
@@ -40,7 +41,6 @@ public class HarvesterSelection : MonoBehaviour
         for(int i =0; i < transform.childCount; i++) {
             transform.GetChild(i).gameObject.SetActive(i == _index);
         }
-
         UpdateUI();
     }
 
@@ -49,24 +49,26 @@ public class HarvesterSelection : MonoBehaviour
             play.gameObject.SetActive(true);
             buy.gameObject.SetActive(false);
             carLockedScreen.SetActive(false);
-            nameText.text = harvesterName[currentHarvester].ToString();
+            nameText.text = harvesters[currentHarvester].name.ToString();
         }
         else {
-            nameText.text = harvesterName[currentHarvester].ToString();
+            nameText.text = harvesters[currentHarvester].name.ToString();
             play.gameObject.SetActive(false);
             buy.gameObject.SetActive(true);
             carLockedScreen.SetActive(true);
-            priceText.text = harvesterPrices[currentHarvester] + "$";
-            buy.interactable = (PlayerData.instance.GetCoinsAmount() >= harvesterPrices[currentHarvester]);
+            priceText.text = harvesters[currentHarvester].price + "$";
+            buy.interactable = (PlayerData.instance.GetCoinsAmount() >= harvesters[currentHarvester].price && PlayerPrefs.GetInt("FarmLevel", 0) >= harvesters[currentHarvester].farmLevel);
+           
+            farmLevelRequired.SetActive(PlayerPrefs.GetInt("FarmLevel", 0) < harvesters[currentHarvester].farmLevel);
         }
         statisticBar.UpdateStatisticBar();
     }
 
 
     private void Update() {
-        if (buy.gameObject.activeInHierarchy) {
-            buy.interactable = (PlayerData.instance.GetCoinsAmount() >= harvesterPrices[currentHarvester]);
-        }
+        //if (buy.gameObject.activeInHierarchy) {
+        //    buy.interactable = (PlayerData.instance.GetCoinsAmount() >= harvesterPrices[currentHarvester] && PlayerPrefs.GetInt("FarmLevel", 0) >= harvesters[currentHarvester].farmLevel);
+        //}
     }
 
     public void ChangeHarvester(int _change) {
@@ -86,7 +88,7 @@ public class HarvesterSelection : MonoBehaviour
 
     public void BuyHarvester() {
         SoundManager.instance.PlaySound(pick);
-        PlayerData.instance.ChangeCoinsAmount(-harvesterPrices[currentHarvester]);
+        PlayerData.instance.ChangeCoinsAmount(-harvesters[currentHarvester].price);
         SaveManager.instance.harvestersUnlocked[currentHarvester] = true;
         SaveManager.instance.Save();
         UpdateUI();

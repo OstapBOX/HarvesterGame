@@ -314,7 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Tow
+  price: 150
   strength: 4
+  farmLevel: 5
   consumption: 0.6
   abilitiesDuration:
   - 25

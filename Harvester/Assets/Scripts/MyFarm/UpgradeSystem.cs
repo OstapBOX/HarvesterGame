@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class UpgradeSystem : MonoBehaviour {
 
     [SerializeField] private GameObject[] upgradeLevels;
@@ -15,35 +16,47 @@ public class UpgradeSystem : MonoBehaviour {
     [SerializeField] private AudioClip upgrade;
     [SerializeField] private AudioClip reject;
 
+    [SerializeField] private GameObject upgradeButton;
+
 
     private int currentLevel;
 
     void Start() {
         Load();
         UpdateScene(currentLevel);
+        if(currentLevel == levelsPrices.Length) {
+            upgradeButton.SetActive(false);
+        }
     }
 
     public void UpdateScene(int _level) {
         for (int i = 0; i <= _level; i++) {
             upgradeLevels[i].SetActive(true);
         }
-        priceText.text = levelsPrices[_level].ToString() + "$";
+        if(_level != levelsPrices.Length - 1) {
+            priceText.text = levelsPrices[_level].ToString() + "$";
+        }
+        else {
+            upgradeButton.SetActive(false);
+        }
         levelText.text = "Level " + _level.ToString();
         statisticBar.UpdateStatisticBar();
     }
 
     public void Upgrade() {
-        if (PlayerData.instance.GetCoinsAmount() >= levelsPrices[currentLevel]) {
-            SoundManager.instance.PlaySound(upgrade);
-            PlayerData.instance.ChangeCoinsAmount(-levelsPrices[currentLevel]);
-            currentLevel++;
-            UpdateScene(currentLevel);
-            Save();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-            notEnoughCoins.SetActive(true);
-        }
+        if(currentLevel < levelsPrices.Length - 1) {
+            if (PlayerData.instance.GetCoinsAmount() >= levelsPrices[currentLevel]) {
+                SoundManager.instance.PlaySound(upgrade);
+                PlayerData.instance.ChangeCoinsAmount(-levelsPrices[currentLevel]);
+                currentLevel++;
+                UpdateScene(currentLevel);
+                Save();
+            }
+            else {
+                SoundManager.instance.PlaySound(reject);
+                notEnoughCoins.SetActive(true);
+            }
+        }      
     }
 
     public void Save() {
