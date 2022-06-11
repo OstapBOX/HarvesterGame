@@ -21,7 +21,6 @@ public class PlantInStorage : MonoBehaviour {
 
             if (sellLock != null) {
                 Destroy(sellLock);
-
             }
         }
     }

@@ -25,6 +25,16 @@ public class Storage : MonoBehaviour {
     [SerializeField] private GameObject sunflowerButton;
     [SerializeField] private GameObject pumpkinButton;
 
+
+    [Header("Buy Screens")]
+    [SerializeField] private GameObject wheatScreen;
+    [SerializeField] private GameObject cornScreen;
+    [SerializeField] private GameObject saladScreen;
+    [SerializeField] private GameObject carrotScreen;
+    [SerializeField] private GameObject cottonScreen;
+    [SerializeField] private GameObject sunflowerScreen;
+    [SerializeField] private GameObject pumpkinScreen;
+
     [Header("Locks")]
     [SerializeField] private GameObject wheatLock;
     [SerializeField] private GameObject cornLock;
@@ -40,9 +50,19 @@ public class Storage : MonoBehaviour {
     [SerializeField] private AudioClip tap;
     [SerializeField] private AudioClip sell;
 
-
-
     [SerializeField] private GameObject notEnoughMoneyScreen;
+    [SerializeField] private GameObject farmLevelRequired;
+    [SerializeField] private TextMeshProUGUI farmlevel;
+
+    private int wheatLevel = 0;
+    private int cornLevel = 3;
+    private int saladLevel = 6;
+    private int carrotLevel = 9;
+    private int cottonLevel = 12;
+    private int sunflowerLevel = 15;
+    private int pumpkinLevel = 18;
+
+
 
     private void Start() {
         statisticBar = GameObject.Find("StatisticBarCanvas").GetComponent<StatisticBar>();
@@ -87,6 +107,7 @@ public class Storage : MonoBehaviour {
 
     public void BuySalad() {
         SoundManager.instance.PlaySound(tap);
+
         if (PlayerData.instance.GetCoinsAmount() >= 500) {
             SoundManager.instance.PlaySound(buy);
             PlayerData.instance.ChangeCoinsAmount(-500);
@@ -102,10 +123,12 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
+
     }
 
     public void BuyCarrot() {
         SoundManager.instance.PlaySound(tap);
+
         if (PlayerData.instance.GetCoinsAmount() >= 1000) {
             SoundManager.instance.PlaySound(buy);
             PlayerData.instance.ChangeCoinsAmount(-1000);
@@ -121,10 +144,14 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
+
+
+
     }
 
     public void BuyCotton() {
         SoundManager.instance.PlaySound(tap);
+
         if (PlayerData.instance.GetCoinsAmount() >= 2500) {
             SoundManager.instance.PlaySound(buy);
             PlayerData.instance.ChangeCoinsAmount(-2500);
@@ -140,8 +167,11 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
+
     }
+
     public void BuySunflower() {
+
         SoundManager.instance.PlaySound(tap);
         if (PlayerData.instance.GetCoinsAmount() >= 5000) {
             SoundManager.instance.PlaySound(buy);
@@ -153,13 +183,17 @@ public class Storage : MonoBehaviour {
             Destroy(sunflowerLock);
             sunflowerAmount.enabled = true;
             pumpkinButton.GetComponent<Button>().interactable = true;
+
+
         }
         else {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
+
     }
     public void BuyPumpkin() {
+
         SoundManager.instance.PlaySound(tap);
         if (PlayerData.instance.GetCoinsAmount() >= 10000) {
             SoundManager.instance.PlaySound(buy);
@@ -175,6 +209,7 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
+
     }
 
 
@@ -190,7 +225,7 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
         }
     }
-    public void SellCorn() {       
+    public void SellCorn() {
         if (PlayerPrefs.GetInt("CornAmount") >= 100) {
             SoundManager.instance.PlaySound(sell);
             PlayerData.instance.ChangeCornAmount(-100);
@@ -227,7 +262,7 @@ public class Storage : MonoBehaviour {
         }
     }
     public void SellCotton() {
-       
+
         if (PlayerPrefs.GetInt("CottonAmount") >= 100) {
             SoundManager.instance.PlaySound(sell);
             PlayerData.instance.ChangeCottonAmount(-100);
@@ -240,7 +275,7 @@ public class Storage : MonoBehaviour {
         }
     }
     public void SellSunflower() {
-       
+
         if (PlayerPrefs.GetInt("SunflowerAmount") >= 100) {
             SoundManager.instance.PlaySound(sell);
             PlayerData.instance.ChangeSunflowerAmount(-100);
@@ -262,6 +297,78 @@ public class Storage : MonoBehaviour {
         }
         else {
             SoundManager.instance.PlaySound(reject);
+        }
+    }
+
+    public void CheckLevelCorn() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= cornLevel) {
+            SoundManager.instance.PlaySound(tap);
+            cornScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = cornLevel.ToString();
+        }
+    }
+
+    public void CheckLevelSalad() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= saladLevel) {
+            SoundManager.instance.PlaySound(tap);
+            saladScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = saladLevel.ToString();
+        }
+    }
+
+    public void CheckLevelCarrot() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= carrotLevel) {
+            SoundManager.instance.PlaySound(tap);
+            carrotScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = carrotLevel.ToString();
+        }
+    }
+
+    public void CheckLevelCotton() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= cottonLevel) {
+            SoundManager.instance.PlaySound(tap);
+            cottonScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = cottonLevel.ToString();
+        }
+    }
+
+    public void CheckLevelSunflower() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= sunflowerLevel) {
+            SoundManager.instance.PlaySound(tap);
+            sunflowerScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = sunflowerLevel.ToString();
+        }
+    }
+
+    public void CheckLevelPumpkin() {
+        if (PlayerPrefs.GetInt("FarmLevel", 0) >= pumpkinLevel) {
+            SoundManager.instance.PlaySound(tap);
+            pumpkinScreen.SetActive(true);
+        }
+        else {
+            SoundManager.instance.PlaySound(reject);
+            farmLevelRequired.SetActive(true);
+            farmlevel.text = pumpkinLevel.ToString();
         }
     }
 
@@ -294,5 +401,10 @@ public class Storage : MonoBehaviour {
     public void LoadStore() {
         SoundManager.instance.PlaySound(tap);
         SceneManager.LoadScene("Shop");
+    }
+
+    public void LoadMyFarm() {
+        SoundManager.instance.PlaySound(tap);
+        SceneManager.LoadScene("MyFarm");
     }
 }
