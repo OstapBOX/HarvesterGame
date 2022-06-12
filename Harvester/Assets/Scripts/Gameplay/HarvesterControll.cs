@@ -21,7 +21,7 @@ public class HarvesterControll : MonoBehaviour {
     private Harvester harvester;
     
 
-    private float currentLine;
+    public float currentLine;
     private float lineDistance = 6;
 
     private float speedUpZPosition = 20f;
@@ -59,15 +59,11 @@ public class HarvesterControll : MonoBehaviour {
         if (gameManager.isGameActive) {
             if (swipeManager.swipeRight) {
                 swipeManager.swipeRight = false;
-                currentLine += 1;
-                //transform.DOMoveX(currentLine * lineDistance + harvesterOffset.x, changeLineTime);
                 ChangeLine(1);
             }
 
             if (swipeManager.swipeLeft) {
                 swipeManager.swipeLeft = false;
-                currentLine -= 1;
-                //transform.DOMoveX(currentLine * lineDistance + harvesterOffset.x, changeLineTime);
                 ChangeLine(-1);
             }
 
@@ -95,7 +91,8 @@ public class HarvesterControll : MonoBehaviour {
     }
 
 
-    private void ChangeLine(int _diection) {
+    public void ChangeLine(int _diection) {
+        currentLine += _diection;
         var Sequence = DOTween.Sequence();
         Sequence.Append(transform.DOMoveX(currentLine * lineDistance + harvesterOffset.x, changeLineTime/2));
         Sequence.Join(transform.DORotate(new Vector3(0, changeLineAngle * _diection, 0), changeLineTime/2));

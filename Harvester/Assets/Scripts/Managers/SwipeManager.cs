@@ -63,7 +63,7 @@ public class SwipeManager : MonoBehaviour
                     swipeRight = true;
                     swipeUp = false;
                     swipeDown = false;
-                    stopTouch = true;                   
+                    stopTouch = true;
                 }
                 else if (Distance.y > swipeRange) {
                     swipeLeft = false;
