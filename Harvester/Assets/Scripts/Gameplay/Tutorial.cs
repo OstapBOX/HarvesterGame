@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Tutorial : MonoBehaviour {
     public static Tutorial instance { get; private set; }
@@ -11,11 +12,17 @@ public class Tutorial : MonoBehaviour {
     private SwipeManager swipeManager;
     private GameManager gameManager;
     private HarvesterControll harvesterControll;
+    private UpgradeSystem upgradeSystem;
 
     private int storageLoaded = 0;
     private int menuLoaded = 0;
+    private int pointerNumb = 0;
+    private int wheatSelled = 0;
 
     private bool swipedRight, swipedLeft;
+    private bool showPowerUps, showedDash, showedShield, showedCultivator;
+  
+    [SerializeField] private AudioClip tap;
 
     [SerializeField] private GameObject enterStorageGroup;
     [SerializeField] private GameObject buyWheatNullGroup;
@@ -23,15 +30,29 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject swipeAndPowerUp;
     [SerializeField] private GameObject swipeRight;
     [SerializeField] private GameObject swipeLeft;
+
     [SerializeField] private GameObject interfaceGroup;
- 
+    [SerializeField] private GameObject strenthPointer;
+    [SerializeField] private GameObject fuelPointer;
+    [SerializeField] private GameObject scorePointer;
+
+    [SerializeField] private GameObject powerUpsGroup;
+    [SerializeField] private GameObject dashGroup;
+    [SerializeField] private GameObject shieldGroup;
+    [SerializeField] private GameObject cultivatorGroup;
+    [SerializeField] private GameObject endPowerUp;
+
+    [SerializeField] private GameObject sellWheat;
+    [SerializeField] private GameObject backToMenuButton;
+    [SerializeField] private GameObject wheatFrame;
+
+    [SerializeField] private GameObject myFarmGroup;
+    [SerializeField] private GameObject upgradeFarm;
+    [SerializeField] private GameObject farmBackToMenu;
+    [SerializeField] private TextMeshProUGUI upgradePrice;
 
     [SerializeField] private GameObject blackPanel;
     [SerializeField] private GameObject invisiblePanel;
-   
-
-
-    
 
     void Start() {
         if (instance == null) {
@@ -44,8 +65,8 @@ public class Tutorial : MonoBehaviour {
     }
 
     private void Update() {
-      
-        if(SceneManager.GetActiveScene().name == "Harvester") {
+        if (SceneManager.GetActiveScene().name == "Harvester") {
+            gameManager.UpdateFuel(1);
             if (!swipedRight) {
                 if (harvesterControll.currentLine == -1) {
                     gameManager.gameSpeed = 25;
@@ -69,12 +90,67 @@ public class Tutorial : MonoBehaviour {
                     swipeAndPowerUp.SetActive(false);
                     swipeLeft.SetActive(false);
                     swipedLeft = true;
+                    StartCoroutine(Interface(1));
                 }
                 else if (harvesterControll.currentLine == -2) {
                     harvesterControll.ChangeLine(1);
                 }
             }
-            
+
+            if (showPowerUps && !showedDash) {
+                if (PlayerData.instance.GetSpeedUpAmount() == 0) {
+                    gameManager.gameSpeed = 25;
+                    blackPanel.SetActive(false);
+                    invisiblePanel.SetActive(true);
+                    dashGroup.SetActive(false);
+                    showedDash = true;
+                    showPowerUps = false;
+                    StartCoroutine(ShieldPowerUp(3));
+                }
+            }
+
+            if (swipeManager.tap && !showPowerUps && showedDash && !showedShield) {
+                showPowerUps = true;
+            }
+
+            if (showPowerUps && showedDash && !showedShield) {
+                if (PlayerData.instance.GetShieldAmount() == 0) {
+                    gameManager.gameSpeed = 25;
+                    blackPanel.SetActive(false);
+                    invisiblePanel.SetActive(true);
+                    shieldGroup.SetActive(false);
+                    showedShield = true;
+                    showPowerUps = false;
+                    StartCoroutine(CultivatorPowerUp(7));
+                }
+            }
+
+            if (swipeManager.doubleTap && !showPowerUps && showedDash && showedShield && !showedCultivator) {
+                showPowerUps = true;
+            }
+
+            if (showPowerUps && showedDash && showedShield && !showedCultivator) {
+
+                if (PlayerData.instance.GetCultivatorAmount() == 0) {
+                    gameManager.gameSpeed = 25;
+                    blackPanel.SetActive(false);
+                    invisiblePanel.SetActive(true);
+                    cultivatorGroup.SetActive(false);
+                    showedCultivator = true;
+                    showPowerUps = false;
+                    StartCoroutine(LeaveGame(7));
+                }
+                
+            }
+
+            if(swipedLeft && swipedRight) {
+                if (harvesterControll.currentLine == 1) {
+                    harvesterControll.ChangeLine(-1);
+                }
+                else if (harvesterControll.currentLine == -1) {
+                    harvesterControll.ChangeLine(1);
+                }
+            }
 
         }
     }
@@ -86,8 +162,11 @@ public class Tutorial : MonoBehaviour {
         if(level == 1) {
             StartCoroutine(StartGame(1));
             swipeManager = GameObject.Find("SwipeManager").GetComponent<SwipeManager>();
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();           
             harvesterControll = GameObject.Find("Harvester").GetComponent<HarvesterControll>();
+            gameManager.isInvulnerable = true;        
+        }if(level == 5) {
+            upgradeSystem = GameObject.Find("FarmObjects").GetComponent<UpgradeSystem>();
         }
     }
 
@@ -97,27 +176,69 @@ public class Tutorial : MonoBehaviour {
         }      
     }
 
+    public void SellWheat() {
+        if(wheatSelled < 5) {
+            storage.SellWheat();
+            wheatSelled++;
+        }
+        else {
+            wheatFrame.SetActive(false);
+            backToMenuButton.SetActive(true);
+        }
+    }
+
     public void LoadStorage() {
         if(storageLoaded == 0) {
             enterStorageGroup.SetActive(false);
             buyWheatNullGroup.SetActive(true);
+        }
+        if(storageLoaded == 1) {
+            sellWheat.SetActive(true);
+            enterStorageGroup.SetActive(false);
+
         }
         SceneManager.LoadScene("Storage");
         storageLoaded++;
     }
 
     public void LoadMenu() {
-        if(menuLoaded == 0) {
+        TapSound();
+        if (menuLoaded == 0) {
             gameplayGroup.SetActive(true);
+        }if(menuLoaded == 1) {
+            enterStorageGroup.SetActive(true);
+        }
+        if(menuLoaded == 2) {
+            myFarmGroup.SetActive(true);
         }
         SceneManager.LoadScene("Menu");
         menuLoaded++;
     }
+    public void LoadMyFarm() {
+        TapSound();     
+        SceneManager.LoadScene("MyFarm");
+    }
 
     public void LoadGame() {
+        TapSound();
         SceneManager.LoadScene("Harvester");
     }
 
+    public void UpgradeFarm() {
+        if(PlayerPrefs.GetInt("FarmLevel", 0) == 0) {
+            upgradeSystem.Upgrade();
+            upgradePrice.text = "35$";            
+        }
+        else if (PlayerPrefs.GetInt("FarmLevel", 0) == 1) {
+            upgradeSystem.Upgrade();
+            upgradePrice.text = "GOT IT";
+        }
+        else {
+            upgradeFarm.SetActive(false);
+            farmBackToMenu.SetActive(true);              
+        }
+       
+    }
 
     private IEnumerator StartGame(float delayTime) {
         yield return new WaitForSeconds(delayTime);
@@ -138,12 +259,83 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator Interface(float delayTime) {
         yield return new WaitForSeconds(delayTime);
-        gameManager.gameSpeed = 0;
+        gameManager.gameSpeed = 0;        
         blackPanel.SetActive(true);
+        blackPanel.GetComponent<Image>().raycastTarget = true;
         interfaceGroup.SetActive(true);
-        invisiblePanel.SetActive(false);
+        
     }
 
+    private IEnumerator PowerUp(float delayTime) {
+        yield return new WaitForSeconds(delayTime);
+        gameManager.gameSpeed = 0;
+        blackPanel.SetActive(true);
+        invisiblePanel.SetActive(false);
+        powerUpsGroup.SetActive(true);
+    }
 
+    private IEnumerator ShieldPowerUp(float delayTime) {
+        yield return new WaitForSeconds(delayTime);
+        PlayerData.instance.ChangeShieldAmount(1);
+        gameManager.gameSpeed = 0;
+        blackPanel.SetActive(true);
+        invisiblePanel.SetActive(false);
+        shieldGroup.SetActive(true);
+    }
 
+    private IEnumerator CultivatorPowerUp(float delayTime) {
+        yield return new WaitForSeconds(delayTime);
+        PlayerData.instance.ChangeCultivatorAmount(1);
+        gameManager.gameSpeed = 0;
+        blackPanel.SetActive(true);
+        invisiblePanel.SetActive(false);
+        cultivatorGroup.SetActive(true);
+    }
+
+    private IEnumerator LeaveGame(float delayTime) {
+        yield return new WaitForSeconds(delayTime/2);
+        blackPanel.SetActive(true);
+        blackPanel.GetComponent<Image>().raycastTarget = true;
+        endPowerUp.SetActive(true);
+        yield return new WaitForSeconds(delayTime/2);
+        PlayerData.instance.ChangeWheatAmount(500);
+        PlayerData.instance.ChangeSpeedUpAmount(5);
+        PlayerData.instance.ChangeCultivatorAmount(5);
+        PlayerData.instance.ChangeShieldAmount(5);        
+        Destroy(endPowerUp);
+        LoadMenu();
+    }
+
+    public void ChangePointer() {
+        TapSound();
+        if (pointerNumb == 0) {
+            Destroy(strenthPointer);
+            fuelPointer.SetActive(true);
+            pointerNumb++;
+        }
+        else if(pointerNumb == 1) {
+            Destroy(fuelPointer);
+            scorePointer.SetActive(true);
+            pointerNumb++;
+        }
+        else {
+            Destroy(interfaceGroup);
+            gameManager.gameSpeed = 25;
+            invisiblePanel.SetActive(true);
+            blackPanel.SetActive(false);
+            StartCoroutine(PowerUp(1));
+        }
+    }
+
+    public void PowerUpButton() {
+        PlayerData.instance.ChangeSpeedUpAmount(1);
+        showPowerUps = true;
+        blackPanel.GetComponent<Image>().raycastTarget = false;
+        dashGroup.SetActive(true);
+    }
+
+    public void TapSound() {
+        SoundManager.instance.PlaySound(tap);
+    }
+    
 }

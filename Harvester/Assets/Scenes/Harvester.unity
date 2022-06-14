@@ -13408,6 +13408,7 @@ MonoBehaviour:
   cultivatorActivation: {fileID: 8300000, guid: 9f81bb64ee47e374eb9c18361ffb3e4d,
     type: 3}
   reject: {fileID: 8300000, guid: 68aaf93e39ab45042924ec6c44301ce5, type: 3}
+  currentLine: 0
   abilitiesMasks:
   - {fileID: 602016101}
   - {fileID: 1294238025}

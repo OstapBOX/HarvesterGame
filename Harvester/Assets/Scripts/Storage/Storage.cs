@@ -171,7 +171,6 @@ public class Storage : MonoBehaviour {
     }
 
     public void BuySunflower() {
-
         SoundManager.instance.PlaySound(tap);
         if (PlayerData.instance.GetCoinsAmount() >= 5000) {
             SoundManager.instance.PlaySound(buy);
@@ -190,7 +189,6 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
-
     }
     public void BuyPumpkin() {
 
@@ -209,10 +207,7 @@ public class Storage : MonoBehaviour {
             SoundManager.instance.PlaySound(reject);
             notEnoughMoneyScreen.SetActive(true);
         }
-
     }
-
-
     public void SellWheat() {
         if (PlayerPrefs.GetInt("WheatAmount") >= 100) {
             SoundManager.instance.PlaySound(sell);
