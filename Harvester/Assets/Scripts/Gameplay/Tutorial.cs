@@ -13,11 +13,13 @@ public class Tutorial : MonoBehaviour {
     private GameManager gameManager;
     private HarvesterControll harvesterControll;
     private UpgradeSystem upgradeSystem;
+    private Button pauseButton;
 
     private int storageLoaded = 0;
     private int menuLoaded = 0;
     private int pointerNumb = 0;
     private int wheatSelled = 0;
+    private int pointerMenuNumb = 0;
 
     private bool swipedRight, swipedLeft;
     private bool showPowerUps, showedDash, showedShield, showedCultivator;
@@ -50,6 +52,13 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject upgradeFarm;
     [SerializeField] private GameObject farmBackToMenu;
     [SerializeField] private TextMeshProUGUI upgradePrice;
+
+    [SerializeField] private GameObject menuInterfaceGroup;
+    [SerializeField] private GameObject abilitiesHolder;
+    [SerializeField] private GameObject coinsHolder;
+    [SerializeField] private GameObject energyHolder;
+    [SerializeField] private GameObject dollarsHolder;
+    [SerializeField] private TextMeshProUGUI finishButton;
 
     [SerializeField] private GameObject blackPanel;
     [SerializeField] private GameObject invisiblePanel;
@@ -164,6 +173,8 @@ public class Tutorial : MonoBehaviour {
             swipeManager = GameObject.Find("SwipeManager").GetComponent<SwipeManager>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();           
             harvesterControll = GameObject.Find("Harvester").GetComponent<HarvesterControll>();
+            pauseButton = GameObject.Find("PauseButton").GetComponent<Button>();
+            pauseButton.interactable = false;
             gameManager.isInvulnerable = true;        
         }if(level == 5) {
             upgradeSystem = GameObject.Find("FarmObjects").GetComponent<UpgradeSystem>();
@@ -211,9 +222,13 @@ public class Tutorial : MonoBehaviour {
         if(menuLoaded == 2) {
             myFarmGroup.SetActive(true);
         }
+        if(menuLoaded == 3) {
+          menuInterfaceGroup.SetActive(true);
+        }
         SceneManager.LoadScene("Menu");
         menuLoaded++;
     }
+
     public void LoadMyFarm() {
         TapSound();     
         SceneManager.LoadScene("MyFarm");
@@ -298,7 +313,7 @@ public class Tutorial : MonoBehaviour {
         blackPanel.GetComponent<Image>().raycastTarget = true;
         endPowerUp.SetActive(true);
         yield return new WaitForSeconds(delayTime/2);
-        PlayerData.instance.ChangeWheatAmount(500);
+        PlayerData.instance.ChangeWheatAmount(566);
         PlayerData.instance.ChangeSpeedUpAmount(5);
         PlayerData.instance.ChangeCultivatorAmount(5);
         PlayerData.instance.ChangeShieldAmount(5);        
@@ -324,6 +339,29 @@ public class Tutorial : MonoBehaviour {
             invisiblePanel.SetActive(true);
             blackPanel.SetActive(false);
             StartCoroutine(PowerUp(1));
+        }
+    }
+
+    public void ChangePointerMenu() {
+        TapSound();
+        if (pointerMenuNumb == 0) {
+            Destroy(abilitiesHolder);
+            coinsHolder.SetActive(true);
+            pointerMenuNumb++;
+        }
+        else if (pointerMenuNumb == 1) {
+            Destroy(coinsHolder);
+            energyHolder.SetActive(true);
+            pointerMenuNumb++;
+        }
+        else if (pointerMenuNumb == 2) {
+            Destroy(energyHolder);
+            finishButton.text = "Finish";
+            dollarsHolder.SetActive(true);
+            pointerMenuNumb++;
+        }
+        else {
+            Destroy(this.gameObject);
         }
     }
 
