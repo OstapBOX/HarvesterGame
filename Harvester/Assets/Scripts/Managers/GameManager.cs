@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     private bool firstDeath = true;
     public float gameSpeed = 25.0f, maxGameSpeed = 150;
 
-    
+
     private GameObject harvesterModels;
     private Harvester harvester;
 
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
     [Header("PowerUpTime")]
     [SerializeField] private float shieldDuration;
     [SerializeField] private float collectorDuration;
-  
+
 
     private Animator shieldAnimator;
     private Animator collectorAnimator;
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour {
         strengthText.text = strength.ToString();
     }
 
-    IEnumerator FuelIndicator() {
+    private IEnumerator FuelIndicator() {
         while (fuel > 0) {
             yield return new WaitForSeconds(1 - harvester.consumption);
             if (isGameActive) {
@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour {
             gameOverTable.SetActive(true);
             StopAllCoroutines();
         }
-        isGameActive = false;       
+        isGameActive = false;
     }
 
     public void DollarRespawn() {
@@ -182,7 +182,7 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(Invulnerability());
         StartCoroutine(FuelIndicator());
         isGameActive = true;
-        UpdateStrenght(maxHeals/2);
+        UpdateStrenght(maxHeals / 2);
     }
 
     private void UpdateCollected() {
@@ -195,12 +195,12 @@ public class GameManager : MonoBehaviour {
         PlayerData.instance.ChangePumpkinAmount(pumpkinCollected);
     }
 
-   private void UpdateStatistic() {
+    private void UpdateStatistic() {
         PlayerData.instance.UpdateStatisticHighestScore(score);
         PlayerData.instance.UpdateStatisticWheatCollected(score);
         PlayerData.instance.UpdateStatisticGamesPlayed();
         PlayerData.instance.UpdateStatisticTime(minutes, seconds);
-   }
+    }
 
     public void RestartGame() {
         if (PlayerPrefs.GetInt("totalEnergy") > 0) {

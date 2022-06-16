@@ -13,6 +13,7 @@ public class Tutorial : MonoBehaviour {
     private GameManager gameManager;
     private HarvesterControll harvesterControll;
     private UpgradeSystem upgradeSystem;
+    private EnergyManager energyManager;
     private Button pauseButton;
 
     private int storageLoaded = 0;
@@ -64,13 +65,18 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject invisiblePanel;
 
     void Start() {
+        if (PlayerPrefs.GetInt("TutorialShowed") != 0) {
+            Destroy(this.gameObject);
+        }
+
         if (instance == null) {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            energyManager = GameObject.Find("EnergyManager").GetComponent<EnergyManager>();
+            DontDestroyOnLoad(this.gameObject);  
         }
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);
-        }
+        }       
     }
 
     private void Update() {
@@ -169,9 +175,9 @@ public class Tutorial : MonoBehaviour {
             storage = GameObject.Find("Canvas").GetComponent<Storage>();
         }
         if(level == 1) {
-            StartCoroutine(StartGame(1));
+            StartCoroutine(StartGame(1));          
             swipeManager = GameObject.Find("SwipeManager").GetComponent<SwipeManager>();
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();           
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             harvesterControll = GameObject.Find("Harvester").GetComponent<HarvesterControll>();
             pauseButton = GameObject.Find("PauseButton").GetComponent<Button>();
             pauseButton.interactable = false;
@@ -274,6 +280,7 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator Interface(float delayTime) {
         yield return new WaitForSeconds(delayTime);
+        swipeAndPowerUp.SetActive(false);
         gameManager.gameSpeed = 0;        
         blackPanel.SetActive(true);
         blackPanel.GetComponent<Image>().raycastTarget = true;
@@ -313,10 +320,15 @@ public class Tutorial : MonoBehaviour {
         blackPanel.GetComponent<Image>().raycastTarget = true;
         endPowerUp.SetActive(true);
         yield return new WaitForSeconds(delayTime/2);
-        PlayerData.instance.ChangeWheatAmount(566);
-        PlayerData.instance.ChangeSpeedUpAmount(5);
-        PlayerData.instance.ChangeCultivatorAmount(5);
-        PlayerData.instance.ChangeShieldAmount(5);        
+        if (PlayerPrefs.GetInt("ResoursesGot") == 0){
+            energyManager.ChangeEnergyAmount(10);
+            PlayerData.instance.ChangeWheatAmount(566);
+            PlayerData.instance.ChangeSpeedUpAmount(5);
+            PlayerData.instance.ChangeCultivatorAmount(5);
+            PlayerData.instance.ChangeShieldAmount(5);
+        }
+        PlayerPrefs.SetInt("ResoursesGot", 1);
+
         Destroy(endPowerUp);
         LoadMenu();
     }
@@ -362,6 +374,7 @@ public class Tutorial : MonoBehaviour {
         }
         else {
             Destroy(this.gameObject);
+            PlayerPrefs.SetInt("TutorialShowed", 1);
         }
     }
 

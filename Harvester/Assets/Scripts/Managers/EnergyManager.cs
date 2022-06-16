@@ -102,6 +102,11 @@ public class EnergyManager : MonoBehaviour {
         PlayerPrefs.SetString("lastAddedTime", lastAddedTime.ToString());
     }
 
+    public void ChangeEnergyAmount(int amount) {
+        PlayerPrefs.SetInt("totalEnergy", PlayerPrefs.GetInt("totalEnergy") + amount);
+        Load();
+    }
+    
     private DateTime StringToDate(string date) {
         if (String.IsNullOrEmpty(date)) {
             return DateTime.Now;
