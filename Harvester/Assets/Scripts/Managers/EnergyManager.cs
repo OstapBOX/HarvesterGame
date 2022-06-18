@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class EnergyManager : MonoBehaviour {
 
-    [SerializeField] private TextMeshProUGUI textEnergy;
-    [SerializeField] private TextMeshProUGUI textTimer; 
+
+    [SerializeField]private TextMeshProUGUI textEnergy;
+    [SerializeField]private TextMeshProUGUI textTimer;
 
     private int maxEnergy = 10;
     private int totalEnergy = 0;
@@ -16,13 +17,14 @@ public class EnergyManager : MonoBehaviour {
     private DateTime nextEnergyTime;
     private DateTime lastAddedTime;
 
-    private int restoreDuration = 10;//480
+    private int restoreDuration = 480;//480
     private bool restoring = false;
 
-    void Start() {
+    void Awake() {
         Load();
         StartCoroutine(RestoreRoutine());
     }
+
 
     public void UseEnergy() {
         if (totalEnergy == 0) {
@@ -41,7 +43,6 @@ public class EnergyManager : MonoBehaviour {
     }
 
     private IEnumerator RestoreRoutine() {
-
         UpdateEnergy();
         UpdateTimer();
         restoring = true;
@@ -106,7 +107,7 @@ public class EnergyManager : MonoBehaviour {
         PlayerPrefs.SetInt("totalEnergy", PlayerPrefs.GetInt("totalEnergy") + amount);
         Load();
     }
-    
+
     private DateTime StringToDate(string date) {
         if (String.IsNullOrEmpty(date)) {
             return DateTime.Now;
