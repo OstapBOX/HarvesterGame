@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour {
+    
     public TextMeshProUGUI scoreText, strengthText, fuelText, timeText, recordText;
     [SerializeField] private GameObject gameOverTable, recordPointer, continueScreen, notEnoughDollarsScreen, shield, collector;
     [SerializeField] private AudioClip tap;
@@ -48,12 +49,16 @@ public class GameManager : MonoBehaviour {
 
     public int wheatCollected = 0, cornCollected = 0, saladCollected = 0, carrotCollected = 0, sunflowerCollected = 0, cottonCollected = 0, pumpkinCollected = 0;
 
+    //Add
+    private InterAd interAd;
+
     // Start is called before the first frame update
     void Start() {
         Time.timeScale = 1f;
         isGameActive = true;
         reachRecord = PlayerPrefs.GetInt("HighScore", 0);
         harvesterModels = GameObject.Find("HarvesterSelection");
+        interAd = GetComponent<InterAd>();
         harvester = harvesterModels.transform.GetChild(0).GetComponent<Harvester>();
         shieldAnimator = shield.GetComponent<Animator>();
         collectorAnimator = collector.GetComponent<Animator>();
@@ -162,6 +167,7 @@ public class GameManager : MonoBehaviour {
             dirtParticle.SetActive(false);
             gameOverTable.SetActive(true);
             StopAllCoroutines();
+            interAd.ShowAdInGame();
         }
         isGameActive = false;
     }

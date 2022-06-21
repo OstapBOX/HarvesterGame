@@ -63,8 +63,14 @@ public class Storage : MonoBehaviour {
     private int pumpkinLevel = 18;
 
 
+    //Add
+    //private InterAd interAd;
 
     private void Start() {
+        //interAd = GetComponent<InterAd>();
+        //interAd.RequestAndLoadInterstitialAd();
+        //interAd.ShowAd();
+
         statisticBar = GameObject.Find("StatisticBarCanvas").GetComponent<StatisticBar>();
         UpdateWheatAmount();
         UpdateCornAmount();

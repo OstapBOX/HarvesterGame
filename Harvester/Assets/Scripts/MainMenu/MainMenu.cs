@@ -7,15 +7,19 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject notEnoughFuel;
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private AudioClip tap;
-   
 
-    // Start is called before the first frame update
+    //Add
+    //private InterAd interAd;
+
     private void Start() {
         Application.targetFrameRate = 60;
+        //interAd = GetComponent<InterAd>();
+        //interAd.RequestAndLoadInterstitialAd();
+        //interAd.ShowAd();
     }
 
     public void PlayGame()
-    {
+        {
         if(PlayerPrefs.GetInt("totalEnergy") > 0) {
             SoundManager.instance.PlaySound(tap);
             energyManager.UseEnergy();
@@ -46,8 +50,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MyFarm");
     }
 
-    public void Quit()
-    {
+    public void Quit()    {
         SoundManager.instance.PlaySound(tap);
         Application.Quit();
     }
@@ -58,6 +61,10 @@ public class MainMenu : MonoBehaviour
 
     public void ResetBtn() {
         PlayerPrefs.DeleteAll();
+    }
+
+    public void InterBtn() {
+       //interAd.ShowAd();
     }
 
     public void GiveBonus() {

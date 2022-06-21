@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class AddInitialize : MonoBehaviour {
     public static AddInitialize instance { get; private set; }
 
-    private void Start() {
+    private void Awake() {
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -18,6 +18,5 @@ public class AddInitialize : MonoBehaviour {
             Destroy(this.gameObject);
         }
         MobileAds.Initialize(initStatus => { });
-        
     }
 }

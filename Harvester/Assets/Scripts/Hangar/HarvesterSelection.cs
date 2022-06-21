@@ -28,7 +28,12 @@ public class HarvesterSelection : MonoBehaviour
     [SerializeField] private AudioClip swipe;
     [SerializeField] private AudioClip pick;
 
+    //private InterAd interAd;
+
     private void Start() {
+        //interAd = GetComponent<InterAd>();
+        //interAd.RequestAndLoadInterstitialAd();
+        //interAd.ShowAd();
         currentHarvester = CurrentHarvester();
         CheckArrowsStatus();
         SelectHarvester(currentHarvester);
@@ -64,12 +69,6 @@ public class HarvesterSelection : MonoBehaviour
         statisticBar.UpdateStatisticBar();
     }
 
-
-    private void Update() {
-        //if (buy.gameObject.activeInHierarchy) {
-        //    buy.interactable = (PlayerData.instance.GetCoinsAmount() >= harvesterPrices[currentHarvester] && PlayerPrefs.GetInt("FarmLevel", 0) >= harvesters[currentHarvester].farmLevel);
-        //}
-    }
 
     public void ChangeHarvester(int _change) {
         SoundManager.instance.PlaySound(swipe);

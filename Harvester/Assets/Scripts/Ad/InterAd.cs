@@ -5,6 +5,7 @@ using GoogleMobileAds.Common;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 public class InterAd : MonoBehaviour {
     private InterstitialAd interstitialAd;
@@ -23,20 +24,50 @@ public class InterAd : MonoBehaviour {
         RequestAndLoadInterstitialAd();
     }
 
+    private void OnLevelWasLoaded(int level) {
+        RequestAndLoadInterstitialAd();
+    }
+
     public void RequestAndLoadInterstitialAd() {
-        interstitialAd = new InterstitialAd(adUnitId);
-        AdRequest adRequest = new AdRequest.Builder().Build();
-        interstitialAd.LoadAd(adRequest);
+        if(interstitialAd == null || !interstitialAd.IsLoaded()) {
+            interstitialAd = new InterstitialAd(adUnitId);
+            AdRequest adRequest = new AdRequest.Builder().Build();
+            interstitialAd.LoadAd(adRequest);
+        }       
     }
 
     public void ShowAd() {
-        if (interstitialAd == null) {
-            RequestAndLoadInterstitialAd();
-        }
-        if (interstitialAd.IsLoaded()) {
+        PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
+        if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 4 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+            if (interstitialAd.IsLoaded()) {
             interstitialAd.Show();
             RequestAndLoadInterstitialAd();
         }
+        else {
+            interstitialAd.Show();
+            RequestAndLoadInterstitialAd();
+        }
+        }
     }
+
+    public void ShowAdInGame() {
+        if (PlayerPrefs.GetInt("GamesPlayed", 0) % 2 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+            if (interstitialAd.IsLoaded()) {
+            interstitialAd.Show();
+            RequestAndLoadInterstitialAd();
+        }
+        }
+    }
+
+    //private IEnumerator ShowAdCo() {
+    //    PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
+    //    yield return new WaitForSeconds(0.2f);
+    //    if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 4 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+    //        if (interstitialAd.IsLoaded()) {
+    //            interstitialAd.Show();
+    //            RequestAndLoadInterstitialAd();
+    //        }
+    //    }
+    //}
 
 }

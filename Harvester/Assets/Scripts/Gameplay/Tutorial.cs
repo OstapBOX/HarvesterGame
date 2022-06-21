@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Tutorial : MonoBehaviour {
     public static Tutorial instance { get; private set; }
@@ -68,6 +69,9 @@ public class Tutorial : MonoBehaviour {
         if (PlayerPrefs.GetInt("TutorialShowed") != 0) {
             Destroy(this.gameObject);
         }
+        else {
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
+        }
 
         if (instance == null) {
             instance = this;
@@ -76,7 +80,7 @@ public class Tutorial : MonoBehaviour {
         }
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);
-        }       
+        }
     }
 
     private void Update() {
