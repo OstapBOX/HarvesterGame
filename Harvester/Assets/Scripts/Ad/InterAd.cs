@@ -38,7 +38,7 @@ public class InterAd : MonoBehaviour {
 
     public void ShowAd() {
         PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
-        if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 4 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+        if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 6 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
             if (interstitialAd.IsLoaded()) {
             interstitialAd.Show();
             RequestAndLoadInterstitialAd();
@@ -59,15 +59,5 @@ public class InterAd : MonoBehaviour {
         }
     }
 
-    //private IEnumerator ShowAdCo() {
-    //    PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
-    //    yield return new WaitForSeconds(0.2f);
-    //    if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 4 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
-    //        if (interstitialAd.IsLoaded()) {
-    //            interstitialAd.Show();
-    //            RequestAndLoadInterstitialAd();
-    //        }
-    //    }
-    //}
 
 }

@@ -17,6 +17,28 @@ public class AddInitialize : MonoBehaviour {
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);
         }
+
+      
+
+        MobileAds.SetiOSAppPauseOnBackground(true);
+
+        List<String> deviceIds = new List<String>() { AdRequest.TestDeviceSimulator };
+
+        // Add some test device IDs (replace with your own device IDs).
+#if UNITY_IPHONE
+        deviceIds.Add("96e23e80653bb28980d3f40beb58915c");
+#elif UNITY_ANDROID
+        deviceIds.Add("75EF8D155528C04DACBBA6F36F433035");
+#endif
+
+        // Configure TagForChildDirectedTreatment and test device IDs.
+        RequestConfiguration requestConfiguration =
+            new RequestConfiguration.Builder()
+            .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.Unspecified)
+            .SetTestDeviceIds(deviceIds).build();
+        MobileAds.SetRequestConfiguration(requestConfiguration);
+
         MobileAds.Initialize(initStatus => { });
+
     }
 }

@@ -13,11 +13,16 @@ public class RewAd : MonoBehaviour {
     private RewardedAd rewardedDashAd;
     private RewardedAd rewardedShieldAd;
     private RewardedAd rewardedCultivatorAd;
+    private RewardedAd rewardedRespawnAd;
+    private RewardedAd rewardedDoubleScore;
+
 
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private StatisticBar statisticBar;
     [SerializeField] private PowerUpsAmount powerUpsAmount;
     [SerializeField] private AdManager adManager;
+
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private GameObject dollarsBtn;
     [SerializeField] private GameObject fuelBtn;
@@ -45,9 +50,14 @@ public class RewAd : MonoBehaviour {
         if(level == 0) {
             RequesAndLoadCurrentAd();
         }
+        if(level == 1) {
+            RequestAndLoadRespawnRewardedAd();
+            RequestAndLoadDoubleScoreRewardedAd();
+        }
         
     }
 
+    //Menu ad
     public void RequestAndLoadDollarRewardedAd() {
         rewardedDollarsAd = new RewardedAd(adUnitId);
         AdRequest adRequest = new AdRequest.Builder().Build();
@@ -55,18 +65,10 @@ public class RewAd : MonoBehaviour {
 
         rewardedDollarsAd.OnUserEarnedReward += (sender, args) => {
             PlayerPrefs.SetInt("LastShowedAd", 0);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
             PlayerData.instance.ChangeDollarsAmount(2);
             statisticBar.UpdateStatisticBar();
             dollarsBtn.SetActive(false);
-            if (PlayerPrefs.GetInt("AdsShowed", 0) > 1) {
-                PlayerPrefs.SetInt("AdsShowed", 0);
-                PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-            }
-            else {
-                adManager.CheckAdsToShow();
-                RequestAndLoadFuelRewardedAd();
-            }
-            PlayerPrefs.SetInt("AdsShowed", PlayerPrefs.GetInt("AdsShowed", 0) + 1);
         };
     }
 
@@ -77,18 +79,10 @@ public class RewAd : MonoBehaviour {
 
         rewardedFuelAd.OnUserEarnedReward += (sender, args) => {
             PlayerPrefs.SetInt("LastShowedAd", 1);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
             energyManager.ChangeEnergyAmount(2);
             statisticBar.UpdateStatisticBar();
             fuelBtn.SetActive(false);
-            if (PlayerPrefs.GetInt("AdsShowed", 0) > 1) {
-                PlayerPrefs.SetInt("AdsShowed", 0);
-                PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-            }
-            else {
-                adManager.CheckAdsToShow();
-                RequestAndLoadDashRewardedAd();
-            }
-            PlayerPrefs.SetInt("AdsShowed", PlayerPrefs.GetInt("AdsShowed", 0) + 1);
         };
     }
 
@@ -99,18 +93,10 @@ public class RewAd : MonoBehaviour {
 
         rewardedDashAd.OnUserEarnedReward += (sender, args) => {
             PlayerPrefs.SetInt("LastShowedAd", 2);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
             PlayerData.instance.ChangeSpeedUpAmount(3);
             powerUpsAmount.UpdatePowerUpsAmount();
             dashBtn.SetActive(false);
-            if (PlayerPrefs.GetInt("AdsShowed", 0) > 1) {
-                PlayerPrefs.SetInt("AdsShowed", 0);
-                PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-            }
-            else {
-                adManager.CheckAdsToShow();
-                RequestAndLoadShieldRewardedAd();
-            }
-            PlayerPrefs.SetInt("AdsShowed", PlayerPrefs.GetInt("AdsShowed", 0) + 1);
         };
     }
 
@@ -121,18 +107,10 @@ public class RewAd : MonoBehaviour {
 
         rewardedShieldAd.OnUserEarnedReward += (sender, args) => {
             PlayerPrefs.SetInt("LastShowedAd", 3);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
             PlayerData.instance.ChangeShieldAmount(2);
             powerUpsAmount.UpdatePowerUpsAmount();
             shieldBtn.SetActive(false);
-            if (PlayerPrefs.GetInt("AdsShowed", 0) > 1) {
-                PlayerPrefs.SetInt("AdsShowed", 0);
-                PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-            }
-            else {
-                adManager.CheckAdsToShow();
-                RequestAndLoadCultivatorRewardedAd();
-            }
-            PlayerPrefs.SetInt("AdsShowed", PlayerPrefs.GetInt("AdsShowed", 0) + 1);
         };
     }
 
@@ -143,18 +121,10 @@ public class RewAd : MonoBehaviour {
 
         rewardedCultivatorAd.OnUserEarnedReward += (sender, args) => {
             PlayerPrefs.SetInt("LastShowedAd", 4);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
             PlayerData.instance.ChangeCultivatorAmount(1);
             powerUpsAmount.UpdatePowerUpsAmount();
             cultivatorBtn.SetActive(false);
-            if (PlayerPrefs.GetInt("AdsShowed", 0) > 1) {
-                PlayerPrefs.SetInt("AdsShowed", 0);
-                PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-            }
-            else {
-                adManager.CheckAdsToShow();
-                RequestAndLoadDollarRewardedAd();
-            }
-            PlayerPrefs.SetInt("AdsShowed", PlayerPrefs.GetInt("AdsShowed", 0) + 1);
         };
     }
 
@@ -223,6 +193,49 @@ public class RewAd : MonoBehaviour {
         }
         else if (PlayerPrefs.GetInt("LastShowedAd", 4) == 4 && rewardedDollarsAd == null) {
             RequestAndLoadDollarRewardedAd();
+        }
+    }
+
+    //Game ad
+    public void RequestAndLoadRespawnRewardedAd() {
+        rewardedRespawnAd = new RewardedAd(adUnitId);
+        AdRequest adRequest = new AdRequest.Builder().Build();
+        rewardedRespawnAd.LoadAd(adRequest);
+
+        rewardedRespawnAd.OnUserEarnedReward += (sender, args) => {
+            gameManager.Respawn();
+        };
+    }
+
+    public void RequestAndLoadDoubleScoreRewardedAd() {
+        rewardedDoubleScore = new RewardedAd(adUnitId);
+        AdRequest adRequest = new AdRequest.Builder().Build();
+        rewardedDoubleScore.LoadAd(adRequest);
+
+        rewardedDoubleScore.OnUserEarnedReward += (sender, args) => {
+            gameManager.DoubleReward();
+            gameManager.BackToMenu();
+        };
+    }
+
+    public void ShowRespawnRewardedAd() {
+        if (!rewardedRespawnAd.IsLoaded()) {
+            RequestAndLoadShieldRewardedAd();
+            rewardedRespawnAd.Show();
+        }
+        else {
+            rewardedRespawnAd.Show();
+        }
+    }
+
+    public void ShowDoubleScoreRewardedAd() {
+        if (!rewardedDoubleScore.IsLoaded()) {
+            RequestAndLoadCultivatorRewardedAd();
+            rewardedDoubleScore.Show();
+        }
+        else {
+            rewardedDoubleScore.Show();
+           
         }
     }
 }

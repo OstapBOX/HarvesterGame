@@ -132,4 +132,8 @@ public class PlayerData : MonoBehaviour
         return PlayerPrefs.GetInt("CultivatorAmount", 0);
     }
 
+    public int GetGamesAmount() {
+        return PlayerPrefs.GetInt("GamesPlayed", 0);
+    }
+    
 }

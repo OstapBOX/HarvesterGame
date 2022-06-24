@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject notEnoughFuel;
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private AudioClip tap;
+    [SerializeField] private GameObject playForDollar;
 
     //Add
     //private InterAd interAd;
@@ -26,8 +27,20 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else {
-            notEnoughFuel.SetActive(true);
+            if (PlayerData.instance.GetDollarsAmount() > 0) {
+                playForDollar.SetActive(true);
+            }
+            else {
+                notEnoughFuel.SetActive(true);
+            }
+           
         }
+    }
+
+    public void PlayForDollar() {
+        PlayerData.instance.ChangeDollarsAmount(-1);
+        SoundManager.instance.PlaySound(tap);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadShop() {

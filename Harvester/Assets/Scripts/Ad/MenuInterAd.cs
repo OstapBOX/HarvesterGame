@@ -12,11 +12,12 @@ public class MenuInterAd : MonoBehaviour
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            interAd = GetComponent<InterAd>();
+            //interAd = GetComponent<InterAd>();
         }
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);           
         }
+        interAd = GetComponent<InterAd>();
     }
 
     private void OnLevelWasLoaded(int level) {

@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private BoxCollider rotatorCollider;
 
     [SerializeField] private GameObject notEnoughFuel;
+    [SerializeField] private GameObject doubleReward;
+
 
     [SerializeField] private AudioClip gameOverSound;
     [SerializeField] private AudioClip engineStarts;
@@ -73,6 +75,10 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(FuelIndicator());
         StartCoroutine(PlantsParticle());
         strengthText.text = strength.ToString();
+
+        if(PlayerData.instance.GetGamesAmount() % 2 == 0){
+            doubleReward.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -185,6 +191,7 @@ public class GameManager : MonoBehaviour {
     public void Respawn() {
         Time.timeScale = 1f;
         fuel = 100;
+        continueScreen.SetActive(false);
         StartCoroutine(Invulnerability());
         StartCoroutine(FuelIndicator());
         isGameActive = true;
@@ -238,8 +245,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void DoubleReward() {
+        doubleReward.SetActive(false);
         UpdateCollected();
-
     }
 
     //Vibrations

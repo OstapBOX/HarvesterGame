@@ -28,7 +28,7 @@ public class AdManager : MonoBehaviour {
     public void CheckAdsToShow() {
         DateTime lastShowedTime = StringToDate(PlayerPrefs.GetString("LastShowedTime"));
         if (DateTime.Now.AddSeconds(-adInterval) > lastShowedTime) {
-            Debug.Log("Interval");
+            //Debug.Log("Interval");
             int lastShowedAd = PlayerPrefs.GetInt("LastShowedAd", 4);
             if (lastShowedAd == 0) {
                 fuelBtn.SetActive(true);
