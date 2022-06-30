@@ -17,14 +17,13 @@ public class EnergyManager : MonoBehaviour {
     private DateTime nextEnergyTime;
     private DateTime lastAddedTime;
 
-    private int restoreDuration = 480;//480
+    private int restoreDuration = 420;
     private bool restoring = false;
 
     void Awake() {
         Load();
         StartCoroutine(RestoreRoutine());
     }
-
 
     public void UseEnergy() {
         if (totalEnergy == 0) {

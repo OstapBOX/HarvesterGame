@@ -37,25 +37,30 @@ public class InterAd : MonoBehaviour {
     }
 
     public void ShowAd() {
-        PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
-        if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 6 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
-            if (interstitialAd.IsLoaded()) {
-            interstitialAd.Show();
-            RequestAndLoadInterstitialAd();
+        if (PlayerData.instance.GetRemoveAdsStatus()) {
+            PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
+            if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 6 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+                if (interstitialAd.IsLoaded()) {
+                    interstitialAd.Show();
+                    RequestAndLoadInterstitialAd();
+                }
+                else {
+                    interstitialAd.Show();
+                    RequestAndLoadInterstitialAd();
+                }
+            }
         }
-        else {
-            interstitialAd.Show();
-            RequestAndLoadInterstitialAd();
-        }
-        }
+        
     }
 
     public void ShowAdInGame() {
-        if (PlayerPrefs.GetInt("GamesPlayed", 0) % 2 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
-            if (interstitialAd.IsLoaded()) {
-            interstitialAd.Show();
-            RequestAndLoadInterstitialAd();
-        }
+        if (PlayerData.instance.GetRemoveAdsStatus()) {
+            if (PlayerPrefs.GetInt("GamesPlayed", 0) % 2 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0) {
+                if (interstitialAd.IsLoaded()) {
+                    interstitialAd.Show();
+                    RequestAndLoadInterstitialAd();
+                }
+            }
         }
     }
 

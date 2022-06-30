@@ -59,7 +59,7 @@
   </files>
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.com.box.farm.tractor.harvest.farming.Harvester" />
+    <setting name="bundleId" value="com.com.wavywow.farm.tractor.harvest.farming.Harvester" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="False" />

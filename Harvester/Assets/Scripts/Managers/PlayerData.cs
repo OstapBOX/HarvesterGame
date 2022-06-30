@@ -136,4 +136,10 @@ public class PlayerData : MonoBehaviour
         return PlayerPrefs.GetInt("GamesPlayed", 0);
     }
     
+    public bool GetRemoveAdsStatus() {
+        if(PlayerPrefs.GetInt("RemoveAds",0) == 0) {
+            return true;
+        }
+        return false;
+    }
 }

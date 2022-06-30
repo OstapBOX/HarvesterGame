@@ -40,7 +40,7 @@ public class LineSpawn : MonoBehaviour {
     private int spawnStoneBlock,
                 randomCanisterBlock,
                 randomHealBlock,
-                stoneSpawnFrequence = 20,
+                stoneSpawnFrequence = 18,
                 canisterSpawnFrequence = 100,
                 healSpawnFrequence = 100,
                 gardenObjectsInLine = 2,
