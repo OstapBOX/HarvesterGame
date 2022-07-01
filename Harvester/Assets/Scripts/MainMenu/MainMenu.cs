@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private AudioClip tap;
     [SerializeField] private GameObject playForDollar;
+    [SerializeField] private GameObject menuButtons;
 
     //Add
     //private InterAd interAd;
@@ -35,6 +36,14 @@ public class MainMenu : MonoBehaviour
             }
            
         }
+    }
+
+    public void ShowMenuButtons() {
+        menuButtons.SetActive(true);
+    }
+
+    public void HideMenuButtons() {
+        menuButtons.SetActive(false);
     }
 
     public void PlayForDollar() {

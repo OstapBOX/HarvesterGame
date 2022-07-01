@@ -210,11 +210,11 @@ public class GameManager : MonoBehaviour {
         PlayerData.instance.ChangePumpkinAmount(pumpkinCollected);
     }
 
-    private void UpdateStatistic() {
-        PlayerData.instance.UpdateStatisticHighestScore(score);
-        PlayerData.instance.UpdateStatisticWheatCollected(score);
-        PlayerData.instance.UpdateStatisticGamesPlayed();
-        PlayerData.instance.UpdateStatisticTime(minutes, seconds);
+    private void UpdateStatistic() {        
+            PlayerData.instance.UpdateStatisticHighestScore(score);
+            PlayerData.instance.UpdateStatisticWheatCollected(score);
+            PlayerData.instance.UpdateStatisticGamesPlayed();
+            PlayerData.instance.UpdateStatisticTime(minutes, seconds);        
     }
 
     public void RestartGame() {

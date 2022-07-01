@@ -18,7 +18,7 @@ public class SwipeManager : MonoBehaviour
     [SerializeField] private float tapRange;
 
     private float firstClickTime;
-    private const float DOUBLE_CLICK_TIME = 0.18f;
+    private const float DOUBLE_CLICK_TIME = 0.19f;
     private bool coroutineAllowed;
     private int clickCounter;
 

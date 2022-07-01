@@ -66,7 +66,7 @@ MonoBehaviour:
   price: 120
   strength: 3
   farmLevel: 4
-  consumption: 0.3
+  consumption: 0.65
   abilitiesDuration:
   - 35
   - 45

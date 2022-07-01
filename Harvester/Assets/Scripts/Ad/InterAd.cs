@@ -13,7 +13,7 @@ public class InterAd : MonoBehaviour {
 #if UNITY_EDITOR
     string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-4018757636499144/5876126485";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
