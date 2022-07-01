@@ -28,7 +28,7 @@ public class AddInitialize : MonoBehaviour {
 #if UNITY_IPHONE
         deviceIds.Add("96e23e80653bb28980d3f40beb58915c");
 #elif UNITY_ANDROID
-        deviceIds.Add("75EF8D155528C04DACBBA6F36F433035");
+        deviceIds.Add("56c25515-0eea-430e-a032-65bd7b22d130");
 #endif
 
         // Configure TagForChildDirectedTreatment and test device IDs.

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Menu
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f838d9d440e1a244387a1e3d05c8a29e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4d0a3470146c7ca46bf05431f8027112, type: 3}
+  - {fileID: 21300000, guid: 415f5cd001fdc6d4383d9b74ee69fea4, type: 3}
+  - {fileID: 21300000, guid: a3ed9971a5905c94db39fe39b28d55c8, type: 3}
+  - {fileID: 21300000, guid: a4885102b410c0846b44e1c1fd7cb12c, type: 3}
+  - {fileID: 21300000, guid: 5a48ebb2f31453c4f8975f2e0cd4746d, type: 3}
+  - {fileID: 21300000, guid: 25b4e8b33a62ac046b375560fffe87e7, type: 3}
+  - {fileID: 21300000, guid: d5e3b3d363f0afa47a8dcbb80698aa63, type: 3}
+  - {fileID: 21300000, guid: d53d3a8486694034a911d44f2539b557, type: 3}
+  - {fileID: 21300000, guid: 3492f1152d9760f4daf21928027d0815, type: 3}
+  - {fileID: 21300000, guid: e385ee7582abac14ab05b757f15be5df, type: 3}
+  - {fileID: 21300000, guid: d5b7d9f60e5356b4cb73cc9eab52dad6, type: 3}
+  - {fileID: 21300000, guid: 79ba1227950cc80418f5e26c0490da6b, type: 3}
+  - {fileID: 21300000, guid: 6a11d8a80808ef9409084e23b3ab5a60, type: 3}
+  - {fileID: 21300000, guid: 489f42f8a06675042b43ef986ea8264e, type: 3}
+  - {fileID: 21300000, guid: 95f369b9f09765b43a69916dece8596e, type: 3}
+  - {fileID: 21300000, guid: 5293260b075090246967ea0530ae4845, type: 3}
+  - {fileID: 21300000, guid: 3d92102cdeb676a48bfa9f1d7aedf23a, type: 3}
+  - {fileID: 21300000, guid: 68840b2dbade6b84ab2af3010d2cb591, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - OptionsButton
+  - Dollars
+  - CultivatorAmount
+  - MyFarmIcon
+  - ShieldAmount
+  - CrossButton
+  - ShopIconFarmIcon
+  - SpeedUpAmount
+  - HangarIcon
+  - PlayIcon
+  - StorageIcon
+  - Clapper
+  - Canister
+  - StatFrame
+  - WoodenPointer01
+  - Coins
+  - MenuButton
+  - Plus
+  m_RenderDataMap: {}
+  m_Tag: Menu
+  m_IsVariant: 0

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Options
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8c88b7a62e750714580e70ea9c3dc917, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c884d842b04f41046b0dedb2dd1ad734, type: 3}
+  - {fileID: 21300000, guid: ee1a8b52970c27e448ff7c3d3bb601f2, type: 3}
+  - {fileID: 21300000, guid: 14765c145cfd99a4e8f6aea134e9e2af, type: 3}
+  - {fileID: 21300000, guid: c6cb92063ddfcd341b70d7e2ebf88aeb, type: 3}
+  - {fileID: 21300000, guid: 47068c9a7d409334395a47b539e72a3a, type: 3}
+  - {fileID: 21300000, guid: 49554deaa7eaa3943bd1f7c54dace554, type: 3}
+  - {fileID: 21300000, guid: 9083bbbdb6273de4388684c34b7a3450, type: 3}
+  - {fileID: 21300000, guid: d45d147ead4b71b43b15ca4e5822a420, type: 3}
+  - {fileID: 21300000, guid: 80eab30ff2c88b047a833291f8054b17, type: 3}
+  - {fileID: 21300000, guid: 7de54ecf6b0cd484f92484bb16aeda5f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - MusicOff
+  - SliderPoint
+  - MusicOn
+  - WoodenPointer02
+  - SliderFill
+  - VibrationsOff
+  - VibrationsOn
+  - EffectsOff
+  - Slider
+  - EffectsOn
+  m_RenderDataMap: {}
+  m_Tag: Options
+  m_IsVariant: 0

@@ -9,6 +9,7 @@ using System;
 public class Tutorial : MonoBehaviour {
     public static Tutorial instance { get; private set; }
 
+    private GameObject menuButtons;
     private Storage storage;
     private SwipeManager swipeManager;
     private GameManager gameManager;
@@ -28,6 +29,7 @@ public class Tutorial : MonoBehaviour {
   
     [SerializeField] private AudioClip tap;
 
+  
     [SerializeField] private GameObject enterStorageGroup;
     [SerializeField] private GameObject buyWheatNullGroup;
     [SerializeField] private GameObject gameplayGroup;
@@ -66,21 +68,28 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject invisiblePanel;
 
     void Start() {
-        if (PlayerPrefs.GetInt("TutorialShowed") != 0) {
-            Destroy(this.gameObject);
-        }
-        else {
-            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        }
-
         if (instance == null) {
             instance = this;
             energyManager = GameObject.Find("EnergyManager").GetComponent<EnergyManager>();
-            DontDestroyOnLoad(this.gameObject);  
+            DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != null && instance != this) {
             Destroy(this.gameObject);
         }
+
+        if (PlayerPrefs.GetInt("TutorialShowed") != 0) {
+            Destroy(this.gameObject);
+        }
+        else {
+            menuButtons = GameObject.Find("MenuButtonsHolder");
+            menuButtons.SetActive(false);
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
+            PlayerPrefs.SetInt("SpeedUpAmount", 0);
+            PlayerPrefs.SetInt("ShieldAmount", 0);
+            PlayerPrefs.SetInt("CultivatorAmount", 0);
+        }
+
+ 
     }
 
     private void Update() {
@@ -175,6 +184,10 @@ public class Tutorial : MonoBehaviour {
     }
 
     private void OnLevelWasLoaded(int level) {
+        if(level == 0) {
+            menuButtons = GameObject.Find("MenuButtonsHolder");
+            menuButtons.SetActive(false);
+        }
         if(level == 4) {
             storage = GameObject.Find("Canvas").GetComponent<Storage>();
         }
@@ -377,8 +390,12 @@ public class Tutorial : MonoBehaviour {
             pointerMenuNumb++;
         }
         else {
-            Destroy(this.gameObject);
+            if(menuButtons == null) {
+                menuButtons = GameObject.Find("MenuButtonsHolder");
+            }           
+            menuButtons.SetActive(true);
             PlayerPrefs.SetInt("TutorialShowed", 1);
+            Destroy(this.gameObject);
         }
     }
 

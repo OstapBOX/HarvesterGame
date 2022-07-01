@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour {
-    
+
     public TextMeshProUGUI scoreText, strengthText, fuelText, timeText, recordText;
     [SerializeField] private GameObject gameOverTable, recordPointer, continueScreen, notEnoughDollarsScreen, shield, collector;
     [SerializeField] private AudioClip tap;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(PlantsParticle());
         strengthText.text = strength.ToString();
 
-        if(PlayerData.instance.GetGamesAmount() % 2 == 0){
+        if (PlayerData.instance.GetGamesAmount() % 2 == 0) {
             doubleReward.SetActive(false);
         }
     }
@@ -113,7 +113,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void UpdateStrenght(int addStrength) {
-        strength += addStrength;
+        if(PlayerPrefs.GetInt("TutorialShowed") != 0) {
+            strength += addStrength;
+        }
         if (strength <= 0) {
             strength = 0;
             ContinueGame();
@@ -281,6 +283,10 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(Collector());
     }
 
+    public void DashInvulnerability() {
+        StartCoroutine(DashInvulnerabilityCo());
+    }
+
     private IEnumerator Collector() {
         collectorAnimator.SetTrigger("CollectorIncrease");
         cultivatorCollider.enabled = true;
@@ -295,6 +301,12 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(HideShield());
         yield return new WaitForSeconds(shieldDuration);
         shield.SetActive(false);
+    }
+
+    private IEnumerator DashInvulnerabilityCo() {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1.5f);
+        isInvulnerable = false;
     }
 
     private IEnumerator HideCollector() {

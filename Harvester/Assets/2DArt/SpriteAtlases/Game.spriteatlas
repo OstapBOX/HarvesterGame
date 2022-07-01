@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3a448001a926c8e4da1fe6b67ce13478, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d1d1eba5d22d37849a1d1d4e57d092f8, type: 3}
+  - {fileID: 21300000, guid: 4b4b9c664944d1348b67d8c6693a9d04, type: 3}
+  - {fileID: 21300000, guid: 9f395017d778690448a672490ae98631, type: 3}
+  - {fileID: 21300000, guid: 175944984e59a9347888721f9676c6d4, type: 3}
+  - {fileID: 21300000, guid: e3cc9a29389347948825b885884f9b21, type: 3}
+  - {fileID: 21300000, guid: 16594a1c08dcc7c4596c410cf127aee1, type: 3}
+  - {fileID: 21300000, guid: eda0ae0d822395d408f96c6487b119ab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Wrench
+  - Restart
+  - Wheat
+  - Cup
+  - PauseButton
+  - Clock
+  - HouseButton
+  m_RenderDataMap: {}
+  m_Tag: Game
+  m_IsVariant: 0

@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour {
     public static SoundManager instance { get; private set; }
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectsSource;
+    [SerializeField] private AudioSource hansAudioSourse;
 
     private void Awake() {
         if (instance == null) {
@@ -31,6 +32,7 @@ public class SoundManager : MonoBehaviour {
 
     public void ApplyEffectsStatus() {
         effectsSource.mute = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ?  false : true;
+        hansAudioSourse.mute = PlayerPrefs.GetInt("EffectsMuted", 0) == 0 ? false : true;
 
     }
     public void ApplyMusicStatus() {

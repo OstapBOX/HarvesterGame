@@ -101,6 +101,7 @@ public class HarvesterControll : MonoBehaviour {
     }
 
     private void MoveForward() {
+        gameManager.DashInvulnerability();
         float slideDirection = Random.Range(-1, 1);
         var Sequence = DOTween.Sequence();
         Sequence.Append(transform.DOMoveZ(speedUpZPosition, 1f));

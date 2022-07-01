@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tutorial
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6024041ea2f775b4a8389f1436443082, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5f3738c5bf43864408e02285ae025299, type: 3}
+  - {fileID: 21300000, guid: 3fd92356e625f0f40ba25065c02dde25, type: 3}
+  - {fileID: 21300000, guid: 6c0219491555822439efad011449bf5f, type: 3}
+  - {fileID: 21300000, guid: 8de47bfad2f45f145a57561ba393b2ad, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TutorialTextArrow
+  - TutorialTap
+  - TutorialArrow
+  - TutorialHand
+  m_RenderDataMap: {}
+  m_Tag: Tutorial
+  m_IsVariant: 0
