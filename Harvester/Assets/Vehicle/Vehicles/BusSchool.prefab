@@ -312,10 +312,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: School Bus
-  price: 350
+  price: 2400
   strength: 6
   farmLevel: 15
-  consumption: 0.65
+  consumption: 0.75
   abilitiesDuration:
   - 30
   - 35

@@ -63,10 +63,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Armored
-  price: 250
+  price: 3800
   strength: 9
   farmLevel: 9
-  consumption: 0.6
+  consumption: 0.7
   abilitiesDuration:
   - 35
   - 20

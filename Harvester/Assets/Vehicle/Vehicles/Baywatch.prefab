@@ -63,10 +63,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Baywatch
-  price: 200
-  strength: 4
+  price: 2650
+  strength: 6
   farmLevel: 7
-  consumption: 0.7
+  consumption: 0.6
   abilitiesDuration:
   - 30
   - 45

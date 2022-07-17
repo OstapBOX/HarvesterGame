@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Passenger Race
-  price: 275
+  price: 1850
   strength: 3
   farmLevel: 10
   consumption: 0.75

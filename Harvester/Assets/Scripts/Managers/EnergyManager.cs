@@ -17,7 +17,7 @@ public class EnergyManager : MonoBehaviour {
     private DateTime nextEnergyTime;
     private DateTime lastAddedTime;
 
-    private int restoreDuration = 420;
+    private int restoreDuration = 600;
     private bool restoring = false;
 
     void Awake() {
@@ -83,6 +83,7 @@ public class EnergyManager : MonoBehaviour {
     }
 
     private void UpdateEnergy() {
+        Save();
         textEnergy.text = totalEnergy.ToString();
     }
 

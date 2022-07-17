@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cement
-  price: 400
+  price: 3200
   strength: 9
   farmLevel: 18
   consumption: 0.8

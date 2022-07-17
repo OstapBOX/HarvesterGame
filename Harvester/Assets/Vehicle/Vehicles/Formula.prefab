@@ -310,10 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Formula
-  price: 500
+  price: 1800
   strength: 3
   farmLevel: 20
-  consumption: 0.75
+  consumption: 0.8
   abilitiesDuration:
   - 10
   - 35

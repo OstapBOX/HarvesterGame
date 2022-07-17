@@ -9,23 +9,23 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 	private static IExtensionProvider m_StoreExtensionProvider;
 
 	//Resources
-	public string smallCoinsPack = "wavywow.small_coins_pack";
-	public string smallDollarsPack = "wavywow.small_dollars_pack";
-	public string smallFuelPack = "wavywow.small_fuel_pack";
-	public string largeCoinsPack = "wavywow.large_coins_pack";
-	public string largeDollarsPack = "wavywow.large_dollars_pack";
-	public string largeFuelPack = "wavywow.large_fuel_pack";
-	public string resourcesPack = "wavywow.resources_pack";
-	public string removeAds = "wavywow.remove_ads_pack";
+	public string smallCoinsPack = "korobka.small_coins_pack";
+	public string smallDollarsPack = "korobka.small_dollars_pack";
+	public string smallFuelPack = "korobka.small_fuel_pack";
+	public string largeCoinsPack = "korobka.large_coins_pack";
+	public string largeDollarsPack = "korobka.large_dollars_pack";
+	public string largeFuelPack = "korobka.large_fuel_pack";
+	public string resourcesPack = "korobka.resources_pack";
+	public string removeAds = "korobka.remove_ads_pack";
 
 	//Bonuses
-	public string smallDashPack = "wavywow.small_dash_pack";
-	public string smallShieldPack = "wavywow.small_shield_pack";
-	public string smallCultivatorPack = "wavywow.small_cultivator_pack";
-	public string largeDashPack = "wavywow.large_dash_pack";
-	public string largeShieldPack = "wavywow.large_shield_pack";
-	public string largeCultivatorPack = "wavywow.large_cultivator_pack";
-	public string bonusesPack = "wavywow.bonuses_pack";
+	public string smallDashPack = "korobka.small_dash_pack";
+	public string smallShieldPack = "korobka.small_shield_pack";
+	public string smallCultivatorPack = "korobka.small_cultivator_pack";
+	public string largeDashPack = "korobka.large_dash_pack";
+	public string largeShieldPack = "korobka.large_shield_pack";
+	public string largeCultivatorPack = "korobka.large_cultivator_pack";
+	public string bonusesPack = "korobka.bonuses_pack";
 
 	//Other
 	[SerializeField] private EnergyManager energyManager;

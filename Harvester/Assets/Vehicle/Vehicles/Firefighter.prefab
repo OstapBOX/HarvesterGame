@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Firefighter
-  price: 325
-  strength: 5
+  price: 3400
+  strength: 8
   farmLevel: 12
   consumption: 0.7
   abilitiesDuration:

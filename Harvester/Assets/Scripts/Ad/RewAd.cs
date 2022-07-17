@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 
 public class RewAd : MonoBehaviour {
-
+    //Real id ca-app-pub-4018757636499144/4918268035
     private RewardedAd rewardedDollarsAd;
     private RewardedAd rewardedFuelAd;
     private RewardedAd rewardedDashAd;
@@ -35,7 +35,7 @@ public class RewAd : MonoBehaviour {
 #if UNITY_EDITOR
     string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-4018757636499144/4918268035";
+        string adUnitId = "ca-app-pub-4018757636499144/4918268035"; 
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else

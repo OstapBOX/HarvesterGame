@@ -33,8 +33,7 @@ public class MainMenu : MonoBehaviour
             }
             else {
                 notEnoughFuel.SetActive(true);
-            }
-           
+            }           
         }
     }
 

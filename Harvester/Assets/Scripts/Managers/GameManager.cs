@@ -194,6 +194,7 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 1f;
         fuel = 100;
         continueScreen.SetActive(false);
+        gameOverTable.SetActive(false);
         StartCoroutine(Invulnerability());
         StartCoroutine(FuelIndicator());
         isGameActive = true;
@@ -206,7 +207,7 @@ public class GameManager : MonoBehaviour {
         PlayerData.instance.ChangeSaladAmount(saladCollected);
         PlayerData.instance.ChangeCarrotAmount(carrotCollected);
         PlayerData.instance.ChangeSunflowerAmount(sunflowerCollected);
-        PlayerData.instance.ChangeCottonAmount(cornCollected);
+        PlayerData.instance.ChangeCottonAmount(cottonCollected);
         PlayerData.instance.ChangePumpkinAmount(pumpkinCollected);
     }
 
@@ -329,7 +330,4 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(3.8f);
         plantsParticle.SetActive(true);
     }
-
-
-
 }

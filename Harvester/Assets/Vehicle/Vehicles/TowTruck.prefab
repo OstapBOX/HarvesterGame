@@ -315,10 +315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tow
-  price: 150
-  strength: 4
+  price: 3000
+  strength: 7
   farmLevel: 5
-  consumption: 0.55
+  consumption: 0.5
   abilitiesDuration:
   - 25
   - 45

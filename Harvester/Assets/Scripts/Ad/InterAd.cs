@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class InterAd : MonoBehaviour {
+    //Real id ca-app-pub-4018757636499144/5876126485
+
     private InterstitialAd interstitialAd;
 
 #if UNITY_EDITOR

@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Jeep
-  price: 175
-  strength: 4
+  price: 2400
+  strength: 5
   farmLevel: 6
   consumption: 0.5
   abilitiesDuration:

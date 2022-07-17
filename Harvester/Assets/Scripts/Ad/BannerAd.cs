@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 
 public class BannerAd : MonoBehaviour {
+
+    //Real id ca-app-pub-4018757636499144/8885433204
+
     private BannerView bannerView;
 
     private void Start() {
@@ -22,7 +25,7 @@ public class BannerAd : MonoBehaviour {
 #if UNITY_EDITOR
         string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-4018757636499144/8885433204";
+        string adUnitId = "ca-app-pub-4018757636499144/8885433204";	 
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else

@@ -315,8 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Police
-  price: 100
-  strength: 7
+  price: 2250
+  strength: 5
   farmLevel: 2
   consumption: 0.75
   abilitiesDuration:

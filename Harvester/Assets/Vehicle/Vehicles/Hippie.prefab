@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Hippie
-  price: 120
-  strength: 3
+  price: 2000
+  strength: 4
   farmLevel: 4
   consumption: 0.65
   abilitiesDuration:

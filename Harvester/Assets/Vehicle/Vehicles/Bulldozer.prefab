@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Bulldozer
-  price: 450
+  price: 4000
   strength: 10
   farmLevel: 19
   consumption: 0.75

@@ -479,8 +479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Ambulance
-  price: 325
-  strength: 8
+  price: 2800
+  strength: 7
   farmLevel: 13
   consumption: 0.7
   abilitiesDuration:

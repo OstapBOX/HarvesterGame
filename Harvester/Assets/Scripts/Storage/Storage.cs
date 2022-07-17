@@ -54,7 +54,6 @@ public class Storage : MonoBehaviour {
     [SerializeField] private GameObject farmLevelRequired;
     [SerializeField] private TextMeshProUGUI farmlevel;
 
-    private int wheatLevel = 0;
     private int cornLevel = 3;
     private int saladLevel = 6;
     private int carrotLevel = 9;
@@ -62,6 +61,12 @@ public class Storage : MonoBehaviour {
     private int sunflowerLevel = 15;
     private int pumpkinLevel = 18;
 
+    private int cornPrice = 500;
+    private int saladPrice = 2500;
+    private int carrotPrice = 4000;
+    private int cottonPrice = 6000;
+    private int sunflowerPrice = 9000;
+    private int pumpkinPrice = 13000;
 
     //Add
     //private InterAd interAd;
@@ -93,9 +98,9 @@ public class Storage : MonoBehaviour {
 
     public void BuyCorn() {
         SoundManager.instance.PlaySound(tap);
-        if (PlayerData.instance.GetCoinsAmount() >= 100) {
+        if (PlayerData.instance.GetCoinsAmount() >= cornPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-100);
+            PlayerData.instance.ChangeCoinsAmount(-cornPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("CornBought", 1);
@@ -114,9 +119,9 @@ public class Storage : MonoBehaviour {
     public void BuySalad() {
         SoundManager.instance.PlaySound(tap);
 
-        if (PlayerData.instance.GetCoinsAmount() >= 500) {
+        if (PlayerData.instance.GetCoinsAmount() >= saladPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-500);
+            PlayerData.instance.ChangeCoinsAmount(-saladPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("SaladBought", 1);
@@ -135,9 +140,9 @@ public class Storage : MonoBehaviour {
     public void BuyCarrot() {
         SoundManager.instance.PlaySound(tap);
 
-        if (PlayerData.instance.GetCoinsAmount() >= 1000) {
+        if (PlayerData.instance.GetCoinsAmount() >= carrotPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-1000);
+            PlayerData.instance.ChangeCoinsAmount(-carrotPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("CarrotBought", 1);
@@ -158,9 +163,9 @@ public class Storage : MonoBehaviour {
     public void BuyCotton() {
         SoundManager.instance.PlaySound(tap);
 
-        if (PlayerData.instance.GetCoinsAmount() >= 2500) {
+        if (PlayerData.instance.GetCoinsAmount() >= cottonPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-2500);
+            PlayerData.instance.ChangeCoinsAmount(-cottonPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("CottonBought", 1);
@@ -178,9 +183,9 @@ public class Storage : MonoBehaviour {
 
     public void BuySunflower() {
         SoundManager.instance.PlaySound(tap);
-        if (PlayerData.instance.GetCoinsAmount() >= 5000) {
+        if (PlayerData.instance.GetCoinsAmount() >= sunflowerPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-5000);
+            PlayerData.instance.ChangeCoinsAmount(-sunflowerPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("SunflowerBought", 1);
@@ -199,9 +204,9 @@ public class Storage : MonoBehaviour {
     public void BuyPumpkin() {
 
         SoundManager.instance.PlaySound(tap);
-        if (PlayerData.instance.GetCoinsAmount() >= 10000) {
+        if (PlayerData.instance.GetCoinsAmount() >= pumpkinPrice) {
             SoundManager.instance.PlaySound(buy);
-            PlayerData.instance.ChangeCoinsAmount(-10000);
+            PlayerData.instance.ChangeCoinsAmount(-pumpkinPrice);
             statisticBar.UpdateStatisticBar();
 
             PlayerPrefs.SetInt("PumpkinBought", 1);
@@ -214,6 +219,7 @@ public class Storage : MonoBehaviour {
             notEnoughMoneyScreen.SetActive(true);
         }
     }
+
     public void SellWheat() {
         if (PlayerPrefs.GetInt("WheatAmount") >= 100) {
             SoundManager.instance.PlaySound(sell);
