@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainGameTable_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 008b9f86f0ace7f429b7f623ed203158, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 428234473472
+    m_Localized: JOUER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34836677099520
+    m_Localized: Ma Ferme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38528960659456
+    m_Localized: Grange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40979600211968
+    m_Localized: Garage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42315318263808
+    m_Localized: "March\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46101289992192
+    m_Localized: STATISTIQUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47520944455680
+    m_Localized: RECORDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48116774699008
+    m_Localized: "Jeux Jou\xE9s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48422006784000
+    m_Localized: 'Meilleur Score:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48747019206656
+    m_Localized: "Articles Collect\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48618266656768
+    m_Localized: 'Meilleur Moment:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48900132274176
+    m_Localized: 'Plantes:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48936140374016
+    m_Localized: 'Bidons:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49061759778816
+    m_Localized: "Cl\xE9 \xE0 Molette:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49130428923904
+    m_Localized: 'Obstacles:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

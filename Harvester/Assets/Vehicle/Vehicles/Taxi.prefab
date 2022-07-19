@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Taxi
   price: 75
-  strength: 3
+  strength: 4
   farmLevel: 1
   consumption: 0.7
   abilitiesDuration:

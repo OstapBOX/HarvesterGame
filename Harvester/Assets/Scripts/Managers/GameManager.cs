@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public TextMeshProUGUI scoreText, strengthText, fuelText, timeText, recordText;
+    public TextMeshProUGUI scoreText, strengthText, fuelText, timeText, recordText, energyLeft;
     [SerializeField] private GameObject gameOverTable, recordPointer, continueScreen, notEnoughDollarsScreen, shield, collector;
     [SerializeField] private AudioClip tap;
     private int score, fuel, strength, maxHeals;
@@ -174,6 +174,7 @@ public class GameManager : MonoBehaviour {
             plantsParticle.SetActive(false);
             dirtParticle.SetActive(false);
             gameOverTable.SetActive(true);
+            energyLeft.text = PlayerPrefs.GetInt("totalEnergy").ToString();
             StopAllCoroutines();
             interAd.ShowAdInGame();
         }
