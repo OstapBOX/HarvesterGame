@@ -19,11 +19,105 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 172918800384
-    m_Localized: "Puedes comprar semillas y vender plantas. \r\n\xA1Entra en el almac\xE9n!"
+    m_Localized: "Puedes comprar semillas y vender plantas. \r\n\xA1Entra en el granero!"
     m_Metadata:
       m_Items: []
   - m_Id: 2780442099712
     m_Localized: Plantar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71519967608832
+    m_Localized: Trigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72738526167040
+    m_Localized: 'Comprar
+
+      semillas por
+
+
+
+
+      monedas'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75157326757888
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76388044603392
+    m_Localized: "Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78125019136000
+    m_Localized: "Utiliza el deslizamiento hacia la izquierda y la derecha para controlar
+      tu veh\xEDculo..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79140636295168
+    m_Localized: Entendido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81283929833472
+    m_Localized: "Este es el margen de seguridad de tu coche.\r\n\r\nSi chocas con
+      obst\xE1culos, pierdes las llaves."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83066831994880
+    m_Localized: "Este es el indicador de combustible restante. \r\nSi el combustible
+      se acaba, el juego terminar\xE1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92922330710016
+    m_Localized: "Estas son todas las plantas que has recogido. \r\nPuedes venderlas
+      en el granero."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99392313065472
+    m_Localized: "Puedes usar superpoderes para recolectar m\xE1s plantas.\r Cada
+      veh\xEDculo tiene su propio tiempo de recarga."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108358812270592
+    m_Localized: "Su veh\xEDculo se sacudir\xE1 hacia adelante abruptamente y volver\xE1
+      a su posici\xF3n original.\r\n\r\n\xA1Mu\xE9vase hacia arriba!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113381390647296
+    m_Localized: "Activa un escudo que puede destruir los obst\xE1culos sin perder
+      las llaves Inglesa\r\n\r\n\xA1Hacer clic!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122908777349120
+    m_Localized: "El carrete se hace m\xE1s grande para que puedas recoger 3 l\xEDneas
+      y destruir los obst\xE1culos.\r\n\r\n\xA1Doble toque!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126169945178112
+    m_Localized: "\xA1GENIAL!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344089317048320
+    m_Localized: Vender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349554394497024
+    m_Localized: "El n\xFAmero total de power ups se muestra aqu\xED."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351414979362816
+    m_Localized: "Las monedas se pueden gastar en la compra de plantas, veh\xEDculos,
+      potenciadores, mejora de la granja."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360242269618176
+    m_Localized: "No puedes empezar el juego si no tienes combustible.\r\n\r\nPuedes
+      gastar 1 d\xF3lar en su lugar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363071327666176
+    m_Localized: "Para los d\xF3lares, puede continuar el juego, despu\xE9s de aplastar.
+      \r\n\r\nTambi\xE9n se utiliza para iniciar el juego si no hay combustible."
     m_Metadata:
       m_Items: []
   references:

@@ -20,11 +20,100 @@ MonoBehaviour:
   m_TableData:
   - m_Id: 172918800384
     m_Localized: "Sie k\xF6nnen Samen kaufen und Pflanzen verkaufen. \r\nBetreten
-      Sie das Lager!"
+      Sie das scheune!"
     m_Metadata:
       m_Items: []
   - m_Id: 2780442099712
     m_Localized: Pflanzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71519967608832
+    m_Localized: Weizen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72738526167040
+    m_Localized: "Kaufen\r\nsamen f\xFCr\r\n\r\n\r\n\r\nm\xFCnzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75157326757888
+    m_Localized: Kaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76388044603392
+    m_Localized: "Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78125019136000
+    m_Localized: Steuern Sie Ihr Fahrzeug durch Wischen nach links und rechts...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79140636295168
+    m_Localized: Verstanden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81283929833472
+    m_Localized: "Dies ist die Sicherheitsmarge Ihres Fahrzeugs.\r\n\r\nWenn Sie
+      auf Hindernisse treffen, verlieren Sie Ihre Schraubenschl\xFCssel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83066831994880
+    m_Localized: "Dies ist die Anzeige f\xFCr verbleibenden Treibstoff. \r\nWenn
+      der Treibstoff ausgeht, endet das Spiel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92922330710016
+    m_Localized: 'Dies sind alle Pflanzen, die Sie gesammelt haben.
+
+      Du kannst
+      sie in der Scheune verkaufen.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99392313065472
+    m_Localized: "Sie k\xF6nnen Superkr\xE4fte einsetzen, mit denen Sie mehr Pflanzen
+      ernten k\xF6nnen. Jedes Fahrzeug hat seine eigene Nachladezeit."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108358812270592
+    m_Localized: "Ihr Fahrzeug ruckt nach vorne und kehrt in seine urspr\xFCngliche
+      Position zur\xFCck.\r\n\r\nNach oben wischen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113381390647296
+    m_Localized: "Sie aktivieren einen Schild, der Hindernisse zerst\xF6ren kann,
+      ohne Schraubenschl\xFCssel zu verlieren\r\n\r\nTippen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122908777349120
+    m_Localized: "Die Walze wird gr\xF6\xDFer, damit du 3 Linien sammeln und Hindernisse
+      zerst\xF6ren kannst.\r\n\r\nDoppeltippen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126169945178112
+    m_Localized: "GRO\xDFARTIG!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344089317048320
+    m_Localized: Verkaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349554394497024
+    m_Localized: Hier wird die Gesamtzahl der Power-Ups angezeigt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351414979362816
+    m_Localized: "M\xFCnzen k\xF6nnen f\xFCr den Kauf von Pflanzen ausgegeben werden,
+      fahrzeuge, power ups, modernisierung des Betriebs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360242269618176
+    m_Localized: "Sie k\xF6nnen das Spiel nicht starten, wenn Sie keinen Treibstoff
+      haben.\r\n\r\nSie k\xF6nnen stattdessen 1 Dollar ausgeben."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363071327666176
+    m_Localized: "F\xFCr Dollar k\xF6nnen Sie das Spiel nach dem Zerquetschen fortsetzen.
+      \r\n\r\nVerwenden Sie es auch, um das Spiel zu starten, wenn es keinen Treibstoff
+      gibt."
     m_Metadata:
       m_Items: []
   references:

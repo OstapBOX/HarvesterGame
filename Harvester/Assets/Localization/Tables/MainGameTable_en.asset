@@ -78,5 +78,32 @@ MonoBehaviour:
     m_Localized: 'Obstacles:'
     m_Metadata:
       m_Items: []
+  - m_Id: 1014087396065280
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1016451196747776
+    m_Localized: Ooops...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018240738492416
+    m_Localized: 'You don''t have enough coins.
+
+      Earn more or shop at the'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1021913115885568
+    m_Localized: 'You don''t have enough dollars.
+
+      Earn more or shop at the'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1024948462387200
+    m_Localized: 'You don''t have enough canisters.
+
+      Wait until they recover
+      or buy in the'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

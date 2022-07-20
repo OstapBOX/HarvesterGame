@@ -78,5 +78,32 @@ MonoBehaviour:
     m_Localized: 'Hindernisse:'
     m_Metadata:
       m_Items: []
+  - m_Id: 1014087396065280
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1016451196747776
+    m_Localized: Hoppla...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018240738492416
+    m_Localized: "Du hast nicht genug M\xFCnzen.\r\nVerdienen Sie mehr oder kaufen
+      Sie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1021913115885568
+    m_Localized: 'Du hast nicht genug Dollar.
+
+      Verdienen Sie mehr oder kaufen
+      Sie'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1024948462387200
+    m_Localized: 'Ihnen fehlen Kanister.
+
+      Warten Sie, bis sie sich erholt haben,
+      oder kaufen Sie'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

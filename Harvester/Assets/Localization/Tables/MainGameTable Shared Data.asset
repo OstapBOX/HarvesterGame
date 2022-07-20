@@ -75,6 +75,26 @@ MonoBehaviour:
     m_Key: ObstaclesKey
     m_Metadata:
       m_Items: []
+  - m_Id: 1014087396065280
+    m_Key: SettingsKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1016451196747776
+    m_Key: OoopsKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018240738492416
+    m_Key: DontHaveMoneyKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1021913115885568
+    m_Key: DontHaveDollarsKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1024948462387200
+    m_Key: DontHaveCanistersKey
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

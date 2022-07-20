@@ -78,5 +78,28 @@ MonoBehaviour:
     m_Localized: "Obst\xE1culos:"
     m_Metadata:
       m_Items: []
+  - m_Id: 1014087396065280
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1016451196747776
+    m_Localized: Ups...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018240738492416
+    m_Localized: "No tienes suficientes monedas.\r\nGana m\xE1s o compra en la"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1021913115885568
+    m_Localized: "No tienes suficientes d\xF3lares.\r\nGana m\xE1s o compra en la"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1024948462387200
+    m_Localized: 'No tienes suficientes frasco.
+
+      Espera a que se recuperen
+      o compra en la'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

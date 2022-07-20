@@ -20,11 +20,98 @@ MonoBehaviour:
   m_TableData:
   - m_Id: 172918800384
     m_Localized: "Vous pouvez acheter des graines et vendre des plantes. \r\nEntrez
-      dans le stockage !"
+      dans le grange !"
     m_Metadata:
       m_Items: []
   - m_Id: 2780442099712
     m_Localized: Planter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71519967608832
+    m_Localized: "Bl\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72738526167040
+    m_Localized: "Acheter \r\ndes graines \r\n\r\n\r\n\r\npour pi\xE8ces"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75157326757888
+    m_Localized: Acheter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76388044603392
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78125019136000
+    m_Localized: "Utilisez la gauche et la droite pour d\xE9placer votre v\xE9hicule..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79140636295168
+    m_Localized: D'accord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81283929833472
+    m_Localized: "C'est la marge de s\xE9curit\xE9 de votre voiture.\r\n\r\nSi vous
+      heurtez des obstacles, vous perdez vos cl\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83066831994880
+    m_Localized: "C'est l'indicateur de carburant restant. \r\nSi le carburant s'\xE9puise,
+      le jeu se termine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92922330710016
+    m_Localized: "Toutes les plantes que vous avez r\xE9colt\xE9es.\r\nVous pouvez
+      les vendre dans la grange."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99392313065472
+    m_Localized: "Vous pouvez utiliser des super pouvoirs pour collecter plus de
+      plantes.\r Chaque v\xE9hicule a son propre temps de rechargement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108358812270592
+    m_Localized: "Votre v\xE9hicule avance brusquement et revient \xE0 sa position
+      d'origine.\r\n\r\nBalayez vers le haut!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113381390647296
+    m_Localized: "Vous activez un bouclier qui peut d\xE9truire les obstacles sans
+      perdre de cl\xE9s \xE0 molette.\n\nTap !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122908777349120
+    m_Localized: "La moissonneuse s'agrandit pour que vous puissiez collecter 3 lignes
+      et d\xE9truire les obstacles.\r\n\r\nDouble Tap !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126169945178112
+    m_Localized: SUPER!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344089317048320
+    m_Localized: Vendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349554394497024
+    m_Localized: "Le nombre total de mises sous tension est affich\xE9 ici."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351414979362816
+    m_Localized: "Les pi\xE8ces peuvent \xEAtre d\xE9pens\xE9es pour acheter des
+      plantes, v\xE9hicules, power ups, la modernisation de la ferme."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360242269618176
+    m_Localized: "Vous ne pouvez pas commencer le jeu si vous n'avez pas de carburant.\r\n\r\nVous
+      pouvez d\xE9penser 1 dollar \xE0 la place."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363071327666176
+    m_Localized: "Pour les dollars, vous pouvez continuer le jeu, apr\xE8s avoir
+      \xE9cras\xE9.\r\n\r\nUtilisez-le \xE9galement pour d\xE9marrer le jeu s'il
+      n'y a pas de carburant."
     m_Metadata:
       m_Items: []
   references:

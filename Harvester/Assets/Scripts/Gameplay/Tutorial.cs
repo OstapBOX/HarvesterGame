@@ -272,7 +272,7 @@ public class Tutorial : MonoBehaviour {
         }
         else if (PlayerPrefs.GetInt("FarmLevel", 0) == 1) {
             upgradeSystem.Upgrade();
-            upgradePrice.text = "GOT IT";
+            upgradePrice.text = "OK";
         }
         else {
             upgradeFarm.SetActive(false);

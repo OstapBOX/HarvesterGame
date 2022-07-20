@@ -73,7 +73,7 @@ public class EnergyManager : MonoBehaviour {
 
     private void UpdateTimer() {
         if (totalEnergy >= maxEnergy) {
-            textTimer.text = "Full";
+            textTimer.text = "MAX";
             return;
         }
         TimeSpan t = nextEnergyTime - DateTime.Now;

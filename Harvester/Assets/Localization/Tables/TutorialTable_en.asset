@@ -26,5 +26,113 @@ MonoBehaviour:
     m_Localized: Plant
     m_Metadata:
       m_Items: []
+  - m_Id: 71519967608832
+    m_Localized: Wheat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72738526167040
+    m_Localized: 'Buy
+
+      seeds for
+
+
+
+
+      coins'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75157326757888
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76388044603392
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78125019136000
+    m_Localized: Use left and right swipe to control your vehicle...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79140636295168
+    m_Localized: Got it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81283929833472
+    m_Localized: 'This is the safety margin of your car.
+
+
+
+      If you hit obstacles,
+      you lose your wrenches.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83066831994880
+    m_Localized: "This is remaining fuel indicator. \r\nIf fuel runs out game will
+      end."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92922330710016
+    m_Localized: "These are all the plants you have collected. \r\nYou can sell it
+      in the storage."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99392313065472
+    m_Localized: You can use superpowers that will help you harvest more plants.
+      Each vehicle has its own cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108358812270592
+    m_Localized: "Your car makes a straight dash and returns to its original position.
+      \r\n\r\nSwipe up!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113381390647296
+    m_Localized: 'You activate a shield that can destroy obstacles without losing
+      wrenches
+
+
+      Tap!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122908777349120
+    m_Localized: 'The reel gets bigger so you can collect 3 lines and destroy obstacles.
+
+
+
+      Double
+      Tap!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126169945178112
+    m_Localized: GREAT!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344089317048320
+    m_Localized: Sell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349554394497024
+    m_Localized: The total number of power ups is displayed here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351414979362816
+    m_Localized: Coins can be spent on buying plants, vehicles, power ups, upgrading
+      the farm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360242269618176
+    m_Localized: 'You can''t start the game if you don''t have fuel.
+
+      
+
+      You
+      can spend 1 dollar instead.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363071327666176
+    m_Localized: "For dollars, you can continue the game, after crush. \r\n\r\nAlso
+      use it to start the game if there is no fuel."
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
