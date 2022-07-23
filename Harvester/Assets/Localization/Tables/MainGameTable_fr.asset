@@ -103,5 +103,89 @@ MonoBehaviour:
       ou magasinez au"
     m_Metadata:
       m_Items: []
+  - m_Id: 1427368661188608
+    m_Localized: "Vendez R\xE9colte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706553363365888
+    m_Localized: "Ma\xEFs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715103158468608
+    m_Localized: Chou
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715842408742912
+    m_Localized: Carotte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1716421667291136
+    m_Localized: Coton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717396356431872
+    m_Localized: Tournesol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717940303134720
+    m_Localized: Citrouille
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1727688440250368
+    m_Localized: "niveau de \nferme requis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733766754304000
+    m_Localized: Restaurer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739123241222144
+    m_Localized: Devise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1740476793454592
+    m_Localized: 'Amplificateurs:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1760998856032256
+    m_Localized: Niveau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2041653984722944
+    m_Localized: 'Force:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042063071969280
+    m_Localized: 'Gaz:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2049737440329728
+    m_Localized: "Jeu Termin\xE9!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2056415531466752
+    m_Localized: "Red\xE9marrer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059940265164800
+    m_Localized: La Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069482101243904
+    m_Localized: "CV\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2073269389983744
+    m_Localized: Continuer?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2075691206279168
+    m_Localized: 1 Dollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2077117227696128
+    m_Localized: "Les Publicit\xE9s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

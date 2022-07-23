@@ -41,7 +41,7 @@ public class UpgradeSystem : MonoBehaviour {
         else {
             upgradeButton.SetActive(false);
         }
-        levelText.text = "Level " + _level.ToString();
+        levelText.text = _level.ToString();
         statisticBar.UpdateStatisticBar();
     }
 

@@ -105,5 +105,89 @@ MonoBehaviour:
       oder kaufen Sie'
     m_Metadata:
       m_Items: []
+  - m_Id: 1427368661188608
+    m_Localized: Ernten Verkaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706553363365888
+    m_Localized: Mais
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715103158468608
+    m_Localized: Kohl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715842408742912
+    m_Localized: Karotte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1716421667291136
+    m_Localized: Baumwolle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717396356431872
+    m_Localized: Sonnenblume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717940303134720
+    m_Localized: "K\xFCrbis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1727688440250368
+    m_Localized: farm-level erforderlich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733766754304000
+    m_Localized: Wiederaufbau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739123241222144
+    m_Localized: "W\xE4hrung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1740476793454592
+    m_Localized: "Verst\xE4rker:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1760998856032256
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2041653984722944
+    m_Localized: "St\xE4rke:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042063071969280
+    m_Localized: 'Gas:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2049737440329728
+    m_Localized: Spiel ist Aus!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2056415531466752
+    m_Localized: Wieder Starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059940265164800
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069482101243904
+    m_Localized: Fortsetzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2073269389983744
+    m_Localized: Fortsetzen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2075691206279168
+    m_Localized: 1 Dollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2077117227696128
+    m_Localized: ADS Ansehen
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

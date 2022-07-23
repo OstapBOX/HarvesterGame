@@ -105,5 +105,91 @@ MonoBehaviour:
       or buy in the'
     m_Metadata:
       m_Items: []
+  - m_Id: 1427368661188608
+    m_Localized: Sell Resources
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706553363365888
+    m_Localized: Corn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715103158468608
+    m_Localized: Salad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715842408742912
+    m_Localized: Carrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1716421667291136
+    m_Localized: Cotton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717396356431872
+    m_Localized: Sunflower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717940303134720
+    m_Localized: Pumpkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1727688440250368
+    m_Localized: "farm level \nrequired"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733766754304000
+    m_Localized: Restore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739123241222144
+    m_Localized: Currency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1740476793454592
+    m_Localized: 'Power Ups:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1760998856032256
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2041653984722944
+    m_Localized: 'Strength:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042063071969280
+    m_Localized: 'Fuel:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2049737440329728
+    m_Localized: Game Over!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2056415531466752
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059940265164800
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069482101243904
+    m_Localized: 'Resume
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2073269389983744
+    m_Localized: Continue?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2075691206279168
+    m_Localized: 1 Dollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2077117227696128
+    m_Localized: Watch ADS
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

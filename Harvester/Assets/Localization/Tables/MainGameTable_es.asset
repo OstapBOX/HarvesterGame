@@ -101,5 +101,91 @@ MonoBehaviour:
       o compra en la'
     m_Metadata:
       m_Items: []
+  - m_Id: 1427368661188608
+    m_Localized: "\u041Cender la \u0421osecha"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706553363365888
+    m_Localized: "Ma\xEDz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715103158468608
+    m_Localized: Repollo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715842408742912
+    m_Localized: Zanahoria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1716421667291136
+    m_Localized: "Algod\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717396356431872
+    m_Localized: Girasol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1717940303134720
+    m_Localized: Calabaza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1727688440250368
+    m_Localized: 'nivel de granja
+
+      requerido'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733766754304000
+    m_Localized: Restaurar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739123241222144
+    m_Localized: Divisa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1740476793454592
+    m_Localized: 'Potenciadores:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1760998856032256
+    m_Localized: Nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2041653984722944
+    m_Localized: 'Fuerza:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042063071969280
+    m_Localized: 'Gas:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2049737440329728
+    m_Localized: "\xA1Juego Terminado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2056415531466752
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2059940265164800
+    m_Localized: La Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069482101243904
+    m_Localized: Reanudar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2073269389983744
+    m_Localized: "\xBFContinuar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2075691206279168
+    m_Localized: "1 D\xF3lar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2077117227696128
+    m_Localized: Ver ANUNCIOS
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
