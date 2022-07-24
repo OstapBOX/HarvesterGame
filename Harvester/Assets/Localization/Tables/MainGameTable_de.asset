@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 428234473472
-    m_Localized: ANFANG
+    m_Localized: Anfang
     m_Metadata:
       m_Items: []
   - m_Id: 34836677099520
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1740476793454592
-    m_Localized: "Verst\xE4rker:"
+    m_Localized: "Verst\xE4rker"
     m_Metadata:
       m_Items: []
   - m_Id: 1760998856032256

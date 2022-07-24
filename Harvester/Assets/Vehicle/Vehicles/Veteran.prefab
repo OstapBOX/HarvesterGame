@@ -228,7 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Veteran
+  name:
+  - Veteran
+  - "V\xE9t\xE9ran"
+  - Veteran
+  - Veterano
+  - "\u0420\u0435\u0442\u0440\u043E"
+  - "\u0420\u0435\u0442\u0440\u043E"
   price: 2100
   strength: 5
   farmLevel: 11

@@ -314,7 +314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Police
+  name:
+  - Police
+  - Police
+  - Polizei
+  - "Polic\xEDa"
+  - "\u041F\u043E\u043B\u0456\u0446\u0456\u044F"
+  - "\u041F\u043E\u043B\u0438\u0446\u0438\u044F"
   price: 2250
   strength: 5
   farmLevel: 2

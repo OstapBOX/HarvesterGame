@@ -62,7 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Armored
+  name:
+  - Armored
+  - "Blind\xE9"
+  - Geldtransport
+  - Blindado
+  - "\u0411\u0440\u043E\u043D\u0435\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0456\u043B\u044C"
+  - "\u0411\u0440\u043E\u043D\u0435\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C"
   price: 3800
   strength: 9
   farmLevel: 9

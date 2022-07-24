@@ -62,7 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Hippie
+  name:
+  - Hippie
+  - Hippie
+  - Hippie
+  - Hippie
+  - "\u0425\u0456\u043F\u043F\u0456"
+  - "\u0425\u0438\u043F\u043F\u0438"
   price: 2000
   strength: 4
   farmLevel: 4

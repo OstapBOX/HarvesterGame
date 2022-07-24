@@ -123,7 +123,7 @@ MonoBehaviour:
   - m_Id: 360242269618176
     m_Localized: 'You can''t start the game if you don''t have fuel.
 
-      
+
 
       You
       can spend 1 dollar instead.'
@@ -132,6 +132,10 @@ MonoBehaviour:
   - m_Id: 363071327666176
     m_Localized: "For dollars, you can continue the game, after crush. \r\n\r\nAlso
       use it to start the game if there is no fuel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1783227882897408
+    m_Localized: Skip
     m_Metadata:
       m_Items: []
   references:

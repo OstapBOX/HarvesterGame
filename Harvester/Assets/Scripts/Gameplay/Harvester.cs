@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Harvester : MonoBehaviour {
-    public string name;
+    public string[] name;
     public int price;
     public int strength;
     public int farmLevel;

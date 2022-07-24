@@ -28,21 +28,18 @@ public class HarvesterSelection : MonoBehaviour
     [SerializeField] private AudioClip swipe;
     [SerializeField] private AudioClip pick;
 
-    //private InterAd interAd;
+    private int localeKey;
 
     private void Start() {
-        //interAd = GetComponent<InterAd>();
-        //interAd.RequestAndLoadInterstitialAd();
-        //interAd.ShowAd();
         currentHarvester = CurrentHarvester();
+        localeKey = PlayerPrefs.GetInt("LocaleKey", 0);
         CheckArrowsStatus();
         SelectHarvester(currentHarvester);
         сharacteristicsBar.UpdateCharacteristics();
-        UpdateUI();//Added
+        UpdateUI();
     }
 
-    private void SelectHarvester(int _index) {
-       
+    private void SelectHarvester(int _index) {       
         for(int i =0; i < transform.childCount; i++) {
             transform.GetChild(i).gameObject.SetActive(i == _index);
         }
@@ -54,10 +51,10 @@ public class HarvesterSelection : MonoBehaviour
             play.gameObject.SetActive(true);
             buy.gameObject.SetActive(false);
             carLockedScreen.SetActive(false);
-            nameText.text = harvesters[currentHarvester].name.ToString();
+            nameText.text = harvesters[currentHarvester].name[localeKey].ToString();
         }
         else {
-            nameText.text = harvesters[currentHarvester].name.ToString();
+            nameText.text = harvesters[currentHarvester].name[localeKey].ToString();
             play.gameObject.SetActive(false);
             buy.gameObject.SetActive(true);
             carLockedScreen.SetActive(true);

@@ -62,7 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Jeep
+  name:
+  - Jeep
+  - Jeep
+  - Jeep
+  - Jeep
+  - "\u0414\u0436\u0438\u043F"
+  - "\u0414\u0436\u0438\u043F"
   price: 2400
   strength: 5
   farmLevel: 6

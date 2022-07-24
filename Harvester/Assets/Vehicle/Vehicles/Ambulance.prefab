@@ -478,7 +478,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Ambulance
+  name:
+  - Ambulance
+  - Ambulance
+  - Ambulanz
+  - Ambulancia
+  - "\u0428\u0432\u0438\u0434\u043A\u0430"
+  - "\u0421\u043A\u043E\u0440\u0430\u044F"
   price: 2800
   strength: 7
   farmLevel: 13

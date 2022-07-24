@@ -62,7 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Baywatch
+  name:
+  - Baywatch
+  - Sauveteur
+  - Bademeister
+  - Salvavidas
+  - "\u0420\u044F\u0442\u0456\u0432\u043D\u0430"
+  - "\u0421\u043F\u0430\u0441\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F"
   price: 2650
   strength: 6
   farmLevel: 7

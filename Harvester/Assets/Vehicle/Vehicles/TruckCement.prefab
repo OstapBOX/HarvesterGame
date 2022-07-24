@@ -153,7 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cement
+  name:
+  - Cement
+  - Malaxeur
+  - Fahrmischer
+  - Hormigonera
+  - "\u0411\u0435\u0442\u043E\u043D\u043E\u043C\u0456\u0448\u0430\u043B\u043A\u0430"
+  - "\u0411\u0435\u0442\u043E\u043D\u043E\u043C\u0435\u0448\u0430\u043B\u043A\u0430"
   price: 3200
   strength: 9
   farmLevel: 18

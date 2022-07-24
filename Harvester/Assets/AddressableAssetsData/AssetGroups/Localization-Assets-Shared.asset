@@ -25,10 +25,6 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/TutorialTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: d8eb2eee36366ab4d839ac404030d3f4
-    m_Address: Assets/Localization/Tables/Vehicles Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: fde5489dd7fb46146ab206d2b2d07ab1, type: 2}
   m_SchemaSet:

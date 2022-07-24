@@ -476,7 +476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Taxi
+  name:
+  - Taxi
+  - Taxi
+  - Taxi
+  - Taxi
+  - "\u0422\u0430\u043A\u0441\u0456"
+  - "\u0422\u0430\u043A\u0441\u0438"
   price: 75
   strength: 4
   farmLevel: 1

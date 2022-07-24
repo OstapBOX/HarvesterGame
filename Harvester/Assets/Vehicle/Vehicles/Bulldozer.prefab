@@ -476,7 +476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Bulldozer
+  name:
+  - Bulldozer
+  - Bulldozer
+  - Bulldozer
+  - "Buld\xF3cer"
+  - "\u0411\u0443\u043B\u044C\u0434\u043E\u0437\u0435\u0440"
+  - "\u0411\u0443\u043B\u044C\u0434\u043E\u0437\u0435\u0440"
   price: 4000
   strength: 10
   farmLevel: 19

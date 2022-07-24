@@ -9,6 +9,7 @@ using System.Collections.Generic;
 public class BannerAd : MonoBehaviour {
 
     //Real id ca-app-pub-4018757636499144/8885433204
+    //Test id ca-app-pub-3940256099942544/6300978111
 
     private BannerView bannerView;
 
@@ -24,8 +25,8 @@ public class BannerAd : MonoBehaviour {
         // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
         string adUnitId = "unused";
-#elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-4018757636499144/8885433204";	 
+#elif UNITY_ANDROID 
+        string adUnitId = "ca-app-pub-3940256099942544/6300978111";	 
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else

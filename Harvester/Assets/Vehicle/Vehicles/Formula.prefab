@@ -309,7 +309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Formula
+  name:
+  - Formula
+  - Formule
+  - Formula
+  - Formula
+  - "\u0424\u043E\u0440\u043C\u0443\u043B\u0430"
+  - "\u0424\u043E\u0440\u043C\u0443\u043B\u0430"
   price: 1800
   strength: 3
   farmLevel: 20

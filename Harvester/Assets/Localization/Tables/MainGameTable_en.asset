@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 428234473472
-    m_Localized: PLAY
+    m_Localized: Play
     m_Metadata:
       m_Items: []
   - m_Id: 34836677099520
-    m_Localized: MY FARM
+    m_Localized: My Farm
     m_Metadata:
       m_Items: []
   - m_Id: 38528960659456
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1740476793454592
-    m_Localized: 'Power Ups:'
+    m_Localized: Power Ups
     m_Metadata:
       m_Items: []
   - m_Id: 1760998856032256

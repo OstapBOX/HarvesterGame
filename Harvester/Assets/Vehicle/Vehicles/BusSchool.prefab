@@ -311,7 +311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d554007bff184da8ddd19bfbeb175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: School Bus
+  name:
+  - School Bus
+  - Bus scolaire
+  - Schulbus
+  - Escuela
+  - "\u0428\u043A\u0456\u043B\u044C\u043D\u0438\u0439"
+  - "\u0428\u043A\u043E\u043B\u044C\u043D\u044B\u0439"
   price: 2400
   strength: 6
   farmLevel: 15
