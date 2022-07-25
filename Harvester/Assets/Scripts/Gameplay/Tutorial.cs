@@ -21,7 +21,6 @@ public class Tutorial : MonoBehaviour {
     private int storageLoaded = 0;
     private int menuLoaded = 0;
     private int pointerNumb = 0;
-    private int wheatSelled = 0;
     private int pointerMenuNumb = 0;
 
     private bool swipedRight, swipedLeft;
@@ -213,14 +212,9 @@ public class Tutorial : MonoBehaviour {
     }
 
     public void SellWheat() {
-        if (wheatSelled < 5) {
-            storage.SellWheat();
-            wheatSelled++;
-        }
-        else {
-            wheatFrame.SetActive(false);
-            backToMenuButton.SetActive(true);
-        }
+        storage.SellPlant("WheatAmount");
+        wheatFrame.SetActive(false);
+        backToMenuButton.SetActive(true);       
     }
 
     public void LoadStorage() {

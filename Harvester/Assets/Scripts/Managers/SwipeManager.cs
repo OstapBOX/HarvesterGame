@@ -24,7 +24,6 @@ public class SwipeManager : MonoBehaviour
 
     private void Awake() {
         swipeLeft = swipeRight = swipeUp = swipeDown = tap = false;
-
         firstClickTime = 0f;
         clickCounter = 0;
         coroutineAllowed = true;

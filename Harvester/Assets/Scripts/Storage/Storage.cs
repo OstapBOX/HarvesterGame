@@ -220,92 +220,62 @@ public class Storage : MonoBehaviour {
         }
     }
 
-    public void SellWheat() {
-        if (PlayerPrefs.GetInt("WheatAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeWheatAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(10);
-            UpdateWheatAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
-    public void SellCorn() {
-        if (PlayerPrefs.GetInt("CornAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeCornAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(20);
-            UpdateCornAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
-    public void SellSalad() {
-        if (PlayerPrefs.GetInt("SaladAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeSaladAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(50);
-            UpdateSaladAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
-    public void SellCarrot() {
-        if (PlayerPrefs.GetInt("CarrotAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeCarrotAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(70);
-            UpdateCarrotAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
-    public void SellCotton() {
+    public void SellPlant(string plantPrefbName) {
+        if (PlayerPrefs.GetInt(plantPrefbName, 0) > 0) {
+            float onePlantPrice = 0.0f;
+            int plantAmount = PlayerPrefs.GetInt(plantPrefbName, 0);
+            SoundManager.instance.PlaySound(sell);            
 
-        if (PlayerPrefs.GetInt("CottonAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeCottonAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(90);
-            UpdateCottonAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
-    public void SellSunflower() {
+            if (plantPrefbName == "WheatAmount") {
+                PlayerData.instance.ChangeWheatAmount(-plantAmount);
+                UpdateWheatAmount();
+                onePlantPrice = 0.1f;
+            }
+            else if (plantPrefbName == "CornAmount") {
+                PlayerData.instance.ChangeCornAmount(-plantAmount);
+                UpdateCornAmount();
+                onePlantPrice = 0.2f;
+            }
+            else if (plantPrefbName == "SaladAmount") {
+                PlayerData.instance.ChangeSaladAmount(-plantAmount);
+                UpdateSaladAmount();
+                onePlantPrice = 0.5f;
+            }
+            else if (plantPrefbName == "CarrotAmount") {
+                PlayerData.instance.ChangeCarrotAmount(-plantAmount);
+                UpdateCarrotAmount();
+                onePlantPrice = 0.7f;
+            }
+            else if (plantPrefbName == "CottonAmount") {
+                PlayerData.instance.ChangeCottonAmount(-plantAmount);
+                UpdateCottonAmount();
+                onePlantPrice = 0.9f;
+            }
+            else if (plantPrefbName == "SunflowerAmount") {
+                PlayerData.instance.ChangeSunflowerAmount(-plantAmount);
+                UpdateSunflowerAmount();
+                onePlantPrice = 1.2f;
+            }
+            else if (plantPrefbName == "PumpkinAmount") {
+                PlayerData.instance.ChangePumpkinAmount(-plantAmount);
+                UpdatePumpkinAmount();
+                onePlantPrice = 1.5f;
+            }
+            else {
+                Debug.Log("This plant dosen't exist");
+            }
 
-        if (PlayerPrefs.GetInt("SunflowerAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangeSunflowerAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(120);
-            UpdateSunflowerAmount();
+            float moneyAmount = onePlantPrice * plantAmount;
+            PlayerData.instance.ChangeCoinsAmount(Mathf.RoundToInt(moneyAmount));
+
             statisticBar.UpdateStatisticBar();
         }
         else {
             SoundManager.instance.PlaySound(reject);
         }
     }
-    public void SellPumpkin() {
-        if (PlayerPrefs.GetInt("PumpkinAmount") >= 100) {
-            SoundManager.instance.PlaySound(sell);
-            PlayerData.instance.ChangePumpkinAmount(-100);
-            PlayerData.instance.ChangeCoinsAmount(150);
-            UpdatePumpkinAmount();
-            statisticBar.UpdateStatisticBar();
-        }
-        else {
-            SoundManager.instance.PlaySound(reject);
-        }
-    }
+
+
 
     public void CheckLevelCorn() {
         if (PlayerPrefs.GetInt("FarmLevel", 0) >= cornLevel) {

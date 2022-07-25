@@ -22,18 +22,22 @@ public class BannerAd : MonoBehaviour {
     }
 
     public void RequestBannerAd() {
+        if (PlayerPrefs.GetInt("TutorialShowed") == 0) {
+            return;
+        }
+
         // These ad units are configured to always serve test ads.
 #if UNITY_EDITOR
         string adUnitId = "unused";
-#elif UNITY_ANDROID 
+#elif UNITY_ANDROID
         string adUnitId = "ca-app-pub-3940256099942544/6300978111";	 
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
         string adUnitId = "unexpected_platform";
 #endif
+
         if (PlayerData.instance.GetRemoveAdsStatus()) {
-            
             if (bannerView != null) {
                 bannerView.Destroy();
             }

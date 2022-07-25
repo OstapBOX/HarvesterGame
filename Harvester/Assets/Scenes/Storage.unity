@@ -779,14 +779,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellSalad
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SaladAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &65121500
@@ -2114,14 +2114,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellCarrot
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: CarrotAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &173951625
@@ -8258,14 +8258,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellCorn
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: CornAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &666286448
@@ -8857,11 +8857,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 16.4
   m_fontSizeBase: 12.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -15886,14 +15886,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellCotton
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: CottonAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1173811018
@@ -16628,7 +16628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1221074710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16638,7 +16638,7 @@ RectTransform:
   m_GameObject: {fileID: 1221074709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.355538, y: 12.355538, z: 12.355538}
+  m_LocalScale: {x: 12.355543, y: 12.355543, z: 12.355543}
   m_Children:
   - {fileID: 714382090}
   m_Father: {fileID: 1665912252}
@@ -16646,7 +16646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127.99983, y: -0}
+  m_AnchoredPosition: {x: 128, y: 0}
   m_SizeDelta: {x: 49.4, y: 24.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221074711
@@ -21866,14 +21866,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellPumpkin
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PumpkinAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1767217836
@@ -22905,14 +22905,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellSunflower
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SunflowerAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1824667057
@@ -24902,14 +24902,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 559468225}
         m_TargetAssemblyTypeName: Storage, Assembly-CSharp
-        m_MethodName: SellWheat
-        m_Mode: 1
+        m_MethodName: SellPlant
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: WheatAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2006654972

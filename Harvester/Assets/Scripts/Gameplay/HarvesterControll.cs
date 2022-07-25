@@ -14,8 +14,6 @@ public class HarvesterControll : MonoBehaviour {
     [SerializeField] private AudioClip cultivatorActivation;
     [SerializeField] private AudioClip reject;
 
-
-
     private GameManager gameManager;
     private SwipeManager swipeManager;
     private Harvester harvester;
@@ -52,6 +50,8 @@ public class HarvesterControll : MonoBehaviour {
         currentLine = 0;
         swipeManager = GameObject.Find("SwipeManager").GetComponent<SwipeManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+
     }
 
     // Update is called once per frame

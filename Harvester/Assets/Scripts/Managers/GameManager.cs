@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
     private GameObject harvesterModels;
     private Harvester harvester;
+    private AudioSource effectsAudioSource;
 
 
     [SerializeField] private BoxCollider cultivatorCollider;
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour {
         harvesterModels = GameObject.Find("HarvesterSelection");
         interAd = GetComponent<InterAd>();
         harvester = harvesterModels.transform.GetChild(0).GetComponent<Harvester>();
+        effectsAudioSource = GameObject.Find("EffectsSource").GetComponent<AudioSource>();
         shieldAnimator = shield.GetComponent<Animator>();
         collectorAnimator = collector.GetComponent<Animator>();
         recordText.text = reachRecord.ToString();
@@ -113,7 +115,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void UpdateStrenght(int addStrength) {
-        if(PlayerPrefs.GetInt("TutorialShowed") != 0) {
+        if (PlayerPrefs.GetInt("TutorialShowed") != 0) {
             strength += addStrength;
         }
         if (strength <= 0) {
@@ -137,7 +139,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    public int getStrenght() {
+    public int GetStrenght() {
         return strength;
     }
 
@@ -157,7 +159,7 @@ public class GameManager : MonoBehaviour {
         }
         else {
             isGameActive = false;
-            gameOverTable.SetActive(true);
+            ShowGameOverTable();
             StopAllCoroutines();
         }
 
@@ -173,12 +175,16 @@ public class GameManager : MonoBehaviour {
             gameOverExplosion.Play();
             plantsParticle.SetActive(false);
             dirtParticle.SetActive(false);
-            gameOverTable.SetActive(true);
-            energyLeft.text = PlayerPrefs.GetInt("totalEnergy").ToString();
+            ShowGameOverTable();
             StopAllCoroutines();
             interAd.ShowAdInGame();
         }
         isGameActive = false;
+    }
+
+    public void ShowGameOverTable() {
+        energyLeft.text = PlayerPrefs.GetInt("totalEnergy").ToString();
+        gameOverTable.SetActive(true);       
     }
 
     public void DollarRespawn() {
@@ -212,11 +218,11 @@ public class GameManager : MonoBehaviour {
         PlayerData.instance.ChangePumpkinAmount(pumpkinCollected);
     }
 
-    private void UpdateStatistic() {        
-            PlayerData.instance.UpdateStatisticHighestScore(score);
-            PlayerData.instance.UpdateStatisticWheatCollected(score);
-            PlayerData.instance.UpdateStatisticGamesPlayed();
-            PlayerData.instance.UpdateStatisticTime(minutes, seconds);        
+    private void UpdateStatistic() {
+        PlayerData.instance.UpdateStatisticHighestScore(score);
+        PlayerData.instance.UpdateStatisticWheatCollected(score);
+        PlayerData.instance.UpdateStatisticGamesPlayed();
+        PlayerData.instance.UpdateStatisticTime(minutes, seconds);
     }
 
     public void RestartGame() {
@@ -264,6 +270,10 @@ public class GameManager : MonoBehaviour {
 #if !UNITY_EDITOR
             Vibration.VibratePeek();
 #endif
+    }
+
+    private void OnDestroy() {
+        effectsAudioSource.Stop();
     }
 
     private IEnumerator Invulnerability() {

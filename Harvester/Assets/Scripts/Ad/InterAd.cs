@@ -42,7 +42,7 @@ public class InterAd : MonoBehaviour {
     public void ShowAd() {
         if (PlayerData.instance.GetRemoveAdsStatus()) {
             PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
-            if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 8 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0 && PlayerPrefs.GetInt("InterstitialShowed", 0) > 80) {
+            if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 8 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0 && PlayerPrefs.GetInt("InterstitialShowed", 0) > 60) {
                 if (interstitialAd.IsLoaded()) {
                     interstitialAd.Show();
                     RequestAndLoadInterstitialAd();
