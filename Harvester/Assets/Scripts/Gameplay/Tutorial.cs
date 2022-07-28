@@ -411,12 +411,17 @@ public class Tutorial : MonoBehaviour {
         PlayerPrefs.SetInt("TutorialShowed", 1);
         TapSound();
         if (PlayerPrefs.GetInt("ResoursesGot") == 0) {
+
+            if(energyManager == null) {
+                energyManager = GameObject.Find("EnergyManager").GetComponent<EnergyManager>();
+            }
             energyManager.ChangeEnergyAmount(10);
             PlayerData.instance.ChangeWheatAmount(566);
             PlayerData.instance.ChangeSpeedUpAmount(5);
             PlayerData.instance.ChangeCultivatorAmount(5);
             PlayerData.instance.ChangeShieldAmount(5);
         }
+
         PlayerPrefs.SetInt("ResoursesGot", 1);
         if (SceneManager.GetActiveScene().name != "Menu") {
             menuLoaded = 100;
@@ -426,6 +431,7 @@ public class Tutorial : MonoBehaviour {
         if (mainMenu == null) {
             mainMenu = GameObject.Find("MainMenu").GetComponent<MainMenu>();
         }
+
         mainMenu.ShowMenuButtons();
 
         Destroy(this.gameObject);

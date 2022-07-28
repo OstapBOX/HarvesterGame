@@ -17,10 +17,10 @@ public class EnergyManager : MonoBehaviour {
     private DateTime nextEnergyTime;
     private DateTime lastAddedTime;
 
-    private int restoreDuration = 600;
+    private int restoreDuration = 540;
     private bool restoring = false;
 
-    void Awake() {
+    void Awake() { 
         Load();
         StartCoroutine(RestoreRoutine());
     }
@@ -73,18 +73,23 @@ public class EnergyManager : MonoBehaviour {
 
     private void UpdateTimer() {
         if (totalEnergy >= maxEnergy) {
-            textTimer.text = "MAX";
+            if(textTimer != null) {
+                textTimer.text = "MAX";
+            }           
             return;
         }
         TimeSpan t = nextEnergyTime - DateTime.Now;
         string value = String.Format("{0}:{1}", t.Minutes.ToString("00"), t.Seconds.ToString("00"));
-
-        textTimer.text = value;
+        if (textTimer != null) {
+            textTimer.text = value;
+        }
     }
 
     private void UpdateEnergy() {
         Save();
-        textEnergy.text = totalEnergy.ToString();
+        if(textEnergy != null) {
+            textEnergy.text = totalEnergy.ToString();
+        }        
     }
 
     private DateTime AddDuration(DateTime time, int duration) {
@@ -117,4 +122,7 @@ public class EnergyManager : MonoBehaviour {
         return DateTime.Parse(date);
     }
 
+    private void OnLevelWasLoaded(int level) {
+        Save();
+    }
 }

@@ -51,10 +51,10 @@ public class HarvesterSelection : MonoBehaviour
             play.gameObject.SetActive(true);
             buy.gameObject.SetActive(false);
             carLockedScreen.SetActive(false);
-            nameText.text = harvesters[currentHarvester].name[localeKey].ToString();
+            nameText.text = harvesters[currentHarvester].vehicleName[localeKey].ToString();
         }
         else {
-            nameText.text = harvesters[currentHarvester].name[localeKey].ToString();
+            nameText.text = harvesters[currentHarvester].vehicleName[localeKey].ToString();
             play.gameObject.SetActive(false);
             buy.gameObject.SetActive(true);
             carLockedScreen.SetActive(true);

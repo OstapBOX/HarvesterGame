@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class PowerUpPosition : MonoBehaviour
 {
-    private GameObject model;
-    private BoxCollider collider;
-    private float colliderZSize;
-    private Vector3 offset;  
+    [SerializeField] private GameObject vehicleLight;
+    private GameObject vehicle;
+    
+    private BoxCollider vehicleCollider;
+
+    private float vehicleZSize;
+
+
+    private Vector3 offset;
    
     void Start()
     {
-        //Get model holder
-        model = GameObject.Find("HarvesterSelection").transform.GetChild(0).gameObject;
-        //Get collider
-        collider = model.GetComponent<BoxCollider>();
-        //Get model size
-        colliderZSize = collider.size.z;
+ 
+        vehicle = GameObject.Find("HarvesterSelection").transform.GetChild(0).gameObject;
+ 
+        vehicleCollider = vehicle.GetComponent<BoxCollider>();
+    
+        vehicleZSize = vehicleCollider.size.z;
 
-        offset = new Vector3(transform.position.x, transform.position.y, transform.position.z + colliderZSize);
+        offset = new Vector3(transform.position.x, transform.position.y, transform.position.z + vehicleZSize);
+
         gameObject.transform.position = offset;
+
     }
 
 }

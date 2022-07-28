@@ -102,9 +102,6 @@ public class SwipeManager : MonoBehaviour
                 swipeRight = false;
                 swipeUp = false;
                 swipeDown = false;
-                // stopTouch = true;
-
-
             }
         }
     }
@@ -114,7 +111,7 @@ public class SwipeManager : MonoBehaviour
         bool normalClickAllowed = true;
         while (Time.time < firstClickTime + DOUBLE_CLICK_TIME) {
             if (clickCounter == 2) {
-                Debug.Log("DoubleClick");
+                //Debug.Log("DoubleClick");
                 tap = false;
                 doubleTap = true;
                 normalClickAllowed = false;
@@ -123,7 +120,7 @@ public class SwipeManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         if (normalClickAllowed) {
-            Debug.Log("NormalClick");
+            //Debug.Log("NormalClick");
             doubleTap = false;
             tap = true;            
         }

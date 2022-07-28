@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 3efedc42538f67c4ca9ee016296dce28
+labels:
+- Architecture
 DefaultImporter:
   externalObjects: {}
   userData: 

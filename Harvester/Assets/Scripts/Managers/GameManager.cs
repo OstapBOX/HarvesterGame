@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour {
     private int score, fuel, strength, maxHeals;
     private int reachRecord;
     private float startTime, currentTime;
-    private int minutes, seconds;
-    public bool isGameActive, isInvulnerable;
-    private bool firstDeath = true;
+    private float cycleDuration = 5.0f;
+    private int minutes, seconds;    
     public float gameSpeed = 25.0f, maxGameSpeed = 150;
 
+    public bool isGameActive, isInvulnerable;
+    private bool firstDeath = true;
 
     private GameObject harvesterModels;
     private Harvester harvester;
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private ParticleSystem gameOverExplosion;
     [SerializeField] private GameObject plantsParticle;
     [SerializeField] private GameObject dirtParticle;
+    [SerializeField] private TimesOfDay timesOfDay;
+    private EnergyManager energyManager;
 
     [Header("Invulnerability")]
     [SerializeField] private float iFramesDuration;
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour {
         interAd = GetComponent<InterAd>();
         harvester = harvesterModels.transform.GetChild(0).GetComponent<Harvester>();
         effectsAudioSource = GameObject.Find("EffectsSource").GetComponent<AudioSource>();
+        energyManager = GameObject.Find("EnergyManager").GetComponent<EnergyManager>();
         shieldAnimator = shield.GetComponent<Animator>();
         collectorAnimator = collector.GetComponent<Animator>();
         recordText.text = reachRecord.ToString();
@@ -76,6 +80,7 @@ public class GameManager : MonoBehaviour {
         gameSpeed = 25.0f;
         StartCoroutine(FuelIndicator());
         StartCoroutine(PlantsParticle());
+        StartCoroutine(ChangeTimeOfDay());
         strengthText.text = strength.ToString();
 
         if (PlayerData.instance.GetGamesAmount() % 2 == 0) {
@@ -137,6 +142,7 @@ public class GameManager : MonoBehaviour {
         }
         ContinueGame();
     }
+
 
 
     public int GetStrenght() {
@@ -230,7 +236,8 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1f;
             UpdateStatistic();
             UpdateCollected();
-            PlayerPrefs.SetInt("totalEnergy", PlayerPrefs.GetInt("totalEnergy") - 1);
+            //PlayerPrefs.SetInt("totalEnergy", PlayerPrefs.GetInt("totalEnergy") - 1);
+            energyManager.UseEnergy();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else {
@@ -285,6 +292,15 @@ public class GameManager : MonoBehaviour {
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         isInvulnerable = false;
+    }
+
+    private IEnumerator ChangeTimeOfDay() {
+        yield return new WaitForSeconds(cycleDuration);
+        timesOfDay.ChangeTime();
+        StartCoroutine(ChangeTimeOfDay());
+        yield return new WaitForSeconds(2.3f);       
+        harvester.SwitchLights();
+        
     }
 
     public void UseShield() {
