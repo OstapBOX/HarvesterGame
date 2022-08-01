@@ -10139,6 +10139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: car-tow-truck
       objectReference: {fileID: 0}
+    - target: {fileID: 7102901249538273351, guid: a23308f142d9af248ab98bafd919082a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7102901249538763879, guid: a23308f142d9af248ab98bafd919082a,
         type: 3}
       propertyPath: m_RootOrder

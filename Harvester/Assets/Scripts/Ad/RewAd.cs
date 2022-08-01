@@ -37,7 +37,7 @@ public class RewAd : MonoBehaviour {
 #if UNITY_EDITOR
     string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917"; 
+        string adUnitId = "ca-app-pub-4018757636499144/4918268035"; 
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else

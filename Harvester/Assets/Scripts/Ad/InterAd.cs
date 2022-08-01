@@ -16,7 +16,7 @@ public class InterAd : MonoBehaviour {
 #if UNITY_EDITOR
     string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-4018757636499144/5876126485";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -42,7 +42,7 @@ public class InterAd : MonoBehaviour {
     public void ShowAd() {
         if (PlayerData.instance.GetRemoveAdsStatus()) {
             PlayerPrefs.SetInt("InterstitialShowed", PlayerPrefs.GetInt("InterstitialShowed", 0) + 1);
-            if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 8 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0 && PlayerPrefs.GetInt("InterstitialShowed", 0) > 60) {
+            if (PlayerPrefs.GetInt("InterstitialShowed", 0) % 10 == 0 && PlayerPrefs.GetInt("TutorialShowed") != 0 && PlayerPrefs.GetInt("InterstitialShowed", 0) > 50) {
                 if (interstitialAd.IsLoaded()) {
                     interstitialAd.Show();
                     RequestAndLoadInterstitialAd();

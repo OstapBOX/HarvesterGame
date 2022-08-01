@@ -416,6 +416,7 @@ public class Tutorial : MonoBehaviour {
                 energyManager = GameObject.Find("EnergyManager").GetComponent<EnergyManager>();
             }
             energyManager.ChangeEnergyAmount(10);
+            energyManager.UpdateTimerForSkip();
             PlayerData.instance.ChangeWheatAmount(566);
             PlayerData.instance.ChangeSpeedUpAmount(5);
             PlayerData.instance.ChangeCultivatorAmount(5);

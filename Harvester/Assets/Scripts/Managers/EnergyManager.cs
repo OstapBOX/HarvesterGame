@@ -85,6 +85,10 @@ public class EnergyManager : MonoBehaviour {
         }
     }
 
+    public void UpdateTimerForSkip() {
+        UpdateTimer();
+    }
+
     private void UpdateEnergy() {
         Save();
         if(textEnergy != null) {

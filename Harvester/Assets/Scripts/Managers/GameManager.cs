@@ -10,19 +10,23 @@ public class GameManager : MonoBehaviour {
 
     public TextMeshProUGUI scoreText, strengthText, fuelText, timeText, recordText, energyLeft;
     [SerializeField] private GameObject gameOverTable, recordPointer, continueScreen, notEnoughDollarsScreen, shield, collector;
+
     [SerializeField] private AudioClip tap;
+    [SerializeField] private AudioClip switchClip;
+
     private int score, fuel, strength, maxHeals;
     private int reachRecord;
     private float startTime, currentTime;
-    private float cycleDuration = 5.0f;
+    private float cycleDuration = 150.0f;
     private int minutes, seconds;    
-    public float gameSpeed = 25.0f, maxGameSpeed = 150;
+    public float gameSpeed = 25.0f, maxGameSpeed = 150.0f;
 
     public bool isGameActive, isInvulnerable;
     private bool firstDeath = true;
 
     private GameObject harvesterModels;
     private Harvester harvester;
+
     private AudioSource effectsAudioSource;
 
 
@@ -280,7 +284,9 @@ public class GameManager : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        effectsAudioSource.Stop();
+        if(effectsAudioSource != null) {
+            effectsAudioSource.Stop();
+        }    
     }
 
     private IEnumerator Invulnerability() {
@@ -300,7 +306,7 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(ChangeTimeOfDay());
         yield return new WaitForSeconds(2.3f);       
         harvester.SwitchLights();
-        
+        SoundManager.instance.PlaySound(switchClip);
     }
 
     public void UseShield() {

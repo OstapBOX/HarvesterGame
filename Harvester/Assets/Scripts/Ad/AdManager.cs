@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class AdManager : MonoBehaviour {
 
-    private int adInterval = 60;
+    private int adInterval = 180;
 
     [SerializeField] private GameObject dollarsBtn;
     [SerializeField] private GameObject fuelBtn;

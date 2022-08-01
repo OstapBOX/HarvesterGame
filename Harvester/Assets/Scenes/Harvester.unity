@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241509a34be52a34c93f5d16052588e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchClip: {fileID: 0}
   environmentMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &110732941
 PrefabInstance:
@@ -7410,6 +7411,7 @@ MonoBehaviour:
   shield: {fileID: 919132149531178714}
   collector: {fileID: 713207920}
   tap: {fileID: 8300000, guid: c3cee050ccb6fa5449e535be28696802, type: 3}
+  switchClip: {fileID: 8300000, guid: 5b63597df6cb87b45987169e283ee4c8, type: 3}
   gameSpeed: 20
   maxGameSpeed: 70
   isGameActive: 0
@@ -11900,7 +11902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &522972866910061456
 CanvasRenderer:
   m_ObjectHideFlags: 0

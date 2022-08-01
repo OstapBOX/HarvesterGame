@@ -242,7 +242,7 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 		if (String.Equals(args.purchasedProduct.definition.id, smallCoinsPack, StringComparison.Ordinal)) {
 			Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
 
-			PlayerData.instance.ChangeCoinsAmount(1500);
+			PlayerData.instance.ChangeCoinsAmount(4000);
 			statisticBar.UpdateStatisticBar();
 			SoundManager.instance.PlaySound(successes);
 		}
@@ -263,7 +263,7 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 		else if (String.Equals(args.purchasedProduct.definition.id, largeCoinsPack, StringComparison.Ordinal)) {
 			Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
 
-			PlayerData.instance.ChangeCoinsAmount(3500);
+			PlayerData.instance.ChangeCoinsAmount(9500);
 			statisticBar.UpdateStatisticBar();
 			SoundManager.instance.PlaySound(successes);
 		}
@@ -284,7 +284,7 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 		else if (String.Equals(args.purchasedProduct.definition.id, resourcesPack, StringComparison.Ordinal)) {
 			Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
 
-			PlayerData.instance.ChangeCoinsAmount(3000);
+			PlayerData.instance.ChangeCoinsAmount(5000);
 			PlayerData.instance.ChangeDollarsAmount(40);
 			energyManager.ChangeEnergyAmount(25);
 
