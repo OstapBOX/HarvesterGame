@@ -136,7 +136,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1727688440250368
-    m_Localized: "\u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0444\u0435\u0440\u043C\u044B\n\u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044F"
+    m_Localized: "\u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0444\u0435\u0440\u043C\u044B
+      \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044F"
     m_Metadata:
       m_Items: []
   - m_Id: 1733766754304000

@@ -77,8 +77,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 99392313065472
-    m_Localized: You can use superpowers that will help you harvest more plants.
-      Each vehicle has its own cooldown.
+    m_Localized: "You can use superpowers that will help you harvest more plants.
+      \nEach vehicle has its own cooldown."
     m_Metadata:
       m_Items: []
   - m_Id: 108358812270592

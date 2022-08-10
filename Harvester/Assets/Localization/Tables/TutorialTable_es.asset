@@ -74,7 +74,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 99392313065472
-    m_Localized: "Puedes usar superpoderes para recolectar m\xE1s plantas.\r Cada
+    m_Localized: "Puedes usar superpoderes para recolectar m\xE1s plantas.\r \nCada
       veh\xEDculo tiene su propio tiempo de recarga."
     m_Metadata:
       m_Items: []

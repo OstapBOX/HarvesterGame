@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 99392313065472
     m_Localized: "Vous pouvez utiliser des super pouvoirs pour collecter plus de
-      plantes.\r Chaque v\xE9hicule a son propre temps de rechargement."
+      plantes.\r \nChaque v\xE9hicule a son propre temps de rechargement."
     m_Metadata:
       m_Items: []
   - m_Id: 108358812270592

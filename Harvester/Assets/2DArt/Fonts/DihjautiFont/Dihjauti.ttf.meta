@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6fa304d8f7d7e824a9407141a9d57515
+guid: 35e7e7aeec4ac234b9db9d491b94838f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Farm to Market Bold
+  - Dihjauti S
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
