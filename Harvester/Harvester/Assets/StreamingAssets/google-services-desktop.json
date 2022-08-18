@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "589961777152",
+    "project_id": "harvester-my-farm",
+    "storage_bucket": "harvester-my-farm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589961777152:android:86241bcc74e92dac4dc8e5",
+        "android_client_info": {
+          "package_name": "com.korobka.farm.tractor.harvest.HarvesterMyFarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589961777152-o1v0smdmu14aqg9naip9026a8eiskt6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.korobka.farm.tractor.harvest.HarvesterMyFarm",
+            "certificate_hash": "e2538f5ba0530ba16a254924d1269f3fbbd33c35"
+          }
+        },
+        {
+          "client_id": "589961777152-fd2qitud0q3sdddnjro0nr4gvonjff28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1PlsMdAUtXUcNQWbFbEW16oxNCxuqJm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589961777152-fd2qitud0q3sdddnjro0nr4gvonjff28.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "589961777152-i656efavb9v19gmk4mm6dansihkvi6al.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.korobka.farm.tractor.harvest.HarvesterMyFarm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
