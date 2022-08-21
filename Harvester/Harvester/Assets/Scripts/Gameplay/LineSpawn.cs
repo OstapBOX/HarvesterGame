@@ -1,6 +1,4 @@
-﻿ using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LineSpawn : MonoBehaviour {
     public GameObject[] obstaclePrefabObjects;
@@ -27,7 +25,7 @@ public class LineSpawn : MonoBehaviour {
     private const float gardenCornerLengthOffset = 2.0f,
                         gardenCornerWidthOffset = 4.1f,
                         zBlocksSpawnPosition = 70.0f,
-                        zHousesSpawnOffset = 10.0f;
+    zHousesSpawnOffset = 10.0f;
 
     private float[] anglesRotation = { 90f, 180f, 270f };
 
@@ -132,17 +130,17 @@ public class LineSpawn : MonoBehaviour {
         for (int blockNumber = 0; blockNumber < objectsInLine; blockNumber++) {
 
             if (blockNumber == leftHousePosition || blockNumber == rightHousePosition) {
-                if (spawnLeftHouse()) {
-                    spawnHouse(blocksPosition[leftHousePosition], blockNumber, leftHouseOffset);
-                    leftHouseSpawned = 0;
-                }
-                leftHouseSpawned++;
+                //if (spawnLeftHouse()) {
+                //    spawnHouse(blocksPosition[leftHousePosition], blockNumber, leftHouseOffset);
+                //    leftHouseSpawned = 0;
+                //}
+                //leftHouseSpawned++;
 
-                if (spawnRightHouse()) {
-                    spawnHouse(blocksPosition[rightHousePosition], blockNumber, !leftHouseOffset);
-                    rightHouseSpawned = 0;
-                }
-                rightHouseSpawned++;
+                //if (spawnRightHouse()) {
+                //    spawnHouse(blocksPosition[rightHousePosition], blockNumber, !leftHouseOffset);
+                //    rightHouseSpawned = 0;
+                //}
+                //rightHouseSpawned++;
             }
 
             else if (blockNumber == leftGardenPosition || blockNumber == rightGardenPosition) {
@@ -284,33 +282,33 @@ public class LineSpawn : MonoBehaviour {
         return false;
     }
 
-    private bool spawnLeftHouse() {
-        houseSpawnAmountPeriod = Random.Range(minFrequenceHouseSpawn, maxFrequenceHouseSpawn);
-        if (leftHouseSpawned > houseSpawnAmountPeriod) {
-            return true;
-        }
-        return false;
-    }
+    //private bool spawnLeftHouse() {
+    //    houseSpawnAmountPeriod = Random.Range(minFrequenceHouseSpawn, maxFrequenceHouseSpawn);
+    //    if (leftHouseSpawned > houseSpawnAmountPeriod) {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
-    private bool spawnRightHouse() {
-        houseSpawnAmountPeriod = Random.Range(minFrequenceHouseSpawn, maxFrequenceHouseSpawn);
-        if (rightHouseSpawned > houseSpawnAmountPeriod) {
-            return true;
-        }
-        return false;
-    }
+    //private bool spawnRightHouse() {
+    //    houseSpawnAmountPeriod = Random.Range(minFrequenceHouseSpawn, maxFrequenceHouseSpawn);
+    //    if (rightHouseSpawned > houseSpawnAmountPeriod) {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
-    private void spawnHouse(Vector3 blocksPosition, int blockNumber, bool leftHouseOffset) {
-        int randomHouseObstacle = Random.Range(0, housePrefabObjects.Length);
-        int randomRotation = Random.Range(0, anglesRotation.Length);
-        float randomHouseOffsetX = Random.Range(10, 13);
+    //private void spawnHouse(Vector3 blocksPosition, int blockNumber, bool leftHouseOffset) {
+    //    int randomHouseObstacle = Random.Range(0, housePrefabObjects.Length);
+    //    int randomRotation = Random.Range(0, anglesRotation.Length);
+    //    float randomHouseOffsetX = Random.Range(10, 13);
 
-        if (leftHouseOffset) {
-            randomHouseOffsetX = -randomHouseOffsetX;
-        }
+    //    if (leftHouseOffset) {
+    //        randomHouseOffsetX = -randomHouseOffsetX;
+    //    }
 
-        Instantiate(housePrefabObjects[randomHouseObstacle], blocksPosition + new Vector3(randomHouseOffsetX, (housePrefabObjects[randomHouseObstacle].transform.position.y), zHousesSpawnOffset), Quaternion.Euler(0, anglesRotation[randomRotation], 0));
-    }
+    //    Instantiate(housePrefabObjects[randomHouseObstacle], blocksPosition + new Vector3(randomHouseOffsetX, (housePrefabObjects[randomHouseObstacle].transform.position.y), zHousesSpawnOffset), Quaternion.Euler(0, anglesRotation[randomRotation], 0));
+    //}
 
     private int PlantsType() {
         return 1 + PlayerPrefs.GetInt("CornBought", 0) +
@@ -320,7 +318,6 @@ public class LineSpawn : MonoBehaviour {
             PlayerPrefs.GetInt("SunflowerBought", 0) +
             PlayerPrefs.GetInt("PumpkinBought", 0);
     }
-
 }
 
 
