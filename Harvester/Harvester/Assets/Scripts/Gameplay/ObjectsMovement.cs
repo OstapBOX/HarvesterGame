@@ -11,7 +11,7 @@ public class ObjectsMovement : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();  
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (gameManager.isGameActive)
         {

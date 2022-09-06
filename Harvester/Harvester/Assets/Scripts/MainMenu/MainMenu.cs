@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Firebase.Analytics;
+using System;
+
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject notEnoughFuel;
@@ -10,6 +12,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioClip tap;
     [SerializeField] private GameObject playForDollar;
     [SerializeField] private GameObject menuButtons;
+    [SerializeField] private PowerUpsAmount powerUpsAmount;
+    [SerializeField] private GameObject languageMenu;
 
     //Add
     //private InterAd interAd;
@@ -19,6 +23,20 @@ public class MainMenu : MonoBehaviour
         //interAd = GetComponent<InterAd>();
         //interAd.RequestAndLoadInterstitialAd();
         //interAd.ShowAd();
+
+        if (PlayerPrefs.GetInt("FirstSession", 0) == 0) {
+            
+            languageMenu.SetActive(true);
+            PlayerPrefs.SetInt("TutorialShowed", 1);
+            PlayerPrefs.SetInt("FirstSession", 1);
+            energyManager.ChangeEnergyAmount(10);
+            energyManager.UpdateTimerForSkip();
+            PlayerData.instance.ChangeSpeedUpAmount(5);
+            PlayerData.instance.ChangeCultivatorAmount(5);
+            PlayerData.instance.ChangeShieldAmount(5);
+            powerUpsAmount.UpdatePowerUpsAmount();
+            PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
+        }
     }
 
     public void PlayGame()

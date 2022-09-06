@@ -7,16 +7,16 @@ public class PlayerData : MonoBehaviour
 
     //Statistic
     private void Start() {
-        if(instance == null) {
+        if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        else if(instance != null && instance != this) {
+        else if (instance != null && instance != this) {
             Destroy(this.gameObject);
         }
 
         Vibration.Init();
-        PlayerPrefs.SetInt("SessionsAmont", PlayerPrefs.GetInt("SessionsAmont", 0) + 1);       
+        PlayerPrefs.SetInt("SessionsAmont", PlayerPrefs.GetInt("SessionsAmont", 0) + 1);
     }
     
     public void UpdateStatisticGamesPlayed() {
@@ -90,11 +90,13 @@ public class PlayerData : MonoBehaviour
     public void ChangeCoinsAmount(int amount) {
         PlayerPrefs.SetInt("CoinsAmount", PlayerPrefs.GetInt("CoinsAmount", 0) + amount);
         FirebaseAnalytics.LogEvent("coins_transaction");
+        GAManager.instance.CoinsSpent(amount);
     }
 
     public void ChangeDollarsAmount(int amount) {
         PlayerPrefs.SetInt("DollarsAmount", PlayerPrefs.GetInt("DollarsAmount", 0) + amount);
         FirebaseAnalytics.LogEvent("dollars_transaction");
+        GAManager.instance.DollarsSpent(amount);
     }
 
     public int GetCoinsAmount() {

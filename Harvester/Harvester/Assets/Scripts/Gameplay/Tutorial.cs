@@ -102,6 +102,7 @@ public class Tutorial : MonoBehaviour {
                 else if (harvesterControll.currentLine == 1) {
                     harvesterControll.ChangeLine(-1);
                     FirebaseAnalytics.LogEvent("tutorial_swipe_right");
+                    GAManager.instance.TutorialSwipeRight();
                 }
             }
             if (!swipedLeft && swipedRight) {
@@ -117,12 +118,14 @@ public class Tutorial : MonoBehaviour {
                 else if (harvesterControll.currentLine == -2) {
                     harvesterControll.ChangeLine(1);
                     FirebaseAnalytics.LogEvent("tutorial_swipe_left");
+                    GAManager.instance.TutorialSwipeLeft();
                 }
             }
 
             if (showPowerUps && !showedDash) {
                 if (PlayerData.instance.GetSpeedUpAmount() == 0) {
                     FirebaseAnalytics.LogEvent("tutorial_dash_used");
+                    GAManager.instance.TutorialUsedDash();
                     gameManager.gameSpeed = 25;
                     blackPanel.SetActive(false);
                     invisiblePanel.SetActive(true);
@@ -140,6 +143,7 @@ public class Tutorial : MonoBehaviour {
             if (showPowerUps && showedDash && !showedShield) {
                 if (PlayerData.instance.GetShieldAmount() == 0) {
                     FirebaseAnalytics.LogEvent("tutorial_shield_used");
+                    GAManager.instance.TutorialUsedShield();
                     gameManager.gameSpeed = 25;
                     blackPanel.SetActive(false);
                     invisiblePanel.SetActive(true);
@@ -157,6 +161,7 @@ public class Tutorial : MonoBehaviour {
             if (showPowerUps && showedDash && showedShield && !showedCultivator) {
                 if (PlayerData.instance.GetCultivatorAmount() == 0) {
                     FirebaseAnalytics.LogEvent("tutorial_cultivator_used");
+                    GAManager.instance.TutorialUsedCultivator();
                     gameManager.gameSpeed = 25;
                     blackPanel.SetActive(false);
                     invisiblePanel.SetActive(true);
@@ -214,6 +219,7 @@ public class Tutorial : MonoBehaviour {
         if (storage != null) {
             storage.BuyWheat();
             FirebaseAnalytics.LogEvent("tutorial_bought_wheat");
+            GAManager.instance.TutorialBoughtWheat();
         }
     }
 
@@ -222,6 +228,8 @@ public class Tutorial : MonoBehaviour {
         wheatFrame.SetActive(false);
         backToMenuButton.SetActive(true);
         FirebaseAnalytics.LogEvent("tutorial_selled_wheat");
+        GAManager.instance.TutorialSelledWheat();
+
     }
 
     public void LoadStorage() {
@@ -369,6 +377,7 @@ public class Tutorial : MonoBehaviour {
             scorePointer.SetActive(true);
             pointerNumb++;
             FirebaseAnalytics.LogEvent("fuel_pointer_showed");
+            GAManager.instance.TutorialFuelpPointerShowed();
         }
         else {
             Destroy(interfaceGroup);
@@ -393,6 +402,7 @@ public class Tutorial : MonoBehaviour {
             energyHolder.SetActive(true);
             pointerMenuNumb++;
             FirebaseAnalytics.LogEvent("energy_pointer_showed");
+            GAManager.instance.TutorialEnergyPointerShowed();
         }
         else if (pointerMenuNumb == 2) {
             Destroy(energyHolder);
@@ -404,6 +414,7 @@ public class Tutorial : MonoBehaviour {
         else {
             PlayerPrefs.SetInt("TutorialShowed", 1);
             FirebaseAnalytics.LogEvent("tutorial_compleate");
+            GAManager.instance.TutorialCompleate();
             mainMenu.ShowMenuButtons();
             Destroy(this.gameObject);
         }
@@ -448,6 +459,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         FirebaseAnalytics.LogEvent("tutorial_skip");
+        GAManager.instance.TutorialSkip();
 
         mainMenu.ShowMenuButtons();
         Destroy(this.gameObject);

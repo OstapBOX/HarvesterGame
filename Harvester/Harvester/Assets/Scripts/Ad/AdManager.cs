@@ -46,9 +46,6 @@ public class AdManager : MonoBehaviour {
                 dollarsBtn.SetActive(true);
             }
         }
-        else {
-            Debug.Log("Not interval");
-        }
     }
 
     private DateTime StringToDate(string date) {

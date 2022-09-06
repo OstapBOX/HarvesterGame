@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     private int score, fuel, strength, maxHeals;
     private int reachRecord;
     private float startTime, currentTime;
-    private float cycleDuration = 150.0f;
+    private float cycleDuration = 30.0f;
     private int minutes, seconds;    
     public float gameSpeed = 25.0f, maxGameSpeed = 150.0f;
 
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour {
         if (fuel > 100)
             fuel = 100;
 
-        fuelText.text = fuel + "%";
+        fuelText.text = fuel.ToString();
     }
 
     public void ContinueGame() {
@@ -200,6 +200,7 @@ public class GameManager : MonoBehaviour {
         if (PlayerData.instance.GetDollarsAmount() > 0) {
             PlayerData.instance.ChangeDollarsAmount(-1);
             FirebaseAnalytics.LogEvent("player_dollar_respawn");
+            GAManager.instance.DollarRespawn();
             Respawn();
         }
         else {
@@ -243,6 +244,7 @@ public class GameManager : MonoBehaviour {
             energyManager.UseEnergy();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             FirebaseAnalytics.LogEvent("player_restart_game");
+            GAManager.instance.RestartGame();
         }
         else {
             notEnoughFuel.SetActive(true);
@@ -312,16 +314,20 @@ public class GameManager : MonoBehaviour {
     public void UseShield() {
         StartCoroutine(Shield());
         FirebaseAnalytics.LogEvent("player_used_shield");
+        GAManager.instance.PlayerUsedShield();
     }
 
     public void UseCollector() {
         StartCoroutine(Collector());
         FirebaseAnalytics.LogEvent("player_used_cultivator");
+        GAManager.instance.PlayerUsedCultivator();
+
     }
 
     public void DashInvulnerability() {
         StartCoroutine(DashInvulnerabilityCo());
         FirebaseAnalytics.LogEvent("player_used_dash");
+        GAManager.instance.PlayerUsedDash();
     }
 
     private IEnumerator Collector() {

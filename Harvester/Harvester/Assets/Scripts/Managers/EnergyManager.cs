@@ -20,9 +20,9 @@ public class EnergyManager : MonoBehaviour {
     private int restoreDuration = 540;
     private bool restoring = false;
 
-    void Awake() { 
+    void Awake() {
         Load();
-        StartCoroutine(RestoreRoutine());
+        StartCoroutine(RestoreRoutine());   
     }
 
     public void UseEnergy() {

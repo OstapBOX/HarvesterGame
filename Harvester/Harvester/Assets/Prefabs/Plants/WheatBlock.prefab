@@ -123,8 +123,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310208794699245237}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: -0.02876, y: -4.8399, z: 0.078755}
+  m_LocalScale: {x: 6.1107244, y: 6.1107244, z: 6.1107244}
   m_Children: []
   m_Father: {fileID: 3163097734989379216}
   m_RootOrder: 0
@@ -157,7 +157,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 87ff71ffc286b91449d2296928632aed, type: 2}
-  - {fileID: 2100000, guid: d07dc9a550022a74792d211f343e0b16, type: 2}
+  - {fileID: 2100000, guid: 3193cf6cf65b8a748b1a843c78e6c26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,7 +190,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7741637, y: 1.9087417, z: 0.35762954}
+  m_Size: {x: 0.4, y: 1.9087417, z: 0.4}
   m_Center: {x: 0.013625294, y: 0.9489678, z: -0.037306204}
 --- !u!114 &1295421663039328116
 MonoBehaviour:
@@ -204,7 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86ef471e1ea03b47b62da65792b6c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collideSound: {fileID: 8300000, guid: e56f36a6a65727242b59d3516e9b8d59, type: 3}
 --- !u!1 &8390638487740289616
 GameObject:
   m_ObjectHideFlags: 0
