@@ -8,6 +8,6 @@ public class GroundColor : MonoBehaviour
     
     void Start()
     {
-        this.gameObject.GetComponent<MeshRenderer>().material = groundMaterials[Random.Range(0, groundMaterials.Length)];
+       this.gameObject.GetComponent<MeshRenderer>().material = groundMaterials[Random.Range(0, groundMaterials.Length)];
     }
 }

@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using AppodealStack.Monetization.Api;
+using AppodealStack.Monetization.Common;
 
-public class IAPManager : Singleton<IAPManager>, IStoreListener {
+public class IAPManager : Singleton<IAPManager>, IStoreListener, IInAppPurchaseValidationListener {
 	private static IStoreController m_StoreController;
 	private static IExtensionProvider m_StoreExtensionProvider;
 
@@ -161,10 +163,32 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 				// ... look up the Product reference with the general product identifier and the Purchasing system's products collection.
 				Product product = m_StoreController.products.WithID(productId);
 
-				// If the look up found a product for this device's store and that product is ready to be sold ... 
-				if (product != null && product.availableToPurchase) {
-					Debug.Log(string.Format("Purchasing product asychronously: '{0}' - '{1}'", product.definition.id, product.definition.storeSpecificId));// ... buy the product. Expect a response either through ProcessPurchase or OnPurchaseFailed asynchronously.
-					m_StoreController.InitiatePurchase(product);
+                // If the look up found a product for this device's store and that product is ready to be sold ... 
+                if (product != null && product.availableToPurchase) {
+                    Debug.Log(string.Format("Purchasing product asychronously: '{0}' - '{1}'", product.definition.id, product.definition.storeSpecificId));// ... buy the product. Expect a response either through ProcessPurchase or OnPurchaseFailed asynchronously.
+                    m_StoreController.InitiatePurchase(product);
+
+#if UNITY_ANDROID
+					var purchase = new PlayStoreInAppPurchase.Builder(PlayStorePurchaseType.InApp)
+						.WithCurrency("USD")
+						.WithOrderId(product.definition.id)
+						.WithPrice(GetProductePriceFromStore(product.definition.id))
+						.Build();
+
+					Appodeal.ValidatePlayStoreInAppPurchase(purchase, this);
+#elif UNITY_IOS
+            var additionalParams = new Dictionary<string, string> { { "key1", "value1" }, { "key2", "value2" } };
+
+            var purchase = new AppStoreInAppPurchase.Builder(AppStorePurchaseType.Consumable)
+                .WithAdditionalParameters(additionalParams)
+                .WithTransactionId("transactionId")
+                .WithProductId("productId")
+                .WithCurrency("USD")
+                .WithPrice("2.89")
+                .Build();
+
+            Appodeal.ValidateAppStoreInAppPurchase(purchase, this);
+#endif
 				}
 				// Otherwise ...
 				else {
@@ -363,5 +387,13 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 	public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason) {
 		// A product purchase attempt did not succeed. Check failureReason for more detail. Consider sharing this reason with the user.
 		Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
+	}
+
+    public void OnInAppPurchaseValidationSucceeded(string json) {
+		Debug.Log("AppodealPurchaseValidationSucceeded");
+    }
+
+    public void OnInAppPurchaseValidationFailed(string json) {
+		Debug.Log("AppodealPurchaseValidationFailed");
 	}
 }
