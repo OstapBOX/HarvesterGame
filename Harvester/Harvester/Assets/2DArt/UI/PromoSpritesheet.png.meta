@@ -276,7 +276,7 @@ TextureImporter:
       213: 2733324027493012935
     second: PromoSpritesheet_90
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -293,10 +293,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -335,6 +337,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -346,6 +350,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -358,6 +363,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -370,6 +376,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -382,6 +389,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2308,9 +2329,100 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PromoSpritesheet_0: -6513186903265881488
+      PromoSpritesheet_1: 5344602819908134641
+      PromoSpritesheet_10: 7364992182489107152
+      PromoSpritesheet_11: 3356923770967303469
+      PromoSpritesheet_12: -5860799653060065195
+      PromoSpritesheet_13: 5137718523773182732
+      PromoSpritesheet_14: 5280764014736014862
+      PromoSpritesheet_15: 475408187750475151
+      PromoSpritesheet_16: -3645448872869070985
+      PromoSpritesheet_17: 7987988367911704143
+      PromoSpritesheet_18: 2922153988362580536
+      PromoSpritesheet_19: -6979333407181184820
+      PromoSpritesheet_2: -8352341460120246777
+      PromoSpritesheet_20: -3949256440882580419
+      PromoSpritesheet_21: 4415032091252990259
+      PromoSpritesheet_22: -5429806116804931624
+      PromoSpritesheet_23: -1113453222041889012
+      PromoSpritesheet_24: -2672653209727405896
+      PromoSpritesheet_25: 1295922463134448688
+      PromoSpritesheet_26: 892497191366969773
+      PromoSpritesheet_27: -505700205611354343
+      PromoSpritesheet_28: -283011551536619918
+      PromoSpritesheet_29: -1847296400758425358
+      PromoSpritesheet_3: 1784866261583244849
+      PromoSpritesheet_30: 953303743835851801
+      PromoSpritesheet_31: -3191677125562492451
+      PromoSpritesheet_32: -5192528987451052131
+      PromoSpritesheet_33: -6125594147410432414
+      PromoSpritesheet_34: -7240372673592660352
+      PromoSpritesheet_35: 241310542802760149
+      PromoSpritesheet_36: 441573336130555836
+      PromoSpritesheet_37: -2021874056252663623
+      PromoSpritesheet_38: 15969840581115188
+      PromoSpritesheet_39: 5730357123902827545
+      PromoSpritesheet_4: 7916747371594908457
+      PromoSpritesheet_40: 7932778068799249182
+      PromoSpritesheet_41: 3310143087756199405
+      PromoSpritesheet_42: 7553987672952884253
+      PromoSpritesheet_43: -7260717473475364759
+      PromoSpritesheet_44: -5092317398309480630
+      PromoSpritesheet_45: 6472361826764920025
+      PromoSpritesheet_46: 554471432990525820
+      PromoSpritesheet_47: 1881841507192724687
+      PromoSpritesheet_48: -6453875370569821256
+      PromoSpritesheet_49: -7478347608902821153
+      PromoSpritesheet_5: -3293411689002418371
+      PromoSpritesheet_50: -8676177210071201659
+      PromoSpritesheet_51: -7850621794428726875
+      PromoSpritesheet_52: 8972382460897805611
+      PromoSpritesheet_53: -6090592700883427164
+      PromoSpritesheet_54: -9000664808740665602
+      PromoSpritesheet_55: 9195144996715924347
+      PromoSpritesheet_56: -6194687911950816783
+      PromoSpritesheet_57: -550867726016125725
+      PromoSpritesheet_58: -8416801766958595526
+      PromoSpritesheet_59: 5337608062670839550
+      PromoSpritesheet_6: -1345686751488488827
+      PromoSpritesheet_60: -8765268496098459423
+      PromoSpritesheet_61: 8902842259623358653
+      PromoSpritesheet_62: -471148706292696585
+      PromoSpritesheet_63: 4903030280429018934
+      PromoSpritesheet_64: 4435147827966856651
+      PromoSpritesheet_65: 8494422029284638602
+      PromoSpritesheet_66: -3244649505375243003
+      PromoSpritesheet_67: -3219096552434273661
+      PromoSpritesheet_68: -1397537317738462784
+      PromoSpritesheet_69: 726553299087872846
+      PromoSpritesheet_7: -2968027045424820542
+      PromoSpritesheet_70: 2483652276891257601
+      PromoSpritesheet_71: -3204464759290689327
+      PromoSpritesheet_72: 2854254909869311258
+      PromoSpritesheet_73: -4261442192403868534
+      PromoSpritesheet_74: -9177920892535447268
+      PromoSpritesheet_75: 8624544573492729946
+      PromoSpritesheet_76: -7904711402182381642
+      PromoSpritesheet_77: 4772842697281621470
+      PromoSpritesheet_78: 2997464751388046024
+      PromoSpritesheet_79: 8224299330231807317
+      PromoSpritesheet_8: -2083619216647343552
+      PromoSpritesheet_80: -5160081810844793917
+      PromoSpritesheet_81: 8462912779423019612
+      PromoSpritesheet_82: -4477607778117285384
+      PromoSpritesheet_83: 1375503628943804708
+      PromoSpritesheet_84: 6398364065340628663
+      PromoSpritesheet_85: -6615752913512177722
+      PromoSpritesheet_86: 527103509535381712
+      PromoSpritesheet_87: -8765823632701363615
+      PromoSpritesheet_88: -2096002553158848145
+      PromoSpritesheet_89: 3829903746539009668
+      PromoSpritesheet_9: 2070684544838660322
+      PromoSpritesheet_90: 2733324027493012935
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

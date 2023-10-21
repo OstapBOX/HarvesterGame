@@ -396,4 +396,8 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener, IInAppPurchaseV
     public void OnInAppPurchaseValidationFailed(string json) {
 		Debug.Log("AppodealPurchaseValidationFailed");
 	}
+
+    public void OnInitializeFailed(InitializationFailureReason error, string message) {
+        throw new NotImplementedException();
+    }
 }

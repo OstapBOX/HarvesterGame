@@ -9,7 +9,7 @@ using TMPro;
 
 public class AppodealAdManager : MonoBehaviour, IAppodealInitializationListener {
 
-    private string appKey = "a59208440d8e60453cfc5fda5f3c81583248fb01f37e6741";
+    private string appKey = "9d29e61b4e3d409b1ebdf3c986854f792557c22652266c0e";
 
     [SerializeField] private TextMeshProUGUI rewText;
 

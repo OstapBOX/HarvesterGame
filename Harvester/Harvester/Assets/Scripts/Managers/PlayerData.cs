@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour
   public static PlayerData instance { get; private set; }
 
     //Statistic
-    private void Start() {
+    private void Awake() {
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
