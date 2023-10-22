@@ -1,5 +1,5 @@
 using UnityEngine;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System;
 using Firebase.Analytics;
 using AppodealStack.Monetization.Api;
@@ -9,13 +9,13 @@ public class RewAd : MonoBehaviour, IRewardedVideoAdListener {
     //Real id ca-app-pub-4018757636499144/4918268035
     //Test id ca-app-pub-3940256099942544/5224354917
 
-    private RewardedAd rewardedDollarsAd;
-    private RewardedAd rewardedFuelAd;
-    private RewardedAd rewardedDashAd;
-    private RewardedAd rewardedShieldAd;
-    private RewardedAd rewardedCultivatorAd;
-    private RewardedAd rewardedRespawnAd;
-    private RewardedAd rewardedDoubleScore;
+    //private RewardedAd rewardedDollarsAd;
+    //private RewardedAd rewardedFuelAd;
+    //private RewardedAd rewardedDashAd;
+    //private RewardedAd rewardedShieldAd;
+    //private RewardedAd rewardedCultivatorAd;
+    //private RewardedAd rewardedRespawnAd;
+    //private RewardedAd rewardedDoubleScore;
 
 
     [SerializeField] private EnergyManager energyManager;

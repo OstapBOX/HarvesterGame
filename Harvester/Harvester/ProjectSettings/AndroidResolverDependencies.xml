@@ -1,8 +1,6 @@
 <dependencies>
   <packages>
     <package>androidx.core:core:1.7.0</package>
-    <package>androidx.lifecycle:lifecycle-common-java8:2.4.1</package>
-    <package>androidx.lifecycle:lifecycle-process:2.4.1</package>
     <package>com.adcolony:sdk:4.8.0</package>
     <package>com.adjust.sdk:adjust-android:4.30.1</package>
     <package>com.android.installreferrer:installreferrer:2.2</package>
@@ -43,15 +41,15 @@
     <package>com.google.android.gms:play-services-ads:21.0.0</package>
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
     <package>com.google.android.gms:play-services-appset:16.0.2</package>
-    <package>com.google.android.gms:play-services-base:17.6.0</package>
     <package>com.google.android.gms:play-services-base:18.0.1</package>
+    <package>com.google.android.gms:play-services-base:18.2.0</package>
     <package>com.google.android.gms:play-services-basement:18.0.0</package>
     <package>com.google.android.instantapps:instantapps:1.1.0</package>
-    <package>com.google.firebase:firebase-analytics:19.0.0</package>
+    <package>com.google.firebase:firebase-analytics:21.3.0</package>
     <package>com.google.firebase:firebase-analytics-ktx:21.0.0</package>
-    <package>com.google.firebase:firebase-analytics-unity:8.4.0</package>
-    <package>com.google.firebase:firebase-app-unity:8.4.0</package>
-    <package>com.google.firebase:firebase-common:20.0.0</package>
+    <package>com.google.firebase:firebase-analytics-unity:11.6.0</package>
+    <package>com.google.firebase:firebase-app-unity:11.6.0</package>
+    <package>com.google.firebase:firebase-common:20.3.3</package>
     <package>com.google.firebase:firebase-config-ktx:21.1.0</package>
     <package>com.ironsource.sdk:mediationsdk:7.2.2.1</package>
     <package>com.my.target:mytarget-sdk:5.15.2</package>
@@ -72,10 +70,10 @@
     <package>org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0</package>
   </packages>
   <files>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/8.4.0/firebase-analytics-unity-8.4.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/8.4.0/firebase-analytics-unity-8.4.0.pom</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/8.4.0/firebase-app-unity-8.4.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/8.4.0/firebase-app-unity-8.4.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.6.0/firebase-analytics-unity-11.6.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.6.0/firebase-analytics-unity-11.6.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.6.0/firebase-app-unity-11.6.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.6.0/firebase-app-unity-11.6.0.pom</file>
   </files>
   <settings>
     <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
@@ -90,6 +88,8 @@
     <setting name="patchAndroidManifest" value="True" />
     <setting name="patchMainTemplateGradle" value="True" />
     <setting name="projectExportEnabled" value="False" />
+    <setting name="useFullCustomMavenRepoPathWhenExport" value="True" />
+    <setting name="useFullCustomMavenRepoPathWhenNotExport" value="False" />
     <setting name="useJetifier" value="True" />
   </settings>
 </dependencies>

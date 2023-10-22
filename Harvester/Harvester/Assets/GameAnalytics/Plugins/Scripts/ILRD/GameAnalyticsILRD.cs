@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-namespace GameAnalyticsSDK
-{
-    public class GameAnalyticsILRD
-    {
+namespace GameAnalyticsSDK {
+    public class GameAnalyticsILRD {
         // --------- ANDROID NATIVE METHODS ---------
 #if (UNITY_ANDROID) && !(UNITY_EDITOR)
         private static readonly AndroidJavaClass GA = new AndroidJavaClass("com.gameanalytics.sdk.GameAnalytics");
@@ -317,8 +315,7 @@ namespace GameAnalyticsSDK
 #endif
 
         // ----------------------- MOPUB AD IMPRESSIONS ---------------------- //
-        public static void SubscribeMoPubImpressions()
-        {
+        public static void SubscribeMoPubImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeMoPubImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -327,8 +324,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- FYBER AD IMPRESSIONS ---------------------- //
-        public static void SubscribeFyberImpressions()
-        {
+        public static void SubscribeFyberImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeFyberImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -337,8 +333,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- IRON SOURCE AD IMPRESSIONS ---------------------- //
-        public static void SubscribeIronSourceImpressions()
-        {
+        public static void SubscribeIronSourceImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeIronSourceImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -347,8 +342,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- TOPON AD IMPRESSIONS ---------------------- //
-        public static void SubscribeTopOnImpressions()
-        {
+        public static void SubscribeTopOnImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeTopOnImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -357,8 +351,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- MAX AD IMPRESSIONS ---------------------- //
-        public static void SubscribeMaxImpressions()
-        {
+        public static void SubscribeMaxImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeMaxImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -367,8 +360,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- AEQUUS AD IMPRESSIONS ---------------------- //
-        public static void SubscribeAequusImpressions()
-        {
+        public static void SubscribeAequusImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeAequusImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -377,8 +369,7 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- HYPERBID AD IMPRESSIONS ---------------------- //
-        public static void SubscribeHyperBidImpressions()
-        {
+        public static void SubscribeHyperBidImpressions() {
 #if UNITY_EDITOR
             Debug.Log("subscribeHyperBidImpressions()");
 #elif UNITY_IOS || UNITY_ANDROID
@@ -387,42 +378,43 @@ namespace GameAnalyticsSDK
         }
 
         // ----------------------- ADMOB AD IMPRESSIONS ---------------------- //
-#if gameanalytics_admob_enabled
-        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.BannerView bannerView)
-        {
-#if UNITY_EDITOR
-            Debug.Log("subscribeAdMobImpressions(adUnitId, bannerView)");
-#elif UNITY_IOS || UNITY_ANDROID
-            subscribeAdMobImpressions(adUnitId, bannerView);
-#endif
-        }
+        //#if gameanalytics_admob_enabled
+        //        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.BannerView bannerView)
+        //        {
+        //#if UNITY_EDITOR
+        //            Debug.Log("subscribeAdMobImpressions(adUnitId, bannerView)");
+        //#elif UNITY_IOS || UNITY_ANDROID
+        //            subscribeAdMobImpressions(adUnitId, bannerView);
+        //#endif
+        //        }
 
-        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.InterstitialAd interstitialAd)
-        {
-#if UNITY_EDITOR
-            Debug.Log("subscribeAdMobImpressions(adUnitId, interstitialAd)");
-#elif UNITY_IOS || UNITY_ANDROID
-            subscribeAdMobImpressions(adUnitId, interstitialAd);
-#endif
-        }
+        //        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.InterstitialAd interstitialAd)
+        //        {
+        //#if UNITY_EDITOR
+        //            Debug.Log("subscribeAdMobImpressions(adUnitId, interstitialAd)");
+        //#elif UNITY_IOS || UNITY_ANDROID
+        //            subscribeAdMobImpressions(adUnitId, interstitialAd);
+        //#endif
+        //        }
 
-        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.RewardedAd rewardedAd)
-        {
-#if UNITY_EDITOR
-            Debug.Log("subscribeAdMobImpressions(adUnitId, rewardedAd)");
-#elif UNITY_IOS || UNITY_ANDROID
-            subscribeAdMobImpressions(adUnitId, rewardedAd);
-#endif
-        }
+        //        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.RewardedAd rewardedAd)
+        //        {
+        //#if UNITY_EDITOR
+        //            Debug.Log("subscribeAdMobImpressions(adUnitId, rewardedAd)");
+        //#elif UNITY_IOS || UNITY_ANDROID
+        //            subscribeAdMobImpressions(adUnitId, rewardedAd);
+        //#endif
+        //        }
 
-        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.RewardedInterstitialAd rewardedInterstitialAd)
-        {
-#if UNITY_EDITOR
-            Debug.Log("subscribeAdMobImpressions(adUnitId, rewardedInterstitialAd)");
-#elif UNITY_IOS || UNITY_ANDROID
-            subscribeAdMobImpressions(adUnitId, rewardedInterstitialAd);
-#endif
-        }
-#endif
+        //        public static void SubscribeAdMobImpressions(string adUnitId, GoogleMobileAds.Api.RewardedInterstitialAd rewardedInterstitialAd)
+        //        {
+        //#if UNITY_EDITOR
+        //            Debug.Log("subscribeAdMobImpressions(adUnitId, rewardedInterstitialAd)");
+        //#elif UNITY_IOS || UNITY_ANDROID
+        //            subscribeAdMobImpressions(adUnitId, rewardedInterstitialAd);
+        //#endif
+        //        }
+        //#endif
+        //    }
     }
 }

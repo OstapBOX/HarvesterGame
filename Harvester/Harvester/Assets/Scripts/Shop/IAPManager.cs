@@ -364,4 +364,8 @@ public class IAPManager : Singleton<IAPManager>, IStoreListener {
 		// A product purchase attempt did not succeed. Check failureReason for more detail. Consider sharing this reason with the user.
 		Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
 	}
+
+    public void OnInitializeFailed(InitializationFailureReason error, string message) {
+        throw new NotImplementedException();
+    }
 }
