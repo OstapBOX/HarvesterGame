@@ -1,22 +1,10 @@
 using UnityEngine;
-//using GoogleMobileAds.Api;
 using System;
 using Firebase.Analytics;
-using AppodealStack.Monetization.Api;
-using AppodealStack.Monetization.Common;
+using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Common;
 
 public class RewAd : MonoBehaviour, IRewardedVideoAdListener {
-    //Real id ca-app-pub-4018757636499144/4918268035
-    //Test id ca-app-pub-3940256099942544/5224354917
-
-    //private RewardedAd rewardedDollarsAd;
-    //private RewardedAd rewardedFuelAd;
-    //private RewardedAd rewardedDashAd;
-    //private RewardedAd rewardedShieldAd;
-    //private RewardedAd rewardedCultivatorAd;
-    //private RewardedAd rewardedRespawnAd;
-    //private RewardedAd rewardedDoubleScore;
-
 
     [SerializeField] private EnergyManager energyManager;
     [SerializeField] private StatisticBar statisticBar;
@@ -36,302 +24,96 @@ public class RewAd : MonoBehaviour, IRewardedVideoAdListener {
     private int rewardIndex;
 
     private void Start() {
-        Appodeal.SetRewardedVideoCallbacks(this);
-        //if (adUnitId == null) {
-        //    adUnitId = GetAdId();
-        //}
-        //RequesAndLoadCurrentAd();
+        Appodeal.setRewardedVideoCallbacks(this);        
     }
-
-    private void OnLevelWasLoaded(int level) {
-        //if (adUnitId == null) {
-        //    adUnitId = GetAdId();
-        //}
-        //if (level == 0) {
-        //    RequesAndLoadCurrentAd();
-        //}
-        //if(level == 1) {
-        //    RequestAndLoadRespawnRewardedAd();
-        //    RequestAndLoadDoubleScoreRewardedAd();
-        //}
-
-    }
-
-    //Menu ad
-    public void RequestAndLoadDollarRewardedAd() {
-        //rewardedDollarsAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedDollarsAd.LoadAd(adRequest);
-
-        //rewardedDollarsAd.OnUserEarnedReward += (sender, args) => {
-        //    PlayerPrefs.SetInt("LastShowedAd", 0);
-        //    PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        //    PlayerData.instance.ChangeDollarsAmount(2);
-        //    statisticBar.UpdateStatisticBar();
-        //    dollarsBtn.SetActive(false);
-        //    FirebaseAnalytics.LogEvent("rew_dollar_showed");
-        //    GAManager.instance.ADRewDollarShowed();
-        //};
-    }
-
-    public void RequestAndLoadFuelRewardedAd() {
-        //rewardedFuelAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedFuelAd.LoadAd(adRequest);
-
-        //rewardedFuelAd.OnUserEarnedReward += (sender, args) => {
-        //    PlayerPrefs.SetInt("LastShowedAd", 1);
-        //    PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        //    energyManager.ChangeEnergyAmount(2);
-        //    statisticBar.UpdateStatisticBar();
-        //    fuelBtn.SetActive(false);
-        //    FirebaseAnalytics.LogEvent("rew_fuel_showed");
-        //    GAManager.instance.ADRewFuelShowed();
-        //};
-    }
-
-    public void RequestAndLoadDashRewardedAd() {
-        //rewardedDashAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedDashAd.LoadAd(adRequest);
-
-        //rewardedDashAd.OnUserEarnedReward += (sender, args) => {
-        //    PlayerPrefs.SetInt("LastShowedAd", 2);
-        //    PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        //    PlayerData.instance.ChangeSpeedUpAmount(3);
-        //    powerUpsAmount.UpdatePowerUpsAmount();
-        //    dashBtn.SetActive(false);
-        //    FirebaseAnalytics.LogEvent("rew_dash_showed");
-        //    GAManager.instance.ADRewDashShowed();
-        //};
-    }
-
-    public void RequestAndLoadShieldRewardedAd() {
-        //rewardedShieldAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedShieldAd.LoadAd(adRequest);
-
-        //rewardedShieldAd.OnUserEarnedReward += (sender, args) => {
-        //    PlayerPrefs.SetInt("LastShowedAd", 3);
-        //    PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        //    PlayerData.instance.ChangeShieldAmount(2);
-        //    powerUpsAmount.UpdatePowerUpsAmount();
-        //    shieldBtn.SetActive(false);
-        //    FirebaseAnalytics.LogEvent("rew_shield_showed");
-        //    GAManager.instance.ADRewShieldShowed();
-        //};
-    }
-
-    public void RequestAndLoadCultivatorRewardedAd() {
-        //rewardedCultivatorAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedCultivatorAd.LoadAd(adRequest);
-
-        //rewardedCultivatorAd.OnUserEarnedReward += (sender, args) => {
-        //    PlayerPrefs.SetInt("LastShowedAd", 4);
-        //    PlayerPrefs.SetString("LastShowedTime", DateTime.Now.ToString());
-        //    PlayerData.instance.ChangeCultivatorAmount(1);
-        //    powerUpsAmount.UpdatePowerUpsAmount();
-        //    cultivatorBtn.SetActive(false);
-        //    FirebaseAnalytics.LogEvent("rew_cultivator_showed");
-        //    GAManager.instance.ADRewCultivatorShowed();
-        //};
-    }
+ 
 
     public void ShowDollarRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "dollarAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "dollarAd");
+       
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "dollarAd");
             rewardIndex = 1;
         }
 
-        //if (!rewardedDollarsAd.IsLoaded()) {
-        //    RequestAndLoadDollarRewardedAd();
-        //    rewardedDollarsAd.Show();
-        //}
-        //else {
-        //    rewardedDollarsAd.Show();
-        //}
     }
 
-    public void ShowFuelRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "fuelAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "fuelAd");
+    public void ShowFuelRewardedAd() {       
+
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "fuelAd");
             rewardIndex = 2;
         }
-
-        //if (!rewardedFuelAd.IsLoaded()) {
-        //    RequestAndLoadFuelRewardedAd();
-        //    rewardedFuelAd.Show();
-        //}
-        //else {
-        //    rewardedFuelAd.Show();
-        //}
     }
 
-    public void ShowDashRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "dashAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "dashAd");
+    public void ShowDashRewardedAd() {        
+
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "dashAd");
             rewardIndex = 3;
         }
 
-        //if (!rewardedDashAd.IsLoaded()) {
-        //    RequestAndLoadDashRewardedAd();
-        //    rewardedDashAd.Show();
-        //}
-        //else {
-        //    rewardedDashAd.Show();
-        //}
     }
 
     public void ShowShieldRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "shieldAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "shieldAd");
+
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "shieldAd");
             rewardIndex = 4;
         }
 
-        //if (!rewardedShieldAd.IsLoaded()) {
-        //    RequestAndLoadShieldRewardedAd();
-        //    rewardedShieldAd.Show();
-        //}
-        //else {
-        //    rewardedShieldAd.Show();
-        //}
     }
 
-    public void ShowCultivatorRewardedAd() {
+    public void ShowCultivatorRewardedAd() {       
 
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "cultivatorAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "cultivatorAd");
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "cultivatorAd");
             rewardIndex = 5;
         }
-
-        //if (!rewardedCultivatorAd.IsLoaded()) {
-        //    RequestAndLoadCultivatorRewardedAd();
-        //    rewardedCultivatorAd.Show();
-        //}
-        //else {
-        //    rewardedCultivatorAd.Show();
-        //}
     }
-
-    //private void RequesAndLoadCurrentAd() {
-    //    if (PlayerPrefs.GetInt("LastShowedAd", 4) == 0 && rewardedFuelAd == null) {
-    //        RequestAndLoadFuelRewardedAd();
-    //    }
-    //    else if (PlayerPrefs.GetInt("LastShowedAd", 4) == 1 && rewardedDashAd == null) {
-    //        RequestAndLoadDashRewardedAd();
-    //    }
-    //    else if (PlayerPrefs.GetInt("LastShowedAd", 4) == 2 && rewardedShieldAd == null) {
-    //        RequestAndLoadShieldRewardedAd();
-    //    }
-    //    else if (PlayerPrefs.GetInt("LastShowedAd", 4) == 3 && rewardedCultivatorAd == null) {
-    //        RequestAndLoadCultivatorRewardedAd();
-    //    }
-    //    else if (PlayerPrefs.GetInt("LastShowedAd", 4) == 4 && rewardedDollarsAd == null) {
-    //        RequestAndLoadDollarRewardedAd();
-    //    }
-    //}
 
     //Game ad
     public void RequestAndLoadRespawnRewardedAd() {
 
-        //rewardedRespawnAd = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedRespawnAd.LoadAd(adRequest);
-
-        //rewardedRespawnAd.OnUserEarnedReward += (sender, args) => {
-        //    gameManager.Respawn();
-        //    FirebaseAnalytics.LogEvent("player_video_respawn");
-        //    GAManager.instance.ADRewRespawnShowed();
-        //};
     }
 
     public void RequestAndLoadDoubleScoreRewardedAd() {
 
-
-        //rewardedDoubleScore = new RewardedAd(adUnitId);
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //rewardedDoubleScore.LoadAd(adRequest);
-
-        //rewardedDoubleScore.OnUserEarnedReward += (sender, args) => {
-        //    gameManager.DoubleReward();
-        //    gameManager.BackToMenu();
-        //    FirebaseAnalytics.LogEvent("rew_double_reward");
-        //    GAManager.instance.ADRewDoubleRewShowed();
-        //};
     }
 
     public void ShowRespawnRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "respawnAd")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "respawnAd");
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "respawnAd");
             rewardIndex = 6;
         }
-        //if (!rewardedRespawnAd.IsLoaded()) {
-        //    RequestAndLoadShieldRewardedAd();
-        //    rewardedRespawnAd.Show();
-        //}
-        //else {
-        //    rewardedRespawnAd.Show();
-        //}
+
     }
 
     public void ShowDoubleScoreRewardedAd() {
-        if (Appodeal.CanShow(AppodealAdType.RewardedVideo, "doubleReward")) {
-            Appodeal.Show(AppodealShowStyle.RewardedVideo, "doubleReward");
+      
+        if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO)) {
+            Appodeal.show(Appodeal.REWARDED_VIDEO, "doubleReward");
             rewardIndex = 7;
         }
-        //if (!rewardedDoubleScore.IsLoaded()) {
-        //    RequestAndLoadCultivatorRewardedAd();
-        //    rewardedDoubleScore.Show();
-        //}
-        //else {
-        //    rewardedDoubleScore.Show();
-
-        //}
     }
 
-    //public string GetAdId() {
-    //    string adUnitId;
-    //    if (Application.platform == RuntimePlatform.Android) {
-    //        if (Debug.isDebugBuild) {
-    //            adUnitId = "ca-app-pub-3940256099942544/5224354917";
-    //        }
-    //        else {
-    //            adUnitId = "ca-app-pub-4018757636499144/4918268035";
-    //        }
-    //    }
-    //    else if (Application.platform == RuntimePlatform.IPhonePlayer) {
-    //        if (Debug.isDebugBuild) {
-    //            adUnitId = "ca-app-pub-3940256099942544/1712485313";
-    //        }
-    //        else {
-    //            adUnitId = "real-id-ios";
-    //        }
-    //    }
-    //    else {
-    //        adUnitId = "unexpected_platform";
-    //    }
 
-    //    return adUnitId;
-    //}
-
-    public void OnRewardedVideoLoaded(bool isPrecache) {
-        Debug.Log("On Rewarded Video Loaded");
+    public void onRewardedVideoLoaded(bool precache) {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoFailedToLoad() {
-        Debug.Log("On Rewarded Video Faild To Load");
+    public void onRewardedVideoFailedToLoad() {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoShowFailed() {
-        Debug.Log("On Rewarded Video Show Failed");
+    public void onRewardedVideoShowFailed() {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoShown() {
-        Debug.Log("On Rewarded Video Shown");
+    public void onRewardedVideoShown() {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoFinished(double amount, string currency) {
+    public void onRewardedVideoFinished(double amount, string name) {
         Debug.Log("VIDEO FINISHED");
         UnityMainThreadDispatcher.Instance().Enqueue(() => {
             if (rewardIndex == 1) {
@@ -393,18 +175,18 @@ public class RewAd : MonoBehaviour, IRewardedVideoAdListener {
             else {
                 Debug.Log("UNEXPECTED REWARD");
             }
-        });       
+        });
     }
 
-    public void OnRewardedVideoClosed(bool finished) {
-        Debug.Log("On Rewarded Video Clodsed");
+    public void onRewardedVideoClosed(bool finished) {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoExpired() {
-        Debug.Log("On Rewarded Video Expired");
+    public void onRewardedVideoExpired() {
+        throw new NotImplementedException();
     }
 
-    public void OnRewardedVideoClicked() {
-        Debug.Log("On Rewarded Video ");
+    public void onRewardedVideoClicked() {
+        throw new NotImplementedException();
     }
 }

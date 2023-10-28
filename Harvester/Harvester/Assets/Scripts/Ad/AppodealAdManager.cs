@@ -1,6 +1,6 @@
 using UnityEngine;
-using AppodealStack.Monetization.Api;
-using AppodealStack.Monetization.Common;
+using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Common;
 using System.Collections.Generic;
 using System;
 using Firebase.Analytics;
@@ -23,8 +23,12 @@ public class AppodealAdManager : MonoBehaviour, IAppodealInitializationListener 
     }
 
     private void Initialize() {
-        Appodeal.MuteVideosIfCallsMuted(true);
-        int adTypes = AppodealAdType.Interstitial | AppodealAdType.Banner | AppodealAdType.RewardedVideo;
-        Appodeal.Initialize(appKey, adTypes, this);        
-    }    
+        Appodeal.muteVideosIfCallsMuted(true);
+        int adTypes = Appodeal.INTERSTITIAL | Appodeal.BANNER | Appodeal.REWARDED_VIDEO;
+        Appodeal.initialize(appKey, adTypes, this);
+    }
+
+    public void onInitializationFinished(List<string> errors) {
+        throw new NotImplementedException();
+    }
 }
